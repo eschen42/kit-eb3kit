@@ -12,5 +12,11 @@ $ git clone .....
 $ vagrant up
 ```
 
+## inspirations
+
+* https://blog.mimacom.com/liferay-automated-development-and-deployment/
+* https://github.com/mimacom/liferay-puppet-deployment
+
+
 ## todos
 
