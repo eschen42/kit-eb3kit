@@ -1,0 +1,14 @@
+<%- | String $bibboxbaseurl | -%>
+
+<VirtualHost *:80>
+	ServerName <%= $bibboxbaseurl %>
+	ServerAlias *.<%= $bibboxbaseurl %>
+	<Proxy *>
+        Order deny,allow
+        Allow from all
+	</Proxy>
+
+	ProxyRequests           Off
+	ProxyPass               /       ajp://127.0.0.1:8009/
+	ProxyPassReverse        /       ajp://127.0.0.1:8009/
+</VirtualHost>
