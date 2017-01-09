@@ -103,6 +103,13 @@ class vmbuilder(
 	    group   	=> 'liferay',
 	    subscribe 	=> Archive['/tmp/liferay-ce-portal-tomcat-7.0-ga3.zip']
 	}
+	file { '/opt/liferay/deploy':
+		ensure 		=> 'directory',
+		mode 		=> '0777',
+		owner 		=> 'liferay',
+		group 		=> 'liferay',
+		subscribe	=> File['MoveLiferayContents']
+	}
 	file { '/opt/liferay/tomcat-8.0.32/bin':
 		ensure 		=> 'present',
 		source 		=> '/opt/liferay-ce-portal-7.0-ga3/tomcat-8.0.32/bin',
