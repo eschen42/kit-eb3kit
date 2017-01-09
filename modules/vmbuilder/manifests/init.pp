@@ -288,7 +288,7 @@ class vmbuilder(
 	class { 'python':
 		ensure 	=> 'present',
 		version => '3.4.3',
-		notify	=> Exec['setPythonVersion']
+		notify	=> File['setPythonVersion']
 	}
 	# exec { 'setPythonVersion':
 	# 	command => "/usr/bin/sudo /bin/ln -sf /usr/bin/python3.4 /usr/bin/python"
