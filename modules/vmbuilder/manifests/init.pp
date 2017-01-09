@@ -285,12 +285,13 @@ class vmbuilder(
 
 
 	# Install latest python
-	class { 'python' :
-		ensure 	=> 'latest',
+	class { 'python':
+		ensure 	=> 'present',
+		version => '3.6.0',
 		notify	=> Exec['setPythonVersion']
 	}
 	exec { 'setPythonVersion':
-		command => 'alias python=/usr/local/bin/python2.7'
+		command => 'alias python=/usr/local/bin/python3.6'
 	}
 
 
