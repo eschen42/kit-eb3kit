@@ -76,7 +76,7 @@ class vmbuilder(
 
 
 	# Unzip liferay sources to 'liferay' directory
-	archive { '/tmp/liferay-ce-portal-tomcat-7.0-ga3.zip':
+	archive { '/opt/liferay-ce-portal-tomcat-7.0-ga3.zip':
 		ensure 			=> 'present',
 		extract       	=> true,
 		extract_path  	=> '/opt',
@@ -87,9 +87,9 @@ class vmbuilder(
 
 
 	# Delete temporary zip file
-	# file { '/tmp/liferay.zip':
+	# file { '/opt/liferay.zip':
 	# 	ensure 		=> 'absent',
-	# 	subscribe	=> Archive['/tmp/liferay-ce-portal-tomcat-7.0-ga3.zip']
+	# 	subscribe	=> Archive['/opt/liferay-ce-portal-tomcat-7.0-ga3.zip']
 	# }
 
 
@@ -101,7 +101,7 @@ class vmbuilder(
 		recurse 	=> true,
 	    owner		=> 'liferay',
 	    group   	=> 'liferay',
-	    subscribe 	=> Archive['/tmp/liferay-ce-portal-tomcat-7.0-ga3.zip']
+	    subscribe 	=> Archive['/opt/liferay-ce-portal-tomcat-7.0-ga3.zip']
 	}
 	file { '/opt/liferay/deploy':
 		ensure 		=> 'directory',
@@ -286,8 +286,11 @@ class vmbuilder(
 
 	# Install latest python
 	class { 'python' :
-		ensure    	=> 'present',
-		version		=> '3.4'
+		ensure 	=> 'latest',
+		notify	=> Exec['setPythonVersion']
+	}
+	exec { 'setPythonVersion':
+		command => 'alias python=/usr/local/bin/python2.7'
 	}
 
 

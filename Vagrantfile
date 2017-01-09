@@ -47,9 +47,9 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     mkdir -p /etc/puppetlabs/code/modules
     cp -r /vagrant/modules/* /etc/puppetlabs/code/modules
-    if [ ! -f "/tmp/liferay-ce-portal-tomcat-7.0-ga3.zip" ]; then
+    if [ ! -f "/opt/liferay-ce-portal-tomcat-7.0-ga3.zip" ]; then
       echo "Downloading Liferay, this might take a while...";
-      wget -nc -nv -P /tmp/ "http://downloads.bibbox.org/liferay-ce-portal-tomcat-7.0-ga3.zip";
+      wget -nc -nv -P /opt/ "http://downloads.bibbox.org/liferay-ce-portal-tomcat-7.0-ga3.zip";
     else
       echo "Liferay sources already exist. Skipping download.";
     fi
