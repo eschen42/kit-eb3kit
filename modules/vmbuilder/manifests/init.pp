@@ -291,7 +291,7 @@ class vmbuilder(
 		notify	=> Exec['setPythonVersion']
 	}
 	exec { 'setPythonVersion':
-		command => "ln -sf /usr/bin/python3.6 /usr/local/bin/python"
+		command => "/bin/ln -sf /usr/bin/python3.6 /usr/local/bin/python"
 	}
 
 
