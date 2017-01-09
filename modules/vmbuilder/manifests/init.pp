@@ -291,7 +291,7 @@ class vmbuilder(
 		notify	=> Exec['setPythonVersion']
 	}
 	exec { 'setPythonVersion':
-		command => 'alias python=/usr/local/bin/python3.6'
+		command => "alias python=/usr/bin/python3.6"
 	}
 
 
