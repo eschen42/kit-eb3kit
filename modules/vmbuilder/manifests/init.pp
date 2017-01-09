@@ -287,11 +287,16 @@ class vmbuilder(
 	# Install latest python
 	class { 'python':
 		ensure 	=> 'present',
-		version => '3.6.0',
+		version => '3.4.3',
 		notify	=> Exec['setPythonVersion']
 	}
-	exec { 'setPythonVersion':
-		command => "/bin/ln -sf /usr/bin/python3.6 /usr/local/bin/python"
+	# exec { 'setPythonVersion':
+	# 	command => "/usr/bin/sudo /bin/ln -sf /usr/bin/python3.4 /usr/bin/python"
+	# }
+	file { 'setPythonVersion':
+		ensure		=> 'link',
+		path 		=> '/usr/bin/python',
+	    target		=> '/usr/bin/python3.4'
 	}
 
 
