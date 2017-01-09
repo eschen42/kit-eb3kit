@@ -284,6 +284,12 @@ class vmbuilder(
 	include 'docker'
 
 
+	# Install latest python
+	class { 'python' :
+		version    => 'latest'
+	}
+
+
 	# Configure vhosts for apache
 	file { "/etc/apache2/sites-available/001-default-application-store.conf":
 		ensure  => 'file',
