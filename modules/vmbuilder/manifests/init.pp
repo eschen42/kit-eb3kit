@@ -286,7 +286,7 @@ class vmbuilder(
 
 	# Install latest python
 	class { 'python' :
-		version    => '3.6'
+		ensure    => 'latest'
 	}
 
 
