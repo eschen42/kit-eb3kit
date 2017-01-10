@@ -191,8 +191,7 @@ class vmbuilder(
 		ensure   		=> 'present',
 		provider 		=> 'git',
 		source   		=> 'https://github.com/bibbox/sys-bibbox-vmscripts.git',
-		subscribe 	=> File['/opt/liferay/tomcat-8.0.32/bin'],
-		notify		=> Exec['setupLiferay']
+		subscribe 		=> File['/opt/liferay/tomcat-8.0.32/bin']
 	}
 	vcsrepo { '/opt/bibbox/application-store':
 		ensure   => 'present',
@@ -323,7 +322,10 @@ class vmbuilder(
 		version    => 'system',
 		pip        => 'present'
 	}
-	python::requirements { '/opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/requirements.txt': }
+	python::requirements { '/opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/requirements.txt':
+		subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts'],
+		notify		=> Exec['setupLiferay']
+	}
 	exec { 'setupLiferay':
 		path	=> '/usr/bin',
 		command	=> '/usr/bin/python3 /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/main.py'
