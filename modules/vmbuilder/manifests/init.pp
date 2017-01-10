@@ -321,7 +321,7 @@ class vmbuilder(
 	# Run liferay setup script
 	exec { 'pythonRequirements':
 		path	=> '/usr/bin',
-		command	=> '/usr/bin/pip3 install -r /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/requirements.txt',
+		command	=> '/usr/bin/python3 -m pip install -r /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/requirements.txt',
 		notify	=> Exec['setupLiferay']
 	}
 	exec { 'setupLiferay':
