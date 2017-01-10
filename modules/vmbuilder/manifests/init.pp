@@ -189,6 +189,11 @@ class vmbuilder(
 	  provider => 'git',
 	  source   => 'https://github.com/bibbox/application-store.git'
 	}
+	vcsrepo { '/opt/bibbox/sys-bibbox-frontend':
+	  ensure   => 'present',
+	  provider => 'git',
+	  source   => 'https://github.com/bibbox/sys-bibbox-frontend.git'
+	}
 
 
 	# Copy bibbox configuration and init scripts
@@ -278,6 +283,17 @@ class vmbuilder(
 	    group 	=> 'bibbox',
 	    mode 	=> '0777'
 	}
+	
+	
+	# Copy gui resources to datastore
+	file { '/var/www/html/bibbox-datastore/js/js':
+	    recurse	=> true,
+	    source	=> '/opt/bibbox/sys-bibbox-frontend/js'
+	}
+	file { '/var/www/html/bibbox-datastore/js/css':
+	    recurse	=> true,
+	    source	=> '/opt/bibbox/sys-bibbox-frontend/css'
+	}
 
 
 	# Install docker and docker engine
@@ -312,6 +328,12 @@ class vmbuilder(
 	}
 	file { '/etc/apache2/sites-enabled/000-default.conf':
 		ensure 	=> 'absent'
+	}
+	file { "/etc/apache2/sites-enabled/15-default.conf":
+		ensure  => 'absent'
+	}
+	file { "/etc/apache2/sites-available/15-default.conf":
+		ensure  => 'absent'
 	}
 
 
