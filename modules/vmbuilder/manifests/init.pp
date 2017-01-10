@@ -316,12 +316,13 @@ class vmbuilder(
 
 	# Install docker and docker compose
 	include 'docker'
-	include 'docker_compose'
+	class { 'docker::compose': 
+		ensure => present
+	}
 	
 	# Compose and run the sys-activities container
 	docker_compose { '/opt/bibbox/sys-activities/docker-compose.yml':
-		ensure  => present,
-		require	=> Class['docker_compose']
+		ensure  => present
 	}
 
 
