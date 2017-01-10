@@ -196,6 +196,11 @@ class vmbuilder(
 	  provider => 'git',
 	  source   => 'https://github.com/bibbox/sys-bibbox-frontend.git'
 	}
+	vcsrepo { '/opt/bibbox/sys-activities':
+	  ensure   => 'present',
+	  provider => 'git',
+	  source   => 'https://github.com/bibbox/sys-activities.git'
+	}
 
 
 	# Copy bibbox configuration and init scripts
@@ -304,6 +309,11 @@ class vmbuilder(
 
 	# Install docker and docker engine
 	include 'docker'
+	
+	# Compose and run the sys-activities container
+	docker_compose { '/opt/bibbox/sys-activities/docker-compose.yml':
+		ensure  => present
+	}
 
 
 	# Configure vhosts for apache
