@@ -336,6 +336,7 @@ class vmbuilder(
 		version => '1.8.1'
 	}
 	
+	
 	# Compose and run the sys-activities container
 	docker_compose { '/opt/bibbox/sys-activities/docker-compose.yml':
 		ensure  => present
