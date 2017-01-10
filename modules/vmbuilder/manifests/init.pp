@@ -323,12 +323,8 @@ class vmbuilder(
 		version    => 'system',
 		pip        => 'present'
 	}
+	python::requirements { '/opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/requirements.txt': }
 	exec { 'setupLiferay':
-		path	=> '/usr/bin',
-		command	=> '/usr/bin/pip install -r /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/requirements.txt',
-		notify	=> Exec['runMainScript']
-	}
-	exec { 'runMainScript':
 		path	=> '/usr/bin',
 		command	=> '/usr/bin/python3 /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/main.py'
 	}
