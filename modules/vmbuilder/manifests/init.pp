@@ -284,22 +284,6 @@ class vmbuilder(
 	include 'docker'
 
 
-	# Install latest python
-	class { 'python':
-		ensure 	=> 'present',
-		version => '3.4.3',
-		notify	=> File['setPythonVersion']
-	}
-	# exec { 'setPythonVersion':
-	# 	command => "/usr/bin/sudo /bin/ln -sf /usr/bin/python3.4 /usr/bin/python"
-	# }
-	file { 'setPythonVersion':
-		ensure		=> 'link',
-		path 		=> '/usr/bin/python',
-	    target		=> '/usr/bin/python3.4'
-	}
-
-
 	# Configure vhosts for apache
 	file { "/etc/apache2/sites-available/001-default-application-store.conf":
 		ensure  => 'file',
