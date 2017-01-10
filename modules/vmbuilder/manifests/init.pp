@@ -188,26 +188,26 @@ class vmbuilder(
 
 	# Clone bibbox repositories
 	vcsrepo { '/opt/bibbox/sys-bibbox-vmscripts':
-	  ensure   		=> 'present',
-	  provider 		=> 'git',
-	  source   		=> 'https://github.com/bibbox/sys-bibbox-vmscripts.git',
-	  subscribe 	=> File['/opt/liferay/tomcat-8.0.32/bin'],
-	  notify		=> Exec['setupLiferay']
+		ensure   		=> 'present',
+		provider 		=> 'git',
+		source   		=> 'https://github.com/bibbox/sys-bibbox-vmscripts.git',
+		subscribe 	=> File['/opt/liferay/tomcat-8.0.32/bin'],
+		notify		=> Exec['setupLiferay']
 	}
 	vcsrepo { '/opt/bibbox/application-store':
-	  ensure   => 'present',
-	  provider => 'git',
-	  source   => 'https://github.com/bibbox/application-store.git'
+		ensure   => 'present',
+		provider => 'git',
+		source   => 'https://github.com/bibbox/application-store.git'
 	}
 	vcsrepo { '/opt/bibbox/sys-bibbox-frontend':
-	  ensure   => 'present',
-	  provider => 'git',
-	  source   => 'https://github.com/bibbox/sys-bibbox-frontend.git'
+		ensure   => 'present',
+		provider => 'git',
+		source   => 'https://github.com/bibbox/sys-bibbox-frontend.git'
 	}
 	vcsrepo { '/opt/bibbox/sys-activities':
-	  ensure   => 'present',
-	  provider => 'git',
-	  source   => 'https://github.com/bibbox/sys-activities.git'
+		ensure   => 'present',
+		provider => 'git',
+		source   => 'https://github.com/bibbox/sys-activities.git'
 	}
 
 
@@ -303,15 +303,18 @@ class vmbuilder(
 	# Copy gui resources to datastore
 	file { '/var/www/html/bibbox-datastore/js/js':
 	    recurse	=> true,
-	    source	=> '/opt/bibbox/sys-bibbox-frontend/js'
+	    source	=> '/opt/bibbox/sys-bibbox-frontend/js',
+		subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-frontend']
 	}
 	file { '/var/www/html/bibbox-datastore/js/css':
 	    recurse	=> true,
-	    source	=> '/opt/bibbox/sys-bibbox-frontend/css'
+	    source	=> '/opt/bibbox/sys-bibbox-frontend/css',
+		subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-frontend']
 	}
 	file { '/var/www/html/bibbox-datastore/js/images':
 	    recurse	=> true,
-	    source	=> '/opt/bibbox/sys-bibbox-frontend/images'
+	    source	=> '/opt/bibbox/sys-bibbox-frontend/images',
+		subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-frontend']
 	}
 	
 	
@@ -321,6 +324,11 @@ class vmbuilder(
 		pip        => 'present'
 	}
 	exec { 'setupLiferay':
+		path	=> '/usr/bin',
+		command	=> '/usr/bin/pip install -r /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/requirements.txt',
+		notify	=> Exec['runMainScript']
+	}
+	exec { 'runMainScript':
 		path	=> '/usr/bin',
 		command	=> '/usr/bin/python3 /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/main.py'
 	}
