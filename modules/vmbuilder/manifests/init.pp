@@ -191,8 +191,7 @@ class vmbuilder(
 	  ensure   		=> 'present',
 	  provider 		=> 'git',
 	  source   		=> 'https://github.com/bibbox/sys-bibbox-vmscripts.git',
-	  subscribe 	=> File['/opt/liferay/tomcat-8.0.32/bin'],
-	  notify		=> Exec['setupLiferay']
+	  subscribe 	=> File['/opt/liferay/tomcat-8.0.32/bin']
 	}
 	vcsrepo { '/opt/bibbox/application-store':
 	  ensure   => 'present',
@@ -313,6 +312,18 @@ class vmbuilder(
 	    recurse	=> true,
 	    source	=> '/opt/bibbox/sys-bibbox-frontend/images'
 	}
+	
+	
+	# Install python and run liferay setup script
+	class { 'python' :
+		version    => 'system',
+		pip        => 'present'
+	}
+	exec { 'setupLiferay':
+		path	=> '/usr/bin',
+		command	=> '/usr/bin/python3 /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/main.py'
+		require	=> File['/opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/main.py']
+	}
 
 
 	# Install docker and docker compose
@@ -382,12 +393,6 @@ class vmbuilder(
 	file { "/opt/liferay/tomcat-8.0.32/webapps/ROOT/WEB-INF/urlrewrite.xml":
 	   	ensure 	=> 'file',
 	    source 	=> '/vagrant/resources/urlrewrite.xml'
-	}
-	
-	
-	# Run python script to setup liferay sites and users
-	exec { 'setupLiferay'
-		command => '/usr/bin/python3 /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/main.py'
 	}
 
 }
