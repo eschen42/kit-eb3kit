@@ -64,7 +64,6 @@ Vagrant.configure("2") do |config|
     puppet module install puppetlabs-docker_platform --version 2.1.0 --modulepath /etc/puppetlabs/code/modules
     puppet module install puppetlabs-postgresql --version 4.8.0 --modulepath /etc/puppetlabs/code/modules
     puppet module install tylerwalts-jdk_oracle --version 1.5.0 --modulepath /etc/puppetlabs/code/modules
-	puppet module install garystafford-docker_compose --version 0.4.2 --modulepath /etc/puppetlabs/code/modules
 	sudo apt-get install python3-pip
     sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 7F438280EF8D349F
     sudo apt-get update
