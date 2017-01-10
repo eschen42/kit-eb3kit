@@ -46,7 +46,9 @@ class vmbuilder(
 
 
 	# Install apache with default config
-	class { 'apache': }
+	class { 'apache':
+		default_vhost => false
+	}
 	class { 'apache::mod::proxy': }
 	class { 'apache::mod::proxy_http': }
 	class { 'apache::mod::proxy_ajp': }
@@ -294,6 +296,10 @@ class vmbuilder(
 	    recurse	=> true,
 	    source	=> '/opt/bibbox/sys-bibbox-frontend/css'
 	}
+	file { '/var/www/html/bibbox-datastore/js/images':
+	    recurse	=> true,
+	    source	=> '/opt/bibbox/sys-bibbox-frontend/images'
+	}
 
 
 	# Install docker and docker engine
@@ -325,15 +331,6 @@ class vmbuilder(
 		content => epp('/vagrant/resources/templates/050-liferay.conf.epp', {
 			'bibboxbaseurl'	=> $bibboxbaseurl
 		})
-	}
-	file { '/etc/apache2/sites-enabled/000-default.conf':
-		ensure 	=> 'absent'
-	}
-	File <| title == '/etc/apache2/sites-enabled/15-default.conf' |> {
-		ensure  => 'absent'
-	}
-	File <| title == '/etc/apache2/sites-available/15-default.conf' |> {
-		ensure  => 'absent'
 	}
 
 
