@@ -53,6 +53,13 @@ class vmbuilder(
 	class { 'apache::mod::proxy_http': }
 	class { 'apache::mod::proxy_ajp': }
 	class { 'apache::mod::proxy_wstunnel': }
+	
+	
+	# Define default vhost, or apache can't start
+	apache::vhost { $bibboxbaseurl:
+		port    => '80',
+		docroot => '/var/www/vhost',
+	}
 
 
 	# Install oracle java
@@ -312,7 +319,8 @@ class vmbuilder(
 	
 	# Compose and run the sys-activities container
 	docker_compose { '/opt/bibbox/sys-activities/docker-compose.yml':
-		ensure  => present
+		ensure  => present,
+		require	=> Class['docker']
 	}
 
 
