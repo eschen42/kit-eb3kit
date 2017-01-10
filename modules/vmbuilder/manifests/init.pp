@@ -317,7 +317,7 @@ class vmbuilder(
 	# Install docker and docker compose
 	include 'docker'
 	class { 'docker::compose': 
-		ensure => present
+		version => '1.8.1'
 	}
 	
 	# Compose and run the sys-activities container
