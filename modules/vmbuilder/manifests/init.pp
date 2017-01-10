@@ -329,10 +329,10 @@ class vmbuilder(
 	file { '/etc/apache2/sites-enabled/000-default.conf':
 		ensure 	=> 'absent'
 	}
-	file { "/etc/apache2/sites-enabled/15-default.conf":
+	File <| title == '/etc/apache2/sites-enabled/15-default.conf' |> {
 		ensure  => 'absent'
 	}
-	file { "/etc/apache2/sites-available/15-default.conf":
+	File <| title == '/etc/apache2/sites-available/15-default.conf' |> {
 		ensure  => 'absent'
 	}
 
