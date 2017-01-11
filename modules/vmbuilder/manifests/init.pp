@@ -332,7 +332,8 @@ class vmbuilder(
 	}
 	exec { 'setupLiferay':
 		path		=> '/usr/bin',
-		command		=> '/usr/bin/python3 /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/main.py'
+		command		=> '/usr/bin/python3 /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/main.py',
+		timeout     => 900
 	}
 
 
