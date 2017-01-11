@@ -250,6 +250,7 @@ class vmbuilder(
 	}
 	file { "/etc/bibbox":
 	   	recurse 	=> true,
+	   	owner  		=> 'root',
 		group  		=> 'bibbox',
 	    source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/etc/bibbox',
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts']
@@ -258,13 +259,17 @@ class vmbuilder(
 
 	# Create 'conf.d' directory
 	file { '/etc/bibbox/conf.d':
-		ensure		=> 'directory'
+		ensure		=> 'directory',
+	   	owner  		=> 'root',
+		group  		=> 'bibbox',
 	}
 
 
 	# Render 'bibbox.cfg' template file
 	file { "/etc/bibbox/bibbox.cfg":
 		ensure  	=> 'file',
+	   	owner  		=> 'root',
+		group  		=> 'bibbox',
 		content 	=> epp('/vagrant/resources/templates/bibbox.cfg.epp', {
 			'bibboxkit'		=> $bibboxkit,
 			'bibboxbaseurl'	=> $bibboxbaseurl
