@@ -66,7 +66,7 @@ Vagrant.configure("2") do |config|
     puppet module install tylerwalts-jdk_oracle --version 1.5.0 --modulepath /etc/puppetlabs/code/modules
 	sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 7F438280EF8D349F
     sudo apt-get update
-    sudo apt-get install python3-pip
+    sudo apt-get install -y python3-pip
   SHELL
 
   config.vm.provision "puppet" do |puppet|
