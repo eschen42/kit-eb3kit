@@ -194,7 +194,7 @@ class vmbuilder(
 		subscribe 	=> File['/opt/liferay/tomcat-8.0.32/bin'],
 		notify		=> Exec['pythonRequirements']
 	}
-	vcsrepo { '/opt/bibbox/application-store':
+	vcsrepo { '/opt/bibbox/application-store/application-store':
 		ensure   	=> 'present',
 		provider	=> 'git',
 		source  	=> 'https://github.com/bibbox/application-store.git'
