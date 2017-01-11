@@ -5,10 +5,13 @@ bibboxkit="<%= $bibboxkit %>"
 
 # Base Configuration BIBBOX
 bibboxdir="/opt/bibbox"
-bibboxscriptfolder="sys-bibbox-vmscripts"
+bibboxscriptfolder="bibbox-scripts"
 bibboxapplicationstorefolder="application-store"
 bibboxinstancefolder="application-instance"
 bibboxbaseurl="<%= $bibboxbaseurl %>"
+
+# Admin Roles / TEMP
+adminroles="Administrator;Bibbox Admin;Bibbox VM Admin"
 
 # init configuration
 ApplicationStoreUpdate="ON"
