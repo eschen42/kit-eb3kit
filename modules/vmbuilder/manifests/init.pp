@@ -250,6 +250,7 @@ class vmbuilder(
 	}
 	file { "/etc/bibbox":
 	   	recurse 	=> true,
+		group  		=> 'bibbox',
 	    source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/etc/bibbox',
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts']
 	}
