@@ -331,21 +331,28 @@ class vmbuilder(
 	}
 	
 	
-	# Run liferay setup script
+	# Remove setup config file to reapply configuration on provisioning
+	file { '/etc/bibbox/conf.d/setup.cfg':
+		ensure	=> 'absent'
+	}
+	
+	
+	# Install requirements for liferay setup script
 	exec { 'pythonRequirements':
 		path		=> '/usr/bin',
 		command		=> '/usr/bin/pip3 install -r /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/requirements.txt'
 	}
-	notify { 'setupLiferayNotification':
-		message		=> 'Waiting for Liferay API to apply configuration. This could take a while.',
-		subscribe	=> Exec['pythonRequirements'],
-		notify		=> Exec['setupLiferay']
-	}
-	exec { 'setupLiferay':
-		path		=> '/usr/bin',
-		command		=> '/usr/bin/python3 /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/main.py',
-		timeout     => 900
-	}
+	
+	# notify { 'setupLiferayNotification':
+		# message		=> 'Waiting for Liferay API to apply configuration. This could take a while.',
+		# subscribe	=> Exec['pythonRequirements'],
+		# notify		=> Exec['setupLiferay']
+	# }
+	# exec { 'setupLiferay':
+		# path		=> '/usr/bin',
+		# command		=> '/usr/bin/python3 /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/main.py',
+		# timeout     => 900
+	# }
 
 
 	# Install docker and docker compose
