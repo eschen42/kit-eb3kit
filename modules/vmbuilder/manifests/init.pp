@@ -204,7 +204,6 @@ class vmbuilder(
 		provider	=> 'git',
 	   	owner		=> 'liferay',
 	   	group   	=> 'bibbox',
-		mode 		=> '0755',
 		source  	=> 'https://github.com/bibbox/application-store.git'
 	}
 	vcsrepo { '/opt/bibbox/sys-bibbox-frontend':
