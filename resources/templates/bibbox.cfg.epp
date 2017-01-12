@@ -5,7 +5,7 @@ bibboxkit="<%= $bibboxkit %>"
 
 # Base Configuration BIBBOX
 bibboxdir="/opt/bibbox"
-bibboxscriptfolder="bibbox-scripts"
+bibboxscriptfolder="sys-bibbox-vmscripts"
 bibboxapplicationstorefolder="application-store"
 bibboxinstancefolder="application-instance"
 bibboxbaseurl="<%= $bibboxbaseurl %>"
