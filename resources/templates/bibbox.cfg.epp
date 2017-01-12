@@ -11,7 +11,7 @@ bibboxinstancefolder="application-instance"
 bibboxbaseurl="<%= $bibboxbaseurl %>"
 
 # Admin Roles / TEMP
-adminroles="Administrator;Bibbox Admin;Bibbox VM Admin"
+adminroles="Administrator;BIBBOX Admin;BIBBOX VM Admin"
 
 # init configuration
 ApplicationStoreUpdate="ON"
