@@ -171,6 +171,11 @@ class vmbuilder(
 	    owner	=> 'liferay',
 	    group   => 'bibbox'
 	}
+	file { '/opt/bibbox/application-import-export':
+		ensure	=> 'directory',
+	    owner	=> 'root',
+	    group   => 'bibbox'
+	}
 
 
 	# Set access rights for apache directories
