@@ -311,6 +311,10 @@ class vmbuilder(
 	    group 	=> 'bibbox',
 	    mode 	=> '0777'
 	}
+	file { '/var/www/html/bibbox-datastore/index.html':
+		ensure		=> 'file',
+	    source		=> '/var/www/html/bibbox-datastore/bibbox/application-store/index.html'
+	}
 	file { '/var/www/html/bibbox-datastore/log.out':
 		ensure		=> 'link',
 	    target		=> '/opt/liferay/tomcat-8.0.32/logs/catalina.out'
