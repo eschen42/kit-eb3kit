@@ -335,7 +335,11 @@ class vmbuilder(
 	exec { 'pythonRequirements':
 		path		=> '/usr/bin',
 		command		=> '/usr/bin/pip3 install -r /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/requirements.txt',
-		notify		=> Exec['setupLiferay']
+		notify		=> Exec['setupLiferayNotification']
+	}
+	notify { 'setupLiferayNotification':
+		message	=> 'Waiting for Liferay API to apply configuration. This could take a while.',
+		notify	=> Exec['setupLiferay']
 	}
 	exec { 'setupLiferay':
 		path		=> '/usr/bin',
