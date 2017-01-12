@@ -313,7 +313,7 @@ class vmbuilder(
 	}
 	file { '/var/www/html/bibbox-datastore/index.html':
 		ensure		=> 'file',
-	    source		=> '/var/www/html/bibbox-datastore/bibbox/application-store/index.html'
+	    source		=> '/opt/bibbox/application-store/application-store/index.html'
 	}
 	file { '/var/www/html/bibbox-datastore/log.out':
 		ensure		=> 'link',
