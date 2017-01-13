@@ -10,7 +10,7 @@
 					if (this.readyState!==4) return;
 					if (this.status!==200) return; // or whatever error handling you want
 					var container = document.getElementById('log-container');
-					container.innerHTML= this.responseText;
+					container.innerHTML= this.responseText.replace(/(?:\r\n|\r|\n)/g, '<br />');
 					container.scrollTop = container.scrollHeight;
 				};
 				xhr.send();
