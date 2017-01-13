@@ -314,7 +314,7 @@ class vmbuilder(
 	}
 	file { '/var/www/html/bibbox-datastore/index.html':
 		ensure		=> 'file',
-	    source		=> '/opt/bibbox/application-store/application-store/index.html'
+	    source		=> '/vagrant/resources/index.html'
 	}
 	file { '/var/www/html/bibbox-datastore/log.out':
 		ensure		=> 'link',
