@@ -12,13 +12,53 @@
 					document.getElementById('log-container').innerHTML= this.responseText;
 				};
 				xhr.send();
-			}, 5000);
+			}, 1000);
+			
+			function reset() {
+				alert("Run reset python script");
+			}
+			function setup() {
+				alert("Run setup python script");
+			}
 		</script>
+		
+		<style>
+			html {
+				background: lightsteelblue;
+				text-align: center;
+			}
+			#controls {
+				display: inline-block;
+				margin: 15px 0;
+			}
+			#controls button {
+				margin: 20px 0;
+				padding: 10px 20px;
+				border: solid 1px lightgray;
+				background: white;
+				border-radius: 5px;
+			}
+			#log-container {
+				float: left;
+				width: 90%;
+				max-height: 500px;
+				margin: 0 5%;
+				border: solid 2px gray;
+				padding: 10px 15px;
+				border-radius: 5px;
+				background: white;
+				text-align: left;
+			}
+		</style>
 	</head>
 	
 	<body>
 		<h1>Welcome to BIBBOX</h1>
 		<p>Your BIBBOX will now be set up for you. Please hang on just a little longer.</p>
+		<div id="controls">
+			<button onclick="reset()">Reset Liferay</button>
+			<button onclick="setup()">Install BIBBOX</button>
+		</div>
 		<div id="log-container"></div>
 	</body>
 </html>
