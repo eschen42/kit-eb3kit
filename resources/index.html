@@ -11,7 +11,7 @@
 					if (this.status!==200) return; // or whatever error handling you want
 					var container = document.getElementById('log-container');
 					container.innerHTML= this.responseText;
-					container.scrollTop = objDiv.scrollHeight;
+					container.scrollTop = container.scrollHeight;
 				};
 				xhr.send();
 			}, 1000);
