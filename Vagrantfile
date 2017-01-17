@@ -18,6 +18,9 @@ Vagrant.configure("2") do |config|
   
   config.vm.network :private_network, ip: "192.168.10.10"
 
+  config.vm.network :forwarded_port, guest: 22, host: 2230, id: "ssh", disabled: true
+  config.vm.network :forwarded_port, guest: 22, host: 2231, auto_correct: true
+
   config.vm.provider "virtualbox" do |vb|
   
     # (Option 1) Customize the amount of memory and the cpu cores of the VM:
