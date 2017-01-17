@@ -43,6 +43,13 @@ class vmbuilder(
 		ensure 		=> 'present',
 		groups 		=> ['bibbox', 'liferay', 'docker']
 	}
+	user { 'vmadmin':
+		ensure 		=> 'present',
+		groups 		=> ['sudo', 'docker'],
+		password 	=> 'bibbox4ever',
+		home 		=> '/home/vmadmin',
+		uid 		=> '507'
+	}
 
 
 	# Install apache with default config
@@ -351,17 +358,6 @@ class vmbuilder(
 		path		=> '/usr/bin',
 		command		=> '/usr/bin/pip3 install -r /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/requirements.txt'
 	}
-	
-	# notify { 'setupLiferayNotification':
-		# message		=> 'Waiting for Liferay API to apply configuration. This could take a while.',
-		# subscribe	=> Exec['pythonRequirements'],
-		# notify		=> Exec['setupLiferay']
-	# }
-	# exec { 'setupLiferay':
-		# path		=> '/usr/bin',
-		# command		=> '/usr/bin/python3 /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/main.py',
-		# timeout     => 900
-	# }
 
 
 	# Install docker and docker compose
