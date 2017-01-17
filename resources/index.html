@@ -17,7 +17,9 @@
 					if (this.status!==200) return;
 					var container = document.getElementById('log-container');
 					container.innerHTML= this.responseText.replace(/(?:\r\n|\r|\n)/g, '<br />');
-					container.scrollTop = container.scrollHeight;
+					if(document.getElementById('autoscroll').checked) {
+						container.scrollTop = container.scrollHeight;
+					}
 				};
 				xhr.send();
 			}
@@ -44,6 +46,10 @@
 			}
 			h1 {
 				margin-top: 30px;
+			}
+			label {
+				float: right;
+				margin-right: 5%;
 			}
 			#controls {
 				display: inline-block;
@@ -81,6 +87,7 @@
 			<button onclick="setup()">Install BIBBOX</button>
 		</div>
 		<p id="status"></p>
+		<label><input id="autoscroll" type="checkbox" value="enabled" checked /> Autoscroll</label>
 		<div id="log-container">
 			Loading log data...
 		</div>
