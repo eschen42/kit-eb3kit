@@ -7,7 +7,7 @@
 			
 			setInterval(function() {
 				refreshLog();
-			}, 1000);
+			}, 10000);
 
 			function refreshLog() {
 				var xhr= new XMLHttpRequest();
@@ -39,6 +39,9 @@
 		</script>
 		
 		<style>
+			* {
+				box-sizing: border-box;
+			}
 			html {
 				background: lightsteelblue;
 				text-align: center;
@@ -64,10 +67,9 @@
 				font-size: 14px;
 			}
 			#log-container {
-				float: left;
 				width: 90%;
 				max-height: 500px;
-				margin: 0 5%;
+				margin: 0 auto;
 				border: solid 2px gray;
 				padding: 10px 15px;
 				border-radius: 5px;
