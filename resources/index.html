@@ -1,26 +1,38 @@
 <html>
 	<head>
-		<title>BIBBOX Setup</title>
+		<title>BIBBOX Dashboard</title>
 		
 		<script>
+			refreshLog();
+			
 			setInterval(function() {
+				refreshLog();
+			}, 1000);
+
+			function refreshLog() {
 				var xhr= new XMLHttpRequest();
 				xhr.open('GET', 'log.out', true);
 				xhr.onreadystatechange= function() {
 					if (this.readyState!==4) return;
-					if (this.status!==200) return; // or whatever error handling you want
+					if (this.status!==200) return;
 					var container = document.getElementById('log-container');
 					container.innerHTML= this.responseText.replace(/(?:\r\n|\r|\n)/g, '<br />');
 					container.scrollTop = container.scrollHeight;
 				};
 				xhr.send();
-			}, 1000);
+			}
 			
 			function reset() {
-				alert("Run reset python script");
+				if (confirm("Your system will be set back to a clean Liferay installation and existing data will be lost. Do you want to continue?")) {
+					document.getElementById('status').innerHTML = "Your Liferay installation will now be set up for you. Please hang on just a little longer.";
+					alert("Run reset python script");
+				}
 			}
 			function setup() {
-				alert("Run setup python script");
+				if (confirm("Do you want to install BIBBOX?")) {
+					document.getElementById('status').innerHTML = "Your BIBBOX will now be set up for you. Please hang on just a little longer.";
+					alert("Run reset python script");
+				}
 			}
 		</script>
 		
@@ -29,6 +41,9 @@
 				background: lightsteelblue;
 				text-align: center;
 				font-family: "Arial", "Helvetica", sans-serif;
+			}
+			h1 {
+				margin-top: 30px;
 			}
 			#controls {
 				display: inline-block;
@@ -61,11 +76,13 @@
 	
 	<body>
 		<h1>Welcome to BIBBOX</h1>
-		<p>Your BIBBOX will now be set up for you. Please hang on just a little longer.</p>
 		<div id="controls">
 			<button onclick="reset()">Reset Liferay</button>
 			<button onclick="setup()">Install BIBBOX</button>
 		</div>
-		<div id="log-container"></div>
+		<p id="status"></p>
+		<div id="log-container">
+			Loading log data...
+		</div>
 	</body>
 </html>
