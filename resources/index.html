@@ -7,7 +7,7 @@
 			
 			setInterval(function() {
 				refreshLog();
-			}, 10000);
+			}, 3000);
 
 			function refreshLog() {
 				var xhr= new XMLHttpRequest();
@@ -27,13 +27,13 @@
 			function reset() {
 				if (confirm("Your system will be set back to a clean Liferay installation and existing data will be lost. Do you want to continue?")) {
 					document.getElementById('status').innerHTML = "Your Liferay installation will now be set up for you. Please hang on just a little longer.";
-					alert("Run reset python script");
+					console.log("Run reset python script");
 				}
 			}
 			function setup() {
 				if (confirm("Do you want to install BIBBOX?")) {
 					document.getElementById('status').innerHTML = "Your BIBBOX will now be set up for you. Please hang on just a little longer.";
-					alert("Run reset python script");
+					console.log("Run reset python script");
 				}
 			}
 		</script>
