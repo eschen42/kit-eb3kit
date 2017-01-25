@@ -372,8 +372,8 @@ class vmbuilder(
 	# 	ensure  => present
 	# }
 	exec { 'dockerUp':
-		path		=> '/usr/local/bin',
-		command 	=> 'sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-activities/docker-compose.yml up -d',
+		path		=> '/usr/bin',
+		command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-activities/docker-compose.yml up -d',
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-activities']
 	}
 
