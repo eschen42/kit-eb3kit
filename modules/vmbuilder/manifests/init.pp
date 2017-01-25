@@ -368,8 +368,13 @@ class vmbuilder(
 	
 	
 	# Compose and run the sys-activities container
-	docker_compose { '/opt/bibbox/sys-activities/docker-compose.yml':
-		ensure  => present
+	# docker_compose { '/opt/bibbox/sys-activities/docker-compose.yml':
+	# 	ensure  => present
+	# }
+	exec { 'dockerUp':
+		path		=> '/usr/local/bin',
+		command 	=> 'sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-activities/docker-compose.yml up -d',
+		subscribe	=> Vcsrepo['/opt/bibbox/sys-activities']
 	}
 
 
