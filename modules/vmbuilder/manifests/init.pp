@@ -293,7 +293,7 @@ class vmbuilder(
 
 
 	# Start bibbox and liferay services
-	service { 'apache2':
+	Service <| title == 'apache2' |> {
 		ensure 		=> running,
 		enable 		=> true,
 		subscribe	=> File['/etc/init.d/bibbox']
