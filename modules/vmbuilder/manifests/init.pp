@@ -386,6 +386,11 @@ class vmbuilder(
 		command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-activities/docker-compose.yml up -d',
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-activities']
 	}
+	exec { 'dockerUp':
+		path		=> '/usr/bin',
+		command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-idmapping/docker-compose.yml up -d',
+		subscribe	=> Vcsrepo['/opt/bibbox/sys-idmapping']
+	}
 
 
 	# Configure vhosts for apache
