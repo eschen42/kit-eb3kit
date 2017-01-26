@@ -41,6 +41,7 @@ The automatic BIBBOX setup is dependend on multiple repositories and one ZIP fil
 * BIBBOX Repository 'sys-bibbox-frontend': https://github.com/bibbox/sys-bibbox-frontend
 * BIBBOX Repository 'sys-bibbox-backend': https://github.com/bibbox/sys-bibbox-backend
 * BIBBOX Repository 'sys-activities': https://github.com/bibbox/sys-activities
+* BIBBOX Repository 'sys-idmapping': https://github.com/bibbox/sys-idmapping
 
 
 ## Inspirations
