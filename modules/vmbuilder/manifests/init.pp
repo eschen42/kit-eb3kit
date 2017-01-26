@@ -381,12 +381,12 @@ class vmbuilder(
 	# docker_compose { '/opt/bibbox/sys-activities/docker-compose.yml':
 	# 	ensure  => present
 	# }
-	exec { 'dockerUp':
+	exec { 'dockerUpActivities':
 		path		=> '/usr/bin',
 		command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-activities/docker-compose.yml up -d',
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-activities']
 	}
-	exec { 'dockerUp':
+	exec { 'dockerUpIdMapping':
 		path		=> '/usr/bin',
 		command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-idmapping/docker-compose.yml up -d',
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-idmapping']
