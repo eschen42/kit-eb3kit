@@ -31,6 +31,18 @@ The following parameters can be adjusted in `environments\production\manisfests\
 5. Access your BIBBOX at http://192.168.10.1:18080/
 
 
+## Dependencies
+
+The automatic BIBBOX setup is dependend on multiple repositories and one ZIP file download link:
+
+* Liferay ZIP file: http://downloads.bibbox.org/liferay-ce-portal-tomcat-7.0-ga3.zip
+* BIBBOX Repository 'sys-bibbox-vmscripts': https://github.com/bibbox/sys-bibbox-vmscripts
+* BIBBOX Repository 'application-store': https://github.com/bibbox/application-store
+* BIBBOX Repository 'sys-bibbox-frontend': https://github.com/bibbox/sys-bibbox-frontend
+* BIBBOX Repository 'sys-bibbox-backend': https://github.com/bibbox/sys-bibbox-backend
+* BIBBOX Repository 'sys-activities': https://github.com/bibbox/sys-activities
+
+
 ## Inspirations
 
 * https://blog.mimacom.com/liferay-automated-development-and-deployment/
