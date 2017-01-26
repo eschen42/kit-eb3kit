@@ -224,6 +224,11 @@ class vmbuilder(
 		provider 	=> 'git',
 		source   	=> 'https://github.com/bibbox/sys-activities.git'
 	}
+	vcsrepo { '/opt/bibbox/sys-idmapping':
+		ensure   	=> 'present',
+		provider 	=> 'git',
+		source   	=> 'https://github.com/bibbox/sys-idmapping.git'
+	}
 
 
 	# Copy bibbox configuration and init scripts
