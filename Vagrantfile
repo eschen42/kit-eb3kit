@@ -56,7 +56,7 @@ Vagrant.configure("2") do |config|
                 'createhd', 
                 '--filename', file_to_disk, 
                 '--format', 'VDI', 
-                '--size', 300 * 1024 # 300 GB
+                '--size', 301 * 1024 # 301 GB
                 ] 
            vb.customize [
                 'storageattach', bibboxbaseurl, 
