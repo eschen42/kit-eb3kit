@@ -46,12 +46,33 @@ Vagrant.configure("2") do |config|
       vb.cpus = 4
       vb.memory = 4096
     end
+    
+    # Create new disk
+    file_to_disk = File.realpath( "." ).to_s + "/disk.vdi"
+
+        if ARGV[0] == "up" && ! File.exist?(file_to_disk) 
+           puts "Creating 30GB disk #{file_to_disk}."
+           vb.customize [
+                'createhd', 
+                '--filename', file_to_disk, 
+                '--format', 'VDI', 
+                '--size', 300000 * 1024 # 30 GB
+                ] 
+           vb.customize [
+                'storageattach', :id, 
+                '--storagectl', 'SATA Controller', 
+                '--port', 1, '--device', 0, 
+                '--type', 'hdd', '--medium', 
+                file_to_disk
+                ]
+        end
 
     vb.name = bibboxbaseurl
   end
 
   # Provision the VM with several puppet modules
   config.vm.provision "shell", inline: <<-SHELL
+    sudo /vagrant/resources/add_disk.sh
     mkdir -p /etc/puppetlabs/code/modules
     cp -r /vagrant/modules/* /etc/puppetlabs/code/modules
     if [ ! -f "/opt/liferay-ce-portal-tomcat-7.0-ga3.zip" ]; then
