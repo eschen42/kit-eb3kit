@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
     end
     
     # Create new disk
-    file_to_disk = File.realpath( "." ).to_s + "/disk.vdi"
+    file_to_disk = File.realpath( "." ).to_s + "/disk-02.vdi"
 
         if ARGV[0] == "up" && ! File.exist?(file_to_disk) 
            puts "Creating 30GB disk #{file_to_disk}."
