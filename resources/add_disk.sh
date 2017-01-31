@@ -43,8 +43,8 @@ EOF
 
 pvcreate /dev/sdb1
 vgextend localhost-vg /dev/sdb1
-lvextend -L +30G /dev/VolGroup/lv_root # TODO the size needs to be passed in as a argument
-resize2fs /dev/VolGroup/lv_root
+lvextend -L +30G /dev/localhost-vg/root # TODO the size needs to be passed in as a argument
+resize2fs /dev/localhost-vg/root
 
 
-date > /etc/stratos_dev_env_disk_added_date
+date > /etc/disk_added_date
