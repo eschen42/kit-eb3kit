@@ -72,7 +72,7 @@ Vagrant.configure("2") do |config|
 
   # Provision the VM with several puppet modules
   config.vm.provision "shell", inline: <<-SHELL
-    sudo /vagrant/resources/add_disk.sh
+    sudo bash /vagrant/resources/add_disk.sh
     mkdir -p /etc/puppetlabs/code/modules
     cp -r /vagrant/modules/* /etc/puppetlabs/code/modules
     if [ ! -f "/opt/liferay-ce-portal-tomcat-7.0-ga3.zip" ]; then
