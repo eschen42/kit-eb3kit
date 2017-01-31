@@ -23,9 +23,9 @@
 set -e
 set -x
 
-if [ -f /etc/stratos_dev_env_disk_added_date ]
+if [ -f /etc/disk_added_date ]
 then
-   echo "Stratos runtime already provisioned so exiting."
+   echo "Disk was already added."
    exit 0
 fi
 
@@ -43,7 +43,7 @@ EOF
 
 pvcreate /dev/sdb1
 vgextend localhost-vg /dev/sdb1
-lvextend -L +30G /dev/localhost-vg/root # TODO the size needs to be passed in as a argument
+lvextend -L +300G /dev/localhost-vg/root # TODO the size needs to be passed in as a argument
 resize2fs /dev/localhost-vg/root
 
 
