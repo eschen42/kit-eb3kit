@@ -48,6 +48,8 @@ Vagrant.configure("2") do |config|
 
   # Provision the VM with several puppet modules
   config.vm.provision "shell", inline: <<-SHELL
+    VBoxManage createhd --filename "$bibboxbaseurl-disk02.vdi" --size 300000 --variant Standard --format VDI
+    VBoxManage storageattach "$bibboxbaseurl" --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium "$bibboxbaseurl-disk02.vdi"
     mkdir -p /etc/puppetlabs/code/modules
     cp -r /vagrant/modules/* /etc/puppetlabs/code/modules
     if [ ! -f "/opt/liferay-ce-portal-tomcat-7.0-ga3.zip" ]; then
