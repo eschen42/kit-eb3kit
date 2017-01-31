@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
     end
     
     # Create new disk
-    file_to_disk = File.realpath( "." ).to_s + "/disk-02.vdi"
+    file_to_disk = File.realpath( "." ).to_s + "/disk-03.vdi"
 
         if ARGV[0] == "up" && ! File.exist?(file_to_disk) 
            puts "Creating 30GB disk #{file_to_disk}."
@@ -56,7 +56,7 @@ Vagrant.configure("2") do |config|
                 'createhd', 
                 '--filename', file_to_disk, 
                 '--format', 'VDI', 
-                '--size', 300000 * 1024 # 30 GB
+                '--size', 300 * 1024 # 30 GB
                 ] 
            vb.customize [
                 'storageattach', bibboxbaseurl, 
