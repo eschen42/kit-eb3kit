@@ -59,7 +59,7 @@ Vagrant.configure("2") do |config|
                 '--size', 300000 * 1024 # 30 GB
                 ] 
            vb.customize [
-                'storageattach', :id, 
+                'storageattach', bibboxbaseurl, 
                 '--storagectl', 'IDE Controller', 
                 '--port', 1, '--device', 0, 
                 '--type', 'hdd', '--medium', 
