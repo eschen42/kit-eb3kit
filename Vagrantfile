@@ -2,6 +2,10 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
+  
+  # Shared folders
+  config.vm.synced_folder "shared/opt", "/opt"
+  config.vm.synced_folder "shared/docker", "/var/lib/docker"
 
   # Base url the bibbox kit (should be same as in puppet config file)
   bibboxbaseurl = "eb3kit.bibbox.org"
