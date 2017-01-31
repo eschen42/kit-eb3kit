@@ -60,7 +60,7 @@ Vagrant.configure("2") do |config|
                 ] 
            vb.customize [
                 'storageattach', :id, 
-                '--storagectl', 'SATA Controller', 
+                '--storagectl', 'IDE Controller', 
                 '--port', 1, '--device', 0, 
                 '--type', 'hdd', '--medium', 
                 file_to_disk
