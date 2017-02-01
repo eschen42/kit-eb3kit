@@ -46,7 +46,7 @@ class vmbuilder(
 	user { 'vmadmin':
 		ensure 		=> 'present',
 		groups 		=> ['sudo', 'docker'],
-		password 	=> 'bibbox4ever',
+		password 	=> '$6$mEf4vngN$erw.SnwvN1g77a/i2FdcGKveS7ktRvvauJHfH/XzHR9eMERn8p5sJzF7GTUoypvVU37u6IPaUeTvC9UZj8zOL1',
 		home 		=> '/home/vmadmin',
 		uid 		=> '507'
 	}
