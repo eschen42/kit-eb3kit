@@ -34,7 +34,9 @@ The following parameters can be adjusted in `environments\production\manisfests\
 
 ## Default login
 
-You can login with the user admin, pi, curator and operator, for all users the default password is graz2017. The liferay portal can be configured as Liferay administrator, login on with bibboxadmin, password graz2017.  
+You can login with the users *admin*, *pi*, *curator* and *operator*.  For all users the default password is *graz2017*. 
+
+The liferay portal can be configured as Liferay administrator, login  *bibboxadmin*, password *graz2017*.  
 
 ## Dependencies
 
