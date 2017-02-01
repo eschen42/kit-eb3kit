@@ -14,7 +14,7 @@ The following parameters can be adjusted in `environments\production\manisfests\
 
 | Parameter     | Description                                                                                                          | Default                        |
 |---------------|----------------------------------------------------------------------------------------------------------------------|--------------------------------|
-| bibboxkit     | Name of the BIBBOX kit.                                                                                              | eB3Kit                         |
+| bibboxkit     | Name of the BIBBOX kit, currently only eB3kit is available.                                                                                              | eB3Kit                         |
 | bibboxbaseurl | Base url of the kit which identifies the virtual machine. Needs to match 'bibboxbaseurl' parameter in 'Vagrantfile'. | eb3kit.bibbox.org              |
 | serveradmin   | Mail address of the administrator.                                                                                   | admin@bibbox.org               |
 | db_user       | User of the Liferay database.                                                                                        | liferay                        |
@@ -24,11 +24,13 @@ The following parameters can be adjusted in `environments\production\manisfests\
 
 ## Install Instructions
 
-1. Download or clone this Git repository
-2. Open up a terminal and navigate to the repository
-3. Execute command `$ vagrant up`
-4. Wait while your BIBBOX is being installed (can take quite long, depending on internet connection)
-5. Access your BIBBOX at http://192.168.10.1:18080/
+1. Download or clone this Git repository, **git clone https://github.com/bibbox/kit-eb3kit.git your-vm-name**
+2. Open up a terminal and navigate to the repository, **cd your-vm-name**
+3. Edit the vagrant configuratio as descibed abobve, **nano Vagrantfile**
+4. Edit the puppet configuration as descibed abobve, **nano  environments/production/manifests/config.pp**
+5. Execute command in your base directory,  **vagrant up**
+6. Wait while your BIBBOX is being installed (can take quite long, depending on internet connection)
+7. Configure your proxy or DNS to access the BIBBOX VM at **http://bibboxbaseurl** or use **http://192.168.10.1:1080** (replace 1080 by the port you configured in the Vagrantfile
 
 
 ## Dependencies
