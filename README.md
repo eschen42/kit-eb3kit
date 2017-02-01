@@ -30,7 +30,7 @@ The following parameters can be adjusted in `environments\production\manisfests\
 4. Edit the puppet configuration as descibed abobve, **nano  environments/production/manifests/config.pp**
 5. Execute command in your base directory,  **vagrant up**
 6. Wait while your BIBBOX is being installed (can take quite long, depending on internet connection)
-7. Configure your proxy or DNS to access the BIBBOX VM at **http://bibboxbaseurl** or use **http://192.168.10.1:1080** (replace 1080 by the port you configured in the Vagrantfile
+7. Configure your proxy or DNS to access the BIBBOX VM at **http://bibboxbaseurl** or use **http://192.168.10.1:1080** (replace 1080 by the port you configured in the Vagrantfile)
 
 ## Default login
 
