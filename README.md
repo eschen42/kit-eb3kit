@@ -32,6 +32,9 @@ The following parameters can be adjusted in `environments\production\manisfests\
 6. Wait while your BIBBOX is being installed (can take quite long, depending on internet connection)
 7. Configure your proxy or DNS to access the BIBBOX VM at **http://bibboxbaseurl** or use **http://192.168.10.1:1080** (replace 1080 by the port you configured in the Vagrantfile
 
+## Default login
+
+You can login with the user admin, pi, curator and operator, for all users the default password is graz2017. The liferay portal can be configured as Liferay administrator, login on with bibboxadmin, password graz2017.  
 
 ## Dependencies
 
