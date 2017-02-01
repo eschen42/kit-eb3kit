@@ -45,9 +45,3 @@ The automatic BIBBOX setup is dependend on multiple repositories and one ZIP fil
 * BIBBOX Repository 'sys-activities': https://github.com/bibbox/sys-activities
 * BIBBOX Repository 'sys-idmapping': https://github.com/bibbox/sys-idmapping
 
-
-## Inspirations
-
-* https://blog.mimacom.com/liferay-automated-development-and-deployment/
-* https://github.com/mimacom/liferay-puppet-deployment
-* https://github.com/fafonso/liferay-puppet-vm
