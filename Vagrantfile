@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
   
     # (Option 1) Customize the amount of memory and the cpu cores of the VM:
     # vb.memory = "10240"
-    # vb.cpus = 3
+    # vb.cpus = 4
      
     # (Option 2) RECOMMENDED APPROACH: Give VM 1/4 system memory & access to all cpu cores on the host
     host = RbConfig::CONFIG['host_os']
@@ -47,7 +47,7 @@ Vagrant.configure("2") do |config|
       vb.memory = 4096
     end
     
-    # Create new disk
+    # Create new disk of size 301GB
     file_to_disk = File.realpath( "." ).to_s + "/disk-300GB.vdi"
 
         if ARGV[0] == "up" && ! File.exist?(file_to_disk) 
