@@ -1,43 +1,43 @@
 class vmbuilder(
 
-	$bibboxkit			= "buildKit",
-	$bibboxbaseurl		= "build.bibbox.org",
-	$serveradmin		= "admin@bibbox.org",
+	$bibboxkit	= "buildKit",
+	$bibboxbaseurl	= "build.bibbox.org",
+	$serveradmin	= "admin@bibbox.org",
 
-	$db_user            = "liferay",
-	$db_password        = "CHANGEulHbbFpulHbM74JuBk9@CwMS",
-	$db_name            = "lportal"
+	$db_user	= "liferay",
+	$db_password	= "CHANGEulHbbFpulHbM74JuBk9@CwMS",
+	$db_name	= "lportal"
 
 ) {
 
 	# Ensure groups 'bibbox' and 'docker'
 	group { 'bibbox':
 		ensure		=> 'present',
-		gid			=> 501
+		gid		=> 501
 	}
 	group { 'docker':
 		ensure		=> 'present',
-		gid			=> 502
+		gid		=> 502
 	}
 	group { 'liferay':
 		ensure		=> 'present',
-		gid			=> 503
+		gid		=> 503
 	}
 
 
 	# Ensure users 'bibbox' ans 'liferay'
 	user { 'bibbox':
 		ensure		=> 'present',
-		gid			=> '501',
+		gid		=> '501',
 		home		=> '/home/bibbox',
 		groups		=> ['bibbox', 'docker'],
-		uid			=> '501'
+		uid		=> '501'
 	}
 	user { 'liferay':
 		ensure		=> 'present',
 		home		=> '/home/liferay',
 		groups		=> ['bibbox', 'liferay', 'docker'],
-		uid			=> '502'
+		uid		=> '502'
 	}
 	user { 'root':
 		ensure 		=> 'present',
@@ -93,12 +93,12 @@ class vmbuilder(
 
 	# Unzip liferay sources to 'liferay' directory
 	archive { '/opt/liferay-ce-portal-tomcat-7.0-ga3.zip':
-		ensure 			=> 'present',
+		ensure 		=> 'present',
 		extract       	=> true,
 		extract_path  	=> '/opt',
 		creates       	=> '/opt/liferay-ce-portal-7.0-ga3',
 		cleanup       	=> true,
-		notify			=> File['MoveLiferayContents']
+		notify		=> File['MoveLiferayContents']
 	}
 
 
@@ -378,9 +378,6 @@ class vmbuilder(
 	
 	
 	# Compose and run the sys-activities container
-	# docker_compose { '/opt/bibbox/sys-activities/docker-compose.yml':
-	# 	ensure  => present
-	# }
 	exec { 'dockerUpActivities':
 		path		=> '/usr/bin',
 		command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-activities/docker-compose.yml up -d',
