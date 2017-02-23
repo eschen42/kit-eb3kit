@@ -1,7 +1,7 @@
 class vmbuilder(
 
-	$bibboxkit	= "buildKit",
-	$bibboxbaseurl	= "build.bibbox.org",
+	$bibboxkit	= "eB3Kit",
+	$bibboxbaseurl	= "eb3kit.bibbox.org",
 	$serveradmin	= "admin@bibbox.org",
 
 	$db_user	= "liferay",
