@@ -5,7 +5,7 @@ class vmbuilder(
 	$serveradmin	= "admin@bibbox.org",
 
 	$db_user	= "liferay",
-	$db_password	= "CHANGEulHbbFpulHbM74JuBk9@CwMS",
+	$db_password	= "bibbox4ever",
 	$db_name	= "lportal"
 
 ) {
@@ -264,7 +264,9 @@ class vmbuilder(
 	   	owner  		=> 'liferay',
 		group  		=> 'liferay',
 		content 	=> epp('/vagrant/resources/templates/portal-setup-wizard.properties.epp', {
-			'db_password'	=> $db_password
+			'db_user'	=> $db_user,
+			'db_password'	=> $db_password,
+			'db_name'	=> $db_name
 		}),
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts']
 	}
