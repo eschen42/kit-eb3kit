@@ -68,11 +68,12 @@ Vagrant.configure("2") do |config|
 
   # Provision the VM with several puppet modules
   # Raise max. file descriptors
+  # Add the following lines into the shell provisioner to set ulimits to 64000:
+  # sudo cp /vagrant/resources/limits.conf /etc/security/limits.conf
+  # sudo cp /vagrant/resources/common-session /etc/pam.d/common-session
+  # sudo cp /vagrant/resources/common-session-noninteractive /etc/pam.d/common-session-noninteractive
   config.vm.provision "shell", inline: <<-SHELL
     sudo bash /vagrant/resources/add_disk.sh
-    sudo cp /vagrant/resources/limits.conf /etc/security/limits.conf
-    sudo cp /vagrant/resources/common-session /etc/pam.d/common-session
-    sudo cp /vagrant/resources/common-session-noninteractive /etc/pam.d/common-session-noninteractive
     mkdir -p /etc/puppetlabs/code/modules
     cp -r /vagrant/modules/* /etc/puppetlabs/code/modules
     if [ ! -f "/opt/liferay-ce-portal-tomcat-7.0-ga3.zip" ]; then
