@@ -1,0 +1,8 @@
+/opt/liferay/tomcat-8.0.32/logs/catalina.out {
+    copytruncate
+    daily
+    missingok
+    rotate 7
+    compress
+    size 10M
+}
