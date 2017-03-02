@@ -274,7 +274,7 @@ class vmbuilder(
 	   	recurse 	=> true,
 	   	owner  		=> 'root',
 		group  		=> 'bibbox',
-	    source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/etc/bibbox',
+	    	source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/etc/bibbox',
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts']
 	}
 
@@ -379,7 +379,7 @@ class vmbuilder(
 	}
 	
 	
-	# Compose and run the sys-activities container
+	# Compose and run the sys-activities container, create docker network and copy script for deleting docker containers
 	exec { 'dockerUpActivities':
 		path		=> '/usr/bin',
 		command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-activities/docker-compose.yml up -d',
@@ -390,7 +390,26 @@ class vmbuilder(
 		command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-idmapping/docker-compose.yml up -d',
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-idmapping']
 	}
-
+	exec { 'dockerNetwork':
+		path		=> '/usr/bin',
+		command		=> '/usr/bin/sudo /usr/bin/docker network create bibbox-default-network',
+		subscribe	=> Exec['dockerUpIdMapping']
+	}
+	file { "/etc/bibbox/delete_root_folder_applications.sh":
+		ensure		=> 'file',
+	   	owner  		=> 'root',
+		group  		=> 'root',
+		mode		=> '0744',
+		source 		=> '/vagrant/resources/delete_root_folder_applications.sh'
+	}
+	file { "/etc/sudoers.d/liferaydeletescript":
+		ensure  	=> 'file',
+	   	owner  		=> 'root',
+		group  		=> 'root',
+		mode		=> '0220',
+		source 		=> '/vagrant/resources/liferaydeletescript'
+	}
+	
 
 	# Configure vhosts for apache
 	file { "/etc/apache2/sites-available/001-default-application-store.conf":
