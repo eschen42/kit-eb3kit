@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
   # default: "8192" (8GB)
   memory = "8192"
   
-  # Amount of additional disk space in GB (hard drive)
+  # Amount of additional disk space in MB (hard drive)
   # default: 301 * 1024 (301GB)
   disksize = 301 * 1024
   
