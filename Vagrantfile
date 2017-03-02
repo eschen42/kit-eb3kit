@@ -8,19 +8,33 @@ Vagrant.configure("2") do |config|
   #################################################
   
   
+  # Name of the virtual machine
+  # default: "eb3kit"
+  vmname = "eb3kit"
+  
   # Base url the bibbox kit (should match puppet config file)
+  # default: "eb3kit.bibbox.org"
   bibboxbaseurl = "eb3kit.bibbox.org"
   
   # Number of assigned CPU cores
+  # default: 4
   cpus = 4
   
-  # Total amount of memory (RAM)
+  # Total amount of memory in MB (RAM)
+  # default: "8192" (8GB)
   memory = "8192"
   
-  # Amount of additional disk space (hard drive)
-  disksize = 301 * 1024   # 301 GB
+  # Amount of additional disk space in GB (hard drive)
+  # default: 301 * 1024 (301GB)
+  disksize = 301 * 1024
+  
+  # Name of the disk
+  # default "301GB"
+  diskname = "301GB"
 
-   # Static IP and port within the host's network
+  # Static IP and port within the host's network
+  # ip default: "192.168.10.10"
+  # port default: 1080
   ip = "192.168.10.10"
   port = 1080
   
@@ -57,10 +71,10 @@ Vagrant.configure("2") do |config|
     vb.cpus = cpus
     
     # Create new disk of size 301GB
-    file_to_disk = File.realpath( "." ).to_s + "/disk-300GB.vdi"
+    file_to_disk = File.realpath( "." ).to_s + "/disk-" + diskname + ".vdi"
 
         if ARGV[0] == "up" && ! File.exist?(file_to_disk) 
-           puts "Creating 300GB disk #{file_to_disk}."
+           puts "Creating " + diskname + " disk #{file_to_disk}."
            vb.customize [
                 'createhd', 
                 '--filename', file_to_disk, 
@@ -68,7 +82,7 @@ Vagrant.configure("2") do |config|
                 '--size', disksize
                 ] 
            vb.customize [
-                'storageattach', bibboxbaseurl, 
+                'storageattach', vmname, 
                 '--storagectl', 'IDE Controller', 
                 '--port', 1, '--device', 0, 
                 '--type', 'hdd', '--medium', 
@@ -76,7 +90,7 @@ Vagrant.configure("2") do |config|
                 ]
         end
 
-    vb.name = bibboxbaseurl
+    vb.name = vmname
   end
 
   # Provision the VM with several puppet modules, add additional disk space and download Liferay if it doesn't exist yet
