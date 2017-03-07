@@ -52,7 +52,7 @@ Vagrant.configure("2") do |config|
   #################################################
   
   
-  # OS image image of the virtual machine
+  # OS image of the virtual machine
   config.vm.box = "puppetlabs/ubuntu-14.04-64-puppet"
 
   # Static IP and port within the host's network
