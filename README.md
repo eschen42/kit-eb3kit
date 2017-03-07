@@ -1,3 +1,9 @@
+# Full BIBBOX documentation
+
+For a complete documentation of the BIBBOX project, please visit <http://bibbox.readthedocs.io/en/latest/>.
+If you just want simply install a BIBBOX yourself, this **Readme** guide should be enough for you.
+
+
 # Requirements
 
 Requirements
