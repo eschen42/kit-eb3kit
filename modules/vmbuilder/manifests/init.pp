@@ -377,13 +377,12 @@ class vmbuilder(
 		version => '1.8.1'
 	}
 	
+	
+	# Compose and run the sys-activities container, create docker network and copy script for deleting docker containers
 	docker_network { 'bibbox-default-network':
   		ensure   	=> present,
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-activities']
 	}
-	
-	
-	# Compose and run the sys-activities container, create docker network and copy script for deleting docker containers
 	exec { 'dockerUpActivities':
 		path		=> '/usr/bin',
 		command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-activities/docker-compose.yml up -d',
