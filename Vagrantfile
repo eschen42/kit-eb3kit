@@ -75,7 +75,8 @@ Vagrant.configure("2") do |config|
   # Start of provisioning
   config.vm.provider "virtualbox" do |vb|
   
-    # Set RAM and CPUs of VM
+    # Enable multiple CPUs and set RAM and CPUs of VM
+    vb.customize ["modifyvm", vmname, "--ioapic", "on"  ]
     vb.memory = memory
     vb.cpus = cpus
     
