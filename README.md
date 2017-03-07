@@ -80,17 +80,17 @@ In order to run automatic BIBBOX-setup, you need to have Git, Vagrant and Virtua
 
 <https://git-scm.com/downloads>
 
-![alt text](images/installation/git-download.jpg "Git")
+![alt text](images/git-download.jpg "Git")
 
 
 <https://www.vagrantup.com/downloads.html>
 
-![alt text](images/installation/vagrant-downloads.jpg "Vagrant")
+![alt text](images/vagrant-downloads.jpg "Vagrant")
 
 
 <https://www.virtualbox.org/>
 
-![alt text](images/installation/virtualbox-download.jpg "VirtualBox")
+![alt text](images/virtualbox-download.jpg "VirtualBox")
 
 
 ####If your host is a Linux machine or an Linux based remote server, you can instead install these tools with **apt-get**:
@@ -213,7 +213,7 @@ This is how it looks like in the file:
 ```
 # General Kit Information
 bibboxkit		=> "eB3Kit",
-bibboxbaseurl	=> "eb3kit.bibbox.org",
+bibboxbaseurl	        => "eb3kit.bibbox.org",
 serveradmin		=> "admin@bibbox.org",
 
 # Database Information
@@ -235,7 +235,7 @@ Please note, that this can take quite a while depending on internet connection s
 Just leave your CLI open and do some other work while the installation is running.
 You will recognize it has finished, when you see a message saying "Applied catalog in xyz seconds" and you can write commands again in the terminal.
 
-![alt text](images/installation/installation-finished.png "Finished installation")
+![alt text](images/installation-finished.png "Finished installation")
 
 
 ## 5.) Proxy, DNS configuration
@@ -289,7 +289,7 @@ To access your BIBBOX from the everywhere on the web, you need to map your host'
 5. Now reload the Apache to make it recognize your changes by running `service apache2 reload`.
 6. You can now access the BIBBOX from anywhere in the web by calling your domain or IP:Port combination in the browser's address bar!
 
-![alt text](images/installation/bibbox.jpg "Welcome to BIBBOX")
+![alt text](images/bibbox.jpg "Welcome to BIBBOX")
 
 
 
