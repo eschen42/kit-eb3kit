@@ -405,7 +405,7 @@ class vmbuilder(
 		ensure  	=> 'file',
 	   	owner  		=> 'root',
 		group  		=> 'root',
-		mode		=> '0220',
+		mode		=> '0440',
 		source 		=> '/vagrant/resources/liferaydeletescript'
 	}
 	
