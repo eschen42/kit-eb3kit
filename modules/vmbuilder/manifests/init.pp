@@ -379,20 +379,20 @@ class vmbuilder(
 	
 	
 	# Compose and run the sys-activities container, create docker network and copy script for deleting docker containers
+	exec { 'dockerNetwork':
+		path		=> '/usr/bin',
+		command		=> '/usr/bin/sudo /usr/bin/docker network create bibbox-default-network',
+		subscribe	=> Vcsrepo['/opt/bibbox/sys-activities']
+	}
 	exec { 'dockerUpActivities':
 		path		=> '/usr/bin',
 		command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-activities/docker-compose.yml up -d',
-		subscribe	=> Vcsrepo['/opt/bibbox/sys-activities']
+		subscribe	=> Exec['dockerNetwork']
 	}
 	exec { 'dockerUpIdMapping':
 		path		=> '/usr/bin',
 		command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-idmapping/docker-compose.yml up -d',
-		subscribe	=> Vcsrepo['/opt/bibbox/sys-idmapping']
-	}
-	exec { 'dockerNetwork':
-		path		=> '/usr/bin',
-		command		=> '/usr/bin/sudo /usr/bin/docker network create bibbox-default-network',
-		subscribe	=> Exec['dockerUpIdMapping']
+		subscribe	=> Exec['dockerNetwork']
 	}
 	file { "/etc/bibbox/delete_root_folder_applications.sh":
 		ensure		=> 'file',
