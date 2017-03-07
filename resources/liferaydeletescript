@@ -1,0 +1,1 @@
+liferay ALL = NOPASSWD: /etc/bibbox/delete_root_folder_applications.sh
