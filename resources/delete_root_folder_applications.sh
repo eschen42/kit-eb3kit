@@ -1,5 +1,5 @@
 #!/bin/bash
-source bibbox.cfg
+source /etc/bibbox/bibbox.cfg
 if [[ "$1" = "" ]]; then
   echo "ERROR: No Instanc set to delete."
 elif [[ "$1" = "*" ]]; then
