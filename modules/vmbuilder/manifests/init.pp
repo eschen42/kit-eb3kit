@@ -29,15 +29,11 @@ class vmbuilder(
 	user { 'bibbox':
 		ensure		=> 'present',
 		gid		=> '501',
-		managehome	=> true,
-		home		=> '/home/bibbox',
 		groups		=> ['bibbox', 'docker'],
 		uid		=> '501'
 	}
 	user { 'liferay':
 		ensure		=> 'present',
-		managehome	=> true,
-		home		=> '/home/liferay',
 		groups		=> ['bibbox', 'liferay', 'docker'],
 		uid		=> '502'
 	}
