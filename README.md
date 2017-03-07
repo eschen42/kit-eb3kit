@@ -144,7 +144,9 @@ On Linux based systems you can edit this file with `nano Vagrantfile` and save i
 
 * bibboxbaseurl
 * ip
-* port
+* http_port
+* ssh_vagrant_port
+* ssh_port
 
 | Parameter        | Description                                                                                      | Default           |
 |------------------|--------------------------------------------------------------------------------------------------|-------------------|
