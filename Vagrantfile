@@ -34,9 +34,18 @@ Vagrant.configure("2") do |config|
 
   # Static IP and port within the host's network
   # ip default: "192.168.10.10"
-  # port default: 1080
+  # http_port default: 1080
   ip = "192.168.10.10"
-  port = 1080
+  http_port = 1080
+  # https_port = XXXX
+  
+  # Ports used for SSH connection
+  # ssh_vagrant_port is only for Vagranbt internally
+  # default: 2230
+  # ssh_port is used to connect from outside
+  # default: 2231
+  ssh_vagrant_port = 2230
+  ssh_port = 2231
   
   
   #################################################
@@ -57,11 +66,11 @@ Vagrant.configure("2") do |config|
 
   # Static IP and port within the host's network
   config.vm.network :private_network, ip: ip
-  config.vm.network :forwarded_port, host: port,  guest: 80
+  config.vm.network :forwarded_port, host: http_port,  guest: 80
   
   # Port forwarding for SSH
-  config.vm.network :forwarded_port, guest: 22, host: 2230, id: "ssh", disabled: true
-  config.vm.network :forwarded_port, guest: 22, host: 2231, auto_correct: true
+  config.vm.network :forwarded_port, guest: 22, host: ssh_vagrant_port, id: "ssh", disabled: true
+  config.vm.network :forwarded_port, guest: 22, host: ssh_port, auto_correct: true
 
   # Start of provisioning
   config.vm.provider "virtualbox" do |vb|
