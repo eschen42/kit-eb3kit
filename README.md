@@ -27,16 +27,18 @@ The automatic BIBBOX setup depends on multiple repositories and one ZIP file dow
 
 The following parameters are available to configure your virtual machine. You can change them in `Vagrantfile`:
 
-| Parameter     | Description                                                                                      | Default           |
-|---------------|--------------------------------------------------------------------------------------------------|-------------------|
-| vmname        | Name of your virtual machine.                                  	                               | eB3Kit            |
-| bibboxbaseurl | Base url of your BIBBOX installation. Needs to match 'bibboxbaseurl' parameter in 'environments\production\manisfests\config.pp'.                                                                    | eb3kit.bibbox.org |
-| cpus          | Number of CPU cores assigned to the virtual machine.                                             | admin@bibbox.org  |
-| memory        | Total amount of memory in MB (RAM) available to the virtual machine.                             | 8192              |
-| disksize      | Amount of additional disk space in MB (hard drive).                                              | 301 * 1024 	   |
-| diskname      | The disk file will be named "disk-**diskname**.vdi".                                             | 301GB             |
-| ip            | The static IP to your BIBBOX within the host's network.                                          | 192.168.10.10     |
-| port          | The static port to your BIBBOX within the host's network.                                        | 1080              |
+| Parameter        | Description                                                                                      | Default           |
+|------------------|--------------------------------------------------------------------------------------------------|-------------------|
+| vmname           | Name of your virtual machine.                                  	                              | eB3Kit            |
+| bibboxbaseurl    | Base url of your BIBBOX installation. Needs to match 'bibboxbaseurl' parameter in 'environments\production\manisfests\config.pp'.                                                                       | eb3kit.bibbox.org |
+| cpus             | Number of CPU cores assigned to the virtual machine.                                             | admin@bibbox.org  |
+| memory           | Total amount of memory in MB (RAM) available to the virtual machine.                             | 8192              |
+| disksize         | Amount of additional disk space in MB (hard drive).                                              | 301 * 1024 	      |
+| diskname         | The disk file will be named "disk-**diskname**.vdi".                                             | 301GB             |
+| ip               | The static IP to your BIBBOX within the host's network.                                          | 192.168.10.10     |
+| http_port        | The port to your BIBBOX within the host's network.                                               | 1080              |
+| ssh_vagrant_port | Port for SSH access used internally by Vagrant.                                                  | 2230              |
+| ssh_port         | Port used for SSH access from outside the host machine.                                          | 2231              |
 
 
 ### BIBBOX configuration
@@ -144,16 +146,18 @@ On Linux based systems you can edit this file with `nano Vagrantfile` and save i
 * ip
 * port
 
-| Parameter     | Description                                                                                      | Default           |
-|---------------|--------------------------------------------------------------------------------------------------|-------------------|
-| vmname        | Name of your virtual machine.                                  	                               | eB3Kit            |
-| bibboxbaseurl | Base url of your BIBBOX installation. Needs to match 'bibboxbaseurl' parameter in 'environments\production\manisfests\config.pp'.                                                                    | eb3kit.bibbox.org |
-| cpus          | Number of CPU cores assigned to the virtual machine.                                             | admin@bibbox.org  |
-| memory        | Total amount of memory in MB (RAM) available to the virtual machine.                             | 8192              |
-| disksize      | Amount of additional disk space in MB (hard drive).                                              | 301 * 1024 	   |
-| diskname      | The disk file will be named "disk-**diskname**.vdi".                                             | 301GB             |
-| ip            | The static IP to your BIBBOX within the host's network.                                          | 192.168.10.10     |
-| port          | The static port to your BIBBOX within the host's network.                                        | 1080              |
+| Parameter        | Description                                                                                      | Default           |
+|------------------|--------------------------------------------------------------------------------------------------|-------------------|
+| vmname           | Name of your virtual machine.                                  	                              | eB3Kit            |
+| bibboxbaseurl    | Base url of your BIBBOX installation. Needs to match 'bibboxbaseurl' parameter in 'environments\production\manisfests\config.pp'.                                                                       | eb3kit.bibbox.org |
+| cpus             | Number of CPU cores assigned to the virtual machine.                                             | admin@bibbox.org  |
+| memory           | Total amount of memory in MB (RAM) available to the virtual machine.                             | 8192              |
+| disksize         | Amount of additional disk space in MB (hard drive).                                              | 301 * 1024 	      |
+| diskname         | The disk file will be named "disk-**diskname**.vdi".                                             | 301GB             |
+| ip               | The static IP to your BIBBOX within the host's network.                                          | 192.168.10.10     |
+| http_port        | The port to your BIBBOX within the host's network.                                               | 1080              |
+| ssh_vagrant_port | Port for SSH access used internally by Vagrant.                                                  | 2230              |
+| ssh_port         | Port used for SSH access from outside the host machine.                                          | 2231              |
 
 This is how it looks like in the file:
 
@@ -306,6 +310,13 @@ You can now log into your BIBBOX with one of the five default users and the pass
 If you want to make changes to the default configuration of the portal (e.g. change the title or logo), you need to log in as **bibboxadmin**.
 
 
-## 7.) Enjoy
+## 7.) Access via SSH
+
+In case you need to access the inside of the virtual machine over SSH, there are two ways to do so. If you are already on the host system, you can just run the command `vagrant ssh` from where cloned the GIT repository. You will then be logged in as user **vagrant** with password **vagrant** and home directory **/home/vagrant**. This user is a superuser, so you should not have any permission problems.
+
+When your machine is hosted on a remote server, or you go in production, you will probably want to access the virtual machine from outside the host system as well. For this scenario, we have another user called **vmadmin** with default password **bibbox4ever** and home directoy **/home/vmadmin**. To connect via SSH open up a terminal on any computer with an active internet connection and enter `ssh vmadmin@xxx.xxx.xx.xxx -p 2231` replacing the **x** with the public IP of your host system and the port **2231** with the SSH port you configured during installation. When prompted for a password, just enter the password you set for the **vmadmin** user (default **bibbox4ever**).
+
+
+## 8.) Enjoy
 
 That's all, enjoy your BIBBOX!
