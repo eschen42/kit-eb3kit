@@ -103,7 +103,7 @@ Vagrant.configure("2") do |config|
     vb.name = vmname
   end
 
-  # Provision the VM with several puppet modules, add additional disk space and download Liferay if it doesn't exist yet
+  # Provision the VM with several puppet modules, add additional disk space enable bash for ssh and download Liferay if it doesn't exist yet
   config.vm.provision "shell", inline: <<-SHELL
     sudo sed -ie 's#SHELL=/bin/sh#SHELL=/bin/bash#g' /etc/default/useradd
     sudo bash /vagrant/resources/add_disk.sh
