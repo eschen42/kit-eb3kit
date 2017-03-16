@@ -67,6 +67,12 @@ class vmbuilder(
 		port    	=> '80',
 		docroot 	=> '/var/www/vhost',
 	}
+    file { '/etc/apache2/sites-enabled/000-default.conf':
+		ensure 		=> 'absent'
+	}
+    file { '/etc/apache2/sites-available/000-default.conf':
+		ensure 		=> 'absent'
+	}
 
 
 	# Install oracle java
