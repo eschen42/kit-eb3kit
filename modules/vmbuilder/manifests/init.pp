@@ -1,41 +1,41 @@
 class vmbuilder(
 
-	$bibboxkit	= "eB3Kit",
-	$bibboxbaseurl	= "eb3kit.bibbox.org",
-	$serveradmin	= "admin@bibbox.org",
+	$bibboxkit         = "eB3Kit",
+	$bibboxbaseurl     = "eb3kit.bibbox.org",
+	$serveradmin       = "admin@bibbox.org",
 
-	$db_user	= "liferay",
-	$db_password	= "bibbox4ever",
-	$db_name	= "lportal"
+	$db_user           = "liferay",
+	$db_password       = "bibbox4ever",
+	$db_name           = "lportal"
 
 ) {
 
 	# Ensure groups 'bibbox' and 'docker'
 	group { 'bibbox':
-		ensure		=> 'present',
+		ensure	=> 'present',
 		gid		=> 501
 	}
 	group { 'docker':
-		ensure		=> 'present',
+		ensure	=> 'present',
 		gid		=> 502
 	}
 	group { 'liferay':
-		ensure		=> 'present',
+		ensure	=> 'present',
 		gid		=> 503
 	}
 
 
-	# Ensure users 'bibbox' ans 'liferay'
+	# Create users 'bibbox', 'liferay' and 'vmadmin' and update 'root'
 	user { 'bibbox':
 		ensure		=> 'present',
-		gid		=> '501',
+		gid         => '501',
 		groups		=> ['bibbox', 'docker'],
-		uid		=> '501'
+		uid		    => '501'
 	}
 	user { 'liferay':
 		ensure		=> 'present',
 		groups		=> ['bibbox', 'liferay', 'docker'],
-		uid		=> '502'
+		uid		    => '502'
 	}
 	user { 'root':
 		ensure 		=> 'present',
@@ -53,7 +53,8 @@ class vmbuilder(
 
 	# Install apache with default config
 	class { 'apache':
-		default_vhost => false
+		default_vhost => false,
+        purge_configs => false
 	}
 	class { 'apache::mod::proxy': }
 	class { 'apache::mod::proxy_http': }
@@ -92,12 +93,12 @@ class vmbuilder(
 
 	# Unzip liferay sources to 'liferay' directory
 	archive { '/opt/liferay-ce-portal-tomcat-7.0-ga3.zip':
-		ensure 		=> 'present',
+		ensure 		    => 'present',
 		extract       	=> true,
 		extract_path  	=> '/opt',
 		creates       	=> '/opt/liferay-ce-portal-7.0-ga3',
 		cleanup       	=> true,
-		notify		=> File['MoveLiferayContents']
+		notify		    => File['MoveLiferayContents']
 	}
 
 
@@ -114,9 +115,9 @@ class vmbuilder(
 	   	path 		=> '/opt/liferay',
 		source 		=> '/opt/liferay-ce-portal-7.0-ga3',
 		recurse 	=> true,
-	    	owner		=> 'liferay',
-	    	group   	=> 'liferay',
-	    	subscribe 	=> Archive['/opt/liferay-ce-portal-tomcat-7.0-ga3.zip']
+        owner		=> 'liferay',
+        group   	=> 'liferay',
+        subscribe 	=> Archive['/opt/liferay-ce-portal-tomcat-7.0-ga3.zip']
 	}
 	file { '/opt/liferay/deploy':
 		ensure 		=> 'directory',
@@ -146,18 +147,18 @@ class vmbuilder(
 	# Copy 'war' files to liferay deploy folder
 	file { "/opt/liferay/deploy/BIBBOXDocker-portlet-7.0.0.1.war":
 		ensure 		=> 'file',
-	    	owner		=> 'liferay',
-	    	group   	=> 'liferay',
-	    	mode 		=> '0777',
-	    	source 		=> '/vagrant/resources/BIBBOXDocker-portlet-7.0.0.1.war',
+        owner		=> 'liferay',
+        group   	=> 'liferay',
+        mode 		=> '0777',
+        source 		=> '/vagrant/resources/BIBBOXDocker-portlet-7.0.0.1.war',
 		subscribe	=> File['MoveLiferayContents']
 	}
 	file { "/opt/liferay/deploy/bibbox-theme.war":
 		ensure 		=> 'file',
-	    	owner		=> 'liferay',
-	    	group   	=> 'liferay',
-	    	mode 		=> '0777',
-	    	source 		=> '/vagrant/resources/bibbox-theme.war',
+        owner		=> 'liferay',
+        group   	=> 'liferay',
+        mode 		=> '0777',
+        source 		=> '/vagrant/resources/bibbox-theme.war',
 		subscribe	=> File['MoveLiferayContents']
 	}
 
@@ -169,18 +170,18 @@ class vmbuilder(
 	}
 	file { '/opt/bibbox/application-instance':
 		ensure	=> 'directory',
-	    	owner	=> 'liferay',
-	    	group   => 'bibbox'
+        owner	=> 'liferay',
+        group   => 'bibbox'
 	}
 	file { '/opt/bibbox/application-store':
 		ensure	=> 'directory',
-	    	owner	=> 'liferay',
-	    	group   => 'bibbox'
+        owner	=> 'liferay',
+        group   => 'bibbox'
 	}
 	file { '/opt/bibbox/application-import-export':
 		ensure	=> 'directory',
-	    	owner	=> 'root',
-	    	group   => 'bibbox'
+        owner	=> 'root',
+        group   => 'bibbox'
 	}
 
 
@@ -263,9 +264,9 @@ class vmbuilder(
 	   	owner  		=> 'liferay',
 		group  		=> 'liferay',
 		content 	=> epp('/vagrant/resources/templates/portal-setup-wizard.properties.epp', {
-			'db_user'	=> $db_user,
+			'db_user'	    => $db_user,
 			'db_password'	=> $db_password,
-			'db_name'	=> $db_name
+			'db_name'	    => $db_name
 		}),
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts']
 	}
@@ -273,7 +274,7 @@ class vmbuilder(
 	   	recurse 	=> true,
 	   	owner  		=> 'root',
 		group  		=> 'bibbox',
-	    	source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/etc/bibbox',
+	    source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/etc/bibbox',
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts']
 	}
 
@@ -292,7 +293,7 @@ class vmbuilder(
 	   	owner  		=> 'root',
 		group  		=> 'bibbox',
 		content 	=> epp('/vagrant/resources/templates/bibbox.cfg.epp', {
-			'bibboxkit'	=> $bibboxkit,
+			'bibboxkit'	    => $bibboxkit,
 			'bibboxbaseurl'	=> $bibboxbaseurl
 		})
 	}
@@ -322,38 +323,38 @@ class vmbuilder(
 	}
 	file { '/var/www/html/bibbox-datastore/bibbox':
 		ensure	=> 'link',
-	    	target	=> '/opt/bibbox/application-store/'
+	    target	=> '/opt/bibbox/application-store/'
 	}
 	file { '/var/www/html/bibbox-datastore/js':
 		ensure	=> 'directory',
-	    	owner	=> 'root',
-	    	group 	=> 'bibbox',
-	    	mode 	=> '0777'
+        owner	=> 'root',
+        group 	=> 'bibbox',
+        mode 	=> '0777'
 	}
 	file { '/var/www/html/bibbox-datastore/index.html':
 		ensure		=> 'file',
-	    	source		=> '/vagrant/resources/index.html'
+	    source		=> '/vagrant/resources/index.html'
 	}
 	file { '/var/www/html/bibbox-datastore/log.out':
 		ensure		=> 'link',
-	    	target		=> '/opt/liferay/tomcat-8.0.32/logs/catalina.out'
+	    target		=> '/opt/liferay/tomcat-8.0.32/logs/catalina.out'
 	}
 	
 	
 	# Copy gui resources to datastore
 	file { '/var/www/html/bibbox-datastore/js/js':
-	    	recurse		=> true,
-	    	source		=> '/opt/bibbox/sys-bibbox-frontend/js',
+        recurse		=> true,
+        source		=> '/opt/bibbox/sys-bibbox-frontend/js',
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-frontend']
 	}
 	file { '/var/www/html/bibbox-datastore/js/css':
-	    	recurse		=> true,
-	    	source		=> '/opt/bibbox/sys-bibbox-frontend/css',
+        recurse		=> true,
+        source		=> '/opt/bibbox/sys-bibbox-frontend/css',
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-frontend']
 	}
 	file { '/var/www/html/bibbox-datastore/js/images':
-	    	recurse		=> true,
-	    	source		=> '/opt/bibbox/sys-bibbox-frontend/images',
+        recurse		=> true,
+        source		=> '/opt/bibbox/sys-bibbox-frontend/images',
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-frontend']
 	}
 	
@@ -440,30 +441,30 @@ class vmbuilder(
 	# Symlink the new vhosts config files
 	file { '/etc/apache2/sites-enabled/001-default-application-store.conf':
 		ensure		=> 'link',
-	    	target		=> '/etc/apache2/sites-available/001-default-application-store.conf',
-	    	subscribe 	=> File['/etc/apache2/sites-available/001-default-application-store.conf']
+        target		=> '/etc/apache2/sites-available/001-default-application-store.conf',
+        subscribe 	=> File['/etc/apache2/sites-available/001-default-application-store.conf']
 	}
 	file { '/etc/apache2/sites-enabled/003-sys-activities.conf':
 		ensure		=> 'link',
-	    	target		=> '/etc/apache2/sites-available/003-sys-activities.conf',
-	    	subscribe 	=> File['/etc/apache2/sites-available/003-sys-activities.conf']
+        target		=> '/etc/apache2/sites-available/003-sys-activities.conf',
+        subscribe 	=> File['/etc/apache2/sites-available/003-sys-activities.conf']
 	}
 	file { '/etc/apache2/sites-enabled/003-sys-idmapping.conf':
 		ensure		=> 'link',
-	    	target		=> '/etc/apache2/sites-available/003-sys-idmapping.conf',
-	    	subscribe 	=> File['/etc/apache2/sites-available/003-sys-idmapping.conf']
+        target		=> '/etc/apache2/sites-available/003-sys-idmapping.conf',
+        subscribe 	=> File['/etc/apache2/sites-available/003-sys-idmapping.conf']
 	}
 	file { '/etc/apache2/sites-enabled/050-liferay.conf':
 		ensure		=> 'link',
-	    	target		=> '/etc/apache2/sites-available/050-liferay.conf',
-	    	subscribe 	=> File['/etc/apache2/sites-available/050-liferay.conf']
+        target		=> '/etc/apache2/sites-available/050-liferay.conf',
+        subscribe 	=> File['/etc/apache2/sites-available/050-liferay.conf']
 	}
 
 
 	# Copy 'urlrewrite.xml' to tomcat
 	file { "/opt/liferay/tomcat-8.0.32/webapps/ROOT/WEB-INF/urlrewrite.xml":
 	   	ensure 	=> 'file',
-	    	source 	=> '/vagrant/resources/urlrewrite.xml'
+        source 	=> '/vagrant/resources/urlrewrite.xml'
 	}
 
 }
