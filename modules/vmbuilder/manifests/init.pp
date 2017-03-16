@@ -53,8 +53,8 @@ class vmbuilder(
 
 	# Install apache with default config
 	class { 'apache':
-		default_vhost => false,
-        purge_configs => false
+		default_vhost     => false,
+        purge_vhost_dir   => false
 	}
 	class { 'apache::mod::proxy': }
 	class { 'apache::mod::proxy_http': }
