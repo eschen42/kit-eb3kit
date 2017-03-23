@@ -200,14 +200,14 @@ class vmbuilder(
 
 	# Clone bibbox repositories
 	vcsrepo { '/opt/bibbox/sys-bibbox-vmscripts':
-		ensure   	=> 'present',
+		ensure   	=> 'latest',
 		provider 	=> 'git',
 		source   	=> 'https://github.com/bibbox/sys-bibbox-vmscripts.git',
 		subscribe 	=> File['/opt/liferay/tomcat-8.0.32/bin'],
 		notify		=> Exec['pythonRequirements']
 	}
 	vcsrepo { '/opt/bibbox/application-store/application-store':
-		ensure   	=> 'present',
+		ensure   	=> 'latest',
 		provider	=> 'git',
 	   	owner		=> 'liferay',
 	   	group   	=> 'bibbox',
@@ -215,17 +215,17 @@ class vmbuilder(
 		notify		=> File['/var/www/html/bibbox-datastore/index.html']
 	}
 	vcsrepo { '/opt/bibbox/sys-bibbox-frontend':
-		ensure  	=> 'present',
+		ensure  	=> 'latest',
 		provider 	=> 'git',
 		source   	=> 'https://github.com/bibbox/sys-bibbox-frontend.git'
 	}
 	vcsrepo { '/opt/bibbox/sys-activities':
-		ensure   	=> 'present',
+		ensure   	=> 'latest',
 		provider 	=> 'git',
 		source   	=> 'https://github.com/bibbox/sys-activities.git'
 	}
 	vcsrepo { '/opt/bibbox/sys-idmapping':
-		ensure   	=> 'present',
+		ensure   	=> 'latest',
 		provider 	=> 'git',
 		source   	=> 'https://github.com/bibbox/sys-idmapping.git'
 	}
