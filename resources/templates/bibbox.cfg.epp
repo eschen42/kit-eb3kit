@@ -13,6 +13,7 @@ usedinstanceids="datastore;activities;idmapping"
 
 # Admin Roles / TEMP
 adminroles="Administrator;BIBBOX Admin;BIBBOX VM Admin"
+vmadminroles="BIBBOX VM Admin"
 
 # init configuration
 ApplicationStoreUpdate="ON"
