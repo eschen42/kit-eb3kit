@@ -341,6 +341,10 @@ class vmbuilder(
 		ensure		=> 'file',
 	    	source		=> '/vagrant/resources/index.html'
 	}
+	file { '/var/www/html/error/index.html':
+		ensure		=> 'file',
+	    	source		=> '/vagrant/resources/error/index.html'
+	}
 	file { '/var/www/html/bibbox-datastore/log.out':
 		ensure		=> 'link',
 	    	target		=> '/opt/liferay/tomcat-8.0.32/logs/catalina.out'
