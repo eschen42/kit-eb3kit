@@ -28,7 +28,7 @@ class vmbuilder(
 	# Create users 'bibbox', 'liferay' and 'vmadmin' and update 'root'
 	user { 'bibbox':
 		ensure		=> 'present',
-		gid         => '501',
+		gid         	=> '501',
 		groups		=> ['bibbox', 'docker'],
 		uid		    => '501'
 	}
@@ -93,12 +93,12 @@ class vmbuilder(
 
 	# Unzip liferay sources to 'liferay' directory
 	archive { '/opt/liferay-ce-portal-tomcat-7.0-ga3.zip':
-		ensure 		    => 'present',
+		ensure 		=> 'present',
 		extract       	=> true,
-		extract_path  	=> '/opt',
+		extract_path	=> '/opt',
 		creates       	=> '/opt/liferay-ce-portal-7.0-ga3',
 		cleanup       	=> true,
-		notify		    => File['MoveLiferayContents']
+		notify		=> File['MoveLiferayContents']
 	}
 
 
@@ -115,9 +115,9 @@ class vmbuilder(
 	   	path 		=> '/opt/liferay',
 		source 		=> '/opt/liferay-ce-portal-7.0-ga3',
 		recurse 	=> true,
-        owner		=> 'liferay',
-        group   	=> 'liferay',
-        subscribe 	=> Archive['/opt/liferay-ce-portal-tomcat-7.0-ga3.zip']
+		owner		=> 'liferay',
+		group   	=> 'liferay',
+		subscribe 	=> Archive['/opt/liferay-ce-portal-tomcat-7.0-ga3.zip']
 	}
 	file { '/opt/liferay/deploy':
 		ensure 		=> 'directory',
@@ -262,7 +262,7 @@ class vmbuilder(
 	file { "/opt/liferay/portal-ext.properties":
 	   	owner  		=> 'liferay',
 		group  		=> 'liferay',
-	    source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/liferay/portal-ext.properties',
+	    	source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/liferay/portal-ext.properties',
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts']
 	}
 	file { "/opt/liferay/portal-setup-wizard.properties":
@@ -270,9 +270,9 @@ class vmbuilder(
 	   	owner  		=> 'liferay',
 		group  		=> 'liferay',
 		content 	=> epp('/vagrant/resources/templates/portal-setup-wizard.properties.epp', {
-			'db_user'	    => $db_user,
+			'db_user'	=> $db_user,
 			'db_password'	=> $db_password,
-			'db_name'	    => $db_name
+			'db_name'	=> $db_name
 		}),
 		subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts']
 	}
@@ -299,7 +299,7 @@ class vmbuilder(
 	   	owner  		=> 'root',
 		group  		=> 'bibbox',
 		content 	=> epp('/vagrant/resources/templates/bibbox.cfg.epp', {
-			'bibboxkit'	    => $bibboxkit,
+			'bibboxkit'	=> $bibboxkit,
 			'bibboxbaseurl'	=> $bibboxbaseurl
 		})
 	}
@@ -397,12 +397,14 @@ class vmbuilder(
 	exec { 'dockerUpActivities':
 		path		=> '/usr/bin',
 		command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-activities/docker-compose.yml up -d',
-		subscribe	=> Docker_network['bibbox-default-network']
+		subscribe	=> Docker_network['bibbox-default-network'],
+  		require 	=> Class['docker::compose']
 	}
 	exec { 'dockerUpIdMapping':
 		path		=> '/usr/bin',
 		command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-idmapping/docker-compose.yml up -d',
-		subscribe	=> Docker_network['bibbox-default-network']
+		subscribe	=> Docker_network['bibbox-default-network'],
+  		require 	=> Class['docker::compose']
 	}
 	file { "/etc/bibbox/delete_root_folder_applications.sh":
 		ensure		=> 'file',
