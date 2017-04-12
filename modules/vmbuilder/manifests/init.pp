@@ -397,12 +397,14 @@ class vmbuilder(
 	exec { 'dockerUpActivities':
 		path		=> '/usr/bin',
 		command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-activities/docker-compose.yml up -d',
+		timeout     	=> 1800,
 		subscribe	=> Docker_network['bibbox-default-network'],
   		require 	=> Class['docker::compose']
 	}
 	exec { 'dockerUpIdMapping':
 		path		=> '/usr/bin',
 		command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-idmapping/docker-compose.yml up -d',
+		timeout     	=> 1800,
 		subscribe	=> Docker_network['bibbox-default-network'],
   		require 	=> Class['docker::compose']
 	}
