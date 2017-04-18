@@ -10,6 +10,14 @@ class vmbuilder(
 
 ) {
 
+		# Override hosts file
+		file { '/etc/hosts':
+				ensure 		=> 'file',
+				source 		=> '/vagrant/resources/hosts',
+				notify		=> Class['postgresql::server']
+		}
+
+
 		# Ensure groups 'bibbox' and 'docker'
 		group { 'bibbox':
 				ensure	=> 'present',
