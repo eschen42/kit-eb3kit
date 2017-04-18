@@ -1,7 +1,7 @@
 <%- | String $bibboxbaseurl | -%>
 
 <VirtualHost *:80>
-    ServerName <%= $bibboxbaseurl %>/activities
+    ServerName activities.<%= $bibboxbaseurl %>
     <Proxy *>
         Order deny,allow
         Allow from all
