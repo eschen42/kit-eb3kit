@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a61bb49-6991-49ca-a221-eaa1ed654262" name="Default" comment="" />
+    <list default="true" id="4a61bb49-6991-49ca-a221-eaa1ed654262" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/templates/003-sys-activities.conf.epp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/templates/003-sys-idmapping.conf.epp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/templates/001-default-application-store.conf.epp" afterPath="$PROJECT_DIR$/resources/templates/001-default-application-store.conf.epp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/templates/050-liferay.conf.epp" afterPath="$PROJECT_DIR$/resources/templates/050-liferay.conf.epp" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,16 +18,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="delete_root_folder_applications.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/delete_root_folder_applications.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/index.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -75,28 +71,28 @@
       <file leaf-file-name="001-default-application-store.conf.epp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/templates/001-default-application-store.conf.epp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+            <state relative-caret-position="300">
+              <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="003-sys-activities.conf.epp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/templates/003-sys-activities.conf.epp">
+      <file leaf-file-name="000-default.conf.epp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/templates/000-default.conf.epp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="003-sys-idmapping.conf.epp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/templates/003-sys-idmapping.conf.epp">
+      <file leaf-file-name="050-liferay.conf.epp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/templates/050-liferay.conf.epp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="46" lean-forward="true" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
+            <state relative-caret-position="135">
+              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -166,9 +162,10 @@
         <option value="$PROJECT_DIR$/resources/templates/bibbox.cfg.epp" />
         <option value="$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp" />
         <option value="$PROJECT_DIR$/environments/production/manifests/config.pp" />
-        <option value="$PROJECT_DIR$/resources/templates/001-default-application-store.conf.epp" />
         <option value="$PROJECT_DIR$/resources/templates/003-sys-activities.conf.epp" />
         <option value="$PROJECT_DIR$/resources/templates/003-sys-idmapping.conf.epp" />
+        <option value="$PROJECT_DIR$/resources/templates/050-liferay.conf.epp" />
+        <option value="$PROJECT_DIR$/resources/templates/001-default-application-store.conf.epp" />
       </list>
     </option>
   </component>
@@ -689,15 +686,15 @@
       <workItem from="1492499036769" duration="725000" />
       <workItem from="1492499807388" duration="37000" />
       <workItem from="1492499866935" duration="899000" />
-      <workItem from="1492501001642" duration="2565000" />
+      <workItem from="1492501001642" duration="3504000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4226000" />
+    <option name="totallyTimeSpent" value="5165000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="436" y="115" width="1756" height="1294" extended-state="1" />
+    <frame x="436" y="115" width="1756" height="1294" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -893,6 +890,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -972,6 +970,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1004,20 +1003,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/error/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/templates/000-default.conf.epp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/templates/050-liferay.conf.epp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1121,10 +1106,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/templates/000-default.conf.epp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/templates/050-liferay.conf.epp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/templates/001-default-application-store.conf.epp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+        <state relative-caret-position="300">
+          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
           <folding />
         </state>
       </provider>
