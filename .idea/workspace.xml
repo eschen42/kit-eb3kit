@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a61bb49-6991-49ca-a221-eaa1ed654262" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp" afterPath="$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/templates/bibbox.cfg.epp" afterPath="$PROJECT_DIR$/resources/templates/bibbox.cfg.epp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/templates/050-liferay.conf.epp" afterPath="$PROJECT_DIR$/resources/templates/050-liferay.conf.epp" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -65,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="init.pp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="init.pp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="885">
-              <caret line="453" column="5" lean-forward="false" selection-start-line="453" selection-start-column="5" selection-end-line="453" selection-end-column="5" />
+            <state relative-caret-position="571">
+              <caret line="408" column="45" lean-forward="true" selection-start-line="408" selection-start-column="45" selection-end-line="408" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -95,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="050-liferay.conf.epp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="050-liferay.conf.epp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/templates/050-liferay.conf.epp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            <state relative-caret-position="300">
+              <caret line="20" column="49" lean-forward="false" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -135,7 +134,6 @@
       <find>activi</find>
       <find>activit</find>
       <find>activitie</find>
-      <find>activities</find>
       <find>activities.</find>
       <find>iud</find>
       <find>iu</find>
@@ -149,6 +147,7 @@
       <find>idmappin</find>
       <find>idmapping</find>
       <find>idmapping.</find>
+      <find>activities</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/resources</dir>
@@ -169,10 +168,10 @@
         <option value="$PROJECT_DIR$/environments/production/manifests/config.pp" />
         <option value="$PROJECT_DIR$/resources/templates/003-sys-activities.conf.epp" />
         <option value="$PROJECT_DIR$/resources/templates/003-sys-idmapping.conf.epp" />
-        <option value="$PROJECT_DIR$/resources/templates/050-liferay.conf.epp" />
         <option value="$PROJECT_DIR$/resources/templates/001-default-application-store.conf.epp" />
         <option value="$PROJECT_DIR$/resources/templates/bibbox.cfg.epp" />
         <option value="$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp" />
+        <option value="$PROJECT_DIR$/resources/templates/050-liferay.conf.epp" />
       </list>
     </option>
   </component>
@@ -715,12 +714,12 @@
       <workItem from="1492499036769" duration="725000" />
       <workItem from="1492499807388" duration="37000" />
       <workItem from="1492499866935" duration="899000" />
-      <workItem from="1492501001642" duration="3807000" />
+      <workItem from="1492501001642" duration="4777000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5468000" />
+    <option name="totallyTimeSpent" value="6438000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="436" y="115" width="1756" height="1294" extended-state="0" />
@@ -1119,14 +1118,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/templates/050-liferay.conf.epp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/templates/001-default-application-store.conf.epp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1153,8 +1144,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="453" column="5" lean-forward="false" selection-start-line="453" selection-start-column="5" selection-end-line="453" selection-end-column="5" />
+        <state relative-caret-position="571">
+          <caret line="408" column="45" lean-forward="true" selection-start-line="408" selection-start-column="45" selection-end-line="408" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/templates/050-liferay.conf.epp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="49" lean-forward="false" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
           <folding />
         </state>
       </provider>
