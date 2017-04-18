@@ -1,7 +1,7 @@
 <%- | String $serveradmin, String $bibboxbaseurl | -%>
 
 <VirtualHost *:80>
-        ServerName datastore.<%= $bibboxbaseurl %>
+        ServerName <%= $bibboxbaseurl %>/datastore
         ServerAdmin <%= $serveradmin %>
 
         DocumentRoot /var/www/html/bibbox-datastore

@@ -9,7 +9,7 @@ bibboxscriptfolder="sys-bibbox-vmscripts"
 bibboxapplicationstorefolder="application-store"
 bibboxinstancefolder="application-instance"
 bibboxbaseurl="<%= $bibboxbaseurl %>"
-usedinstanceids="datastore;activities;idmapping"
+usedinstanceids=""
 
 # Admin Roles / TEMP
 adminroles="Administrator;BIBBOX Admin;BIBBOX VM Admin"

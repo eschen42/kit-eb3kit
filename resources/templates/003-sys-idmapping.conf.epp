@@ -1,7 +1,7 @@
 <%- | String $bibboxbaseurl | -%>
 
 <VirtualHost *:80>
-    ServerName idmapping.<%= $bibboxbaseurl %>
+    ServerName <%= $bibboxbaseurl %>/idmapping
     <Proxy *>
         Order deny,allow
         Allow from all
