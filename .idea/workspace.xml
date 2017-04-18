@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a61bb49-6991-49ca-a221-eaa1ed654262" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/templates/001-default-application-store.conf.epp" afterPath="$PROJECT_DIR$/resources/templates/001-default-application-store.conf.epp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/templates/003-sys-activities.conf.epp" afterPath="$PROJECT_DIR$/resources/templates/003-sys-activities.conf.epp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/templates/003-sys-idmapping.conf.epp" afterPath="$PROJECT_DIR$/resources/templates/003-sys-idmapping.conf.epp" />
-    </list>
+    <list default="true" id="4a61bb49-6991-49ca-a221-eaa1ed654262" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,8 +75,8 @@
       <file leaf-file-name="001-default-application-store.conf.epp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/templates/001-default-application-store.conf.epp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+            <state relative-caret-position="435">
+              <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -693,15 +689,15 @@
       <workItem from="1492499036769" duration="725000" />
       <workItem from="1492499807388" duration="37000" />
       <workItem from="1492499866935" duration="899000" />
-      <workItem from="1492501001642" duration="1921000" />
+      <workItem from="1492501001642" duration="2565000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3582000" />
+    <option name="totallyTimeSpent" value="4226000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="436" y="115" width="1756" height="1294" extended-state="0" />
+    <frame x="436" y="115" width="1756" height="1294" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1127,8 +1123,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/templates/001-default-application-store.conf.epp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        <state relative-caret-position="435">
+          <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
           <folding />
         </state>
       </provider>
