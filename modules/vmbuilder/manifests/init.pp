@@ -67,12 +67,6 @@ class vmbuilder(
 				port    	=> '80',
 				docroot 	=> '/var/www/vhost',
 		}
-		file { '/etc/apache2/sites-enabled/000-default.conf':
-			ensure 			=> 'absent'
-		}
-		file { '/etc/apache2/sites-available/000-default.conf':
-				ensure 		=> 'absent'
-		}
 
 
 		# Install oracle java
@@ -444,18 +438,6 @@ class vmbuilder(
 						'bibboxbaseurl'	=> $bibboxbaseurl
 				})
 		}
-		file { "/etc/apache2/sites-available/003-sys-activities.conf":
-				ensure  => 'file',
-				content => epp('/vagrant/resources/templates/003-sys-activities.conf.epp', {
-						'bibboxbaseurl'	=> $bibboxbaseurl
-				})
-		}
-		file { "/etc/apache2/sites-available/003-sys-idmapping.conf":
-				ensure  => 'file',
-				content => epp('/vagrant/resources/templates/003-sys-idmapping.conf.epp', {
-						'bibboxbaseurl'	=> $bibboxbaseurl
-				})
-		}
 		file { "/etc/apache2/sites-available/050-liferay.conf":
 				ensure  => 'file',
 				content => epp('/vagrant/resources/templates/050-liferay.conf.epp', {
@@ -469,16 +451,6 @@ class vmbuilder(
 				ensure		=> 'link',
 				target		=> '/etc/apache2/sites-available/001-default-application-store.conf',
 				subscribe => File['/etc/apache2/sites-available/001-default-application-store.conf']
-		}
-		file { '/etc/apache2/sites-enabled/003-sys-activities.conf':
-				ensure		=> 'link',
-				target		=> '/etc/apache2/sites-available/003-sys-activities.conf',
-				subscribe => File['/etc/apache2/sites-available/003-sys-activities.conf']
-		}
-		file { '/etc/apache2/sites-enabled/003-sys-idmapping.conf':
-				ensure		=> 'link',
-				target		=> '/etc/apache2/sites-available/003-sys-idmapping.conf',
-				subscribe => File['/etc/apache2/sites-available/003-sys-idmapping.conf']
 		}
 		file { '/etc/apache2/sites-enabled/050-liferay.conf':
 				ensure		=> 'link',
