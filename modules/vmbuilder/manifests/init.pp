@@ -13,7 +13,9 @@ class vmbuilder(
 		# Override hosts file
 		file { '/etc/hosts':
 				ensure 		=> 'file',
-				source 		=> '/vagrant/resources/hosts',
+				content 	=> epp('/vagrant/resources/templates/hosts.pp', {
+					'subdomain'	=> split($bibboxbaseurl, '.')[0]
+				}),
 				notify		=> Class['postgresql::server']
 		}
 
