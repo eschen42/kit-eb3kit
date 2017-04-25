@@ -14,7 +14,7 @@ class vmbuilder(
 		file { '/etc/hosts':
 				ensure 		=> 'file',
 				content 	=> epp('/vagrant/resources/templates/hosts.pp', {
-					'subdomain'	=> split($bibboxbaseurl, '.')[0]
+					'subdomain'	=> split($bibboxbaseurl, '[.]')[0]
 				}),
 				notify		=> Class['postgresql::server']
 		}
