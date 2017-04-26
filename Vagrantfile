@@ -34,9 +34,9 @@ Vagrant.configure("2") do |config|
 
   # Static IP and port within the host's network
   # ip default: "192.168.10.10"
-  # http_port default: 1080
+  # http_port default: 80
   ip = "192.168.10.10"
-  http_port = 1080
+  http_port = 80
   # https_port = XXXX
   
   # Ports used for SSH connection
