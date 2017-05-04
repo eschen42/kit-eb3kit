@@ -66,11 +66,11 @@ Vagrant.configure("2") do |config|
 
   # Static IP and port within the host's network
   config.vm.network :private_network, ip: ip
-  config.vm.network :forwarded_port, host: http_port,  guest: 80
+  config.vm.network :forwarded_port, host: http_port, host_ip: "127.0.0.1",  guest: 80
   
   # Port forwarding for SSH
-  config.vm.network :forwarded_port, guest: 22, host: ssh_vagrant_port, id: "ssh", disabled: true
-  config.vm.network :forwarded_port, guest: 22, host: ssh_port, auto_correct: true
+  config.vm.network :forwarded_port, guest: 22, host: ssh_vagrant_port, host_ip: "127.0.0.1", id: "ssh", disabled: true
+  config.vm.network :forwarded_port, guest: 22, host: ssh_port, host_ip: "127.0.0.1", auto_correct: true
 
   # Start of provisioning
   config.vm.provider "virtualbox" do |vb|
