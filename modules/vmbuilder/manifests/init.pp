@@ -81,7 +81,13 @@ class vmbuilder(
 
 		# Install oracle java
 		class { 'jdk_oracle':
-				jce => true
+				jce							=> true,
+				default_java		=> true,
+				version					=> '8',
+				version_update 	=> '131',
+				version_build		=> '11',
+				version_hash		=> '75b2cb2249710d822a60f83e28860053',
+				download_url		=> 'http://downloads.bibbox.org/java'
 		}
 
 

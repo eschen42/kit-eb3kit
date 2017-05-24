@@ -40,7 +40,7 @@ Vagrant.configure("2") do |config|
   # https_port = XXXX
   
   # Ports used for SSH connection
-  # ssh_vagrant_port is only for Vagranbt internally
+  # ssh_vagrant_port is only for Vagrant internally
   # default: 2230
   # ssh_port is used to connect from outside
   # default: 2231
@@ -126,7 +126,7 @@ Vagrant.configure("2") do |config|
     puppet module install puppet-alternatives --version 1.0.2 --modulepath /etc/puppetlabs/code/modules
     puppet module install puppetlabs-docker_platform --version 2.1.0 --modulepath /etc/puppetlabs/code/modules
     puppet module install puppetlabs-postgresql --version 4.8.0 --modulepath /etc/puppetlabs/code/modules
-    puppet module install tylerwalts-jdk_oracle --version 1.5.0 --modulepath /etc/puppetlabs/code/modules
+    puppet module install tylerwalts-jdk_oracle --version 2.0.0 --modulepath /etc/puppetlabs/code/modules
     sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 7F438280EF8D349F
     sudo apt-get update
     sudo apt-get install -y inotify-tools
