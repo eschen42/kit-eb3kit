@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4a61bb49-6991-49ca-a221-eaa1ed654262" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp" afterPath="$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vagrantfile" afterPath="$PROJECT_DIR$/Vagrantfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/add_disk.sh" afterPath="$PROJECT_DIR$/resources/add_disk.sh" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +19,8 @@
       <file leaf-file-name="bibbox.cfg.epp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/templates/bibbox.cfg.epp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="37" />
+            <state relative-caret-position="315">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -38,18 +39,28 @@
       <file leaf-file-name="Vagrantfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vagrantfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2160">
-              <caret line="144" column="40" lean-forward="false" selection-start-line="144" selection-start-column="40" selection-end-line="144" selection-end-column="40" />
+            <state relative-caret-position="420">
+              <caret line="28" column="48" lean-forward="false" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="init.pp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="add_disk.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/add_disk.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="34" column="1" lean-forward="false" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="init.pp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+            <state relative-caret-position="330">
+              <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -58,8 +69,8 @@
       <file leaf-file-name="001-default-application-store.conf.epp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/templates/001-default-application-store.conf.epp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="18" />
+            <state relative-caret-position="465">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -68,8 +79,8 @@
       <file leaf-file-name="000-default.conf.epp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/templates/000-default.conf.epp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="14" />
+            <state relative-caret-position="360">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -78,8 +89,8 @@
       <file leaf-file-name="050-liferay.conf.epp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/templates/050-liferay.conf.epp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+            <state relative-caret-position="315">
+              <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -95,7 +106,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hosts.pp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="hosts.pp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/templates/hosts.pp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -105,23 +116,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.pp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/environments/production/manifests/config.pp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>datas</find>
-      <find>datast</find>
-      <find>datastore.</find>
       <find>datastore</find>
       <find>datastor</find>
       <find>datasto</find>
@@ -147,8 +145,11 @@
       <find>idmapping.</find>
       <find>activities</find>
       <find>requi</find>
-      <find>bibboxbaseurl</find>
       <find>templates/</find>
+      <find>application</find>
+      <find>ip</find>
+      <find>bibboxbase</find>
+      <find>bibboxbaseurl</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/resources</dir>
@@ -175,8 +176,8 @@
         <option value="$PROJECT_DIR$/resources/hosts" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/resources/templates/hosts.pp" />
-        <option value="$PROJECT_DIR$/Vagrantfile" />
         <option value="$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp" />
+        <option value="$PROJECT_DIR$/Vagrantfile" />
       </list>
     </option>
   </component>
@@ -187,8 +188,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="354" />
-    <option name="y" value="147" />
+    <option name="x" value="679" />
+    <option name="y" value="111" />
     <option name="width" value="2317" />
     <option name="height" value="1294" />
   </component>
@@ -207,7 +208,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -290,7 +291,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -743,15 +744,17 @@
       <workItem from="1493796298870" duration="4999000" />
       <workItem from="1495005823434" duration="11000" />
       <workItem from="1495541615204" duration="5226000" />
-      <workItem from="1496128914940" duration="148000" />
+      <workItem from="1496128914940" duration="3206000" />
+      <workItem from="1496153609918" duration="3796000" />
+      <workItem from="1497343665451" duration="4614000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26624000" />
+    <option name="totallyTimeSpent" value="38092000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="354" y="147" width="2317" height="1294" extended-state="0" />
+    <frame x="679" y="111" width="2317" height="1294" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -786,6 +789,20 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../../Angular/playground/src/app/dashboard.component.js.map" />
+        <option value="$PROJECT_DIR$/../../Angular/playground/src/app/dashboard.component.js" />
+        <option value="$PROJECT_DIR$/../../Angular/playground/src/app/app-routing.module.js.map" />
+        <option value="$PROJECT_DIR$/../../Angular/playground/src/app/app-routing.module.js" />
+        <option value="$PROJECT_DIR$/../../Angular/playground/src/app/in-memory-data.service.js.map" />
+        <option value="$PROJECT_DIR$/../../Angular/playground/src/app/in-memory-data.service.js" />
+        <option value="$PROJECT_DIR$/../../Angular/playground/src/app/hero-search.service.js" />
+        <option value="$PROJECT_DIR$/../../Angular/playground/src/app/hero-search.service.js.map" />
+        <option value="$PROJECT_DIR$/../../Angular/playground/src/app/hero-search.component.js" />
+        <option value="$PROJECT_DIR$/../../Angular/playground/src/app/hero-search.component.js.map" />
+      </list>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1035,13 +1052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/add_disk.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/delete_root_folder_applications.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1097,58 +1107,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/templates/hosts.pp">
+    <entry file="file://$PROJECT_DIR$/resources/add_disk.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/templates/000-default.conf.epp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/templates/001-default-application-store.conf.epp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/templates/bibbox.cfg.epp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/templates/050-liferay.conf.epp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        <state relative-caret-position="510">
+          <caret line="34" column="1" lean-forward="false" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Vagrantfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="144" column="40" lean-forward="false" selection-start-line="144" selection-start-column="40" selection-end-line="144" selection-end-column="40" />
+        <state relative-caret-position="420">
+          <caret line="28" column="48" lean-forward="false" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/templates/bibbox.cfg.epp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/templates/000-default.conf.epp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/templates/001-default-application-store.conf.epp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/templates/050-liferay.conf.epp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/templates/hosts.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
           <folding />
         </state>
       </provider>

@@ -43,7 +43,7 @@ EOF
 
 pvcreate /dev/sdb1
 vgextend localhost-vg /dev/sdb1
-lvextend -L +300G /dev/localhost-vg/root # TODO the size needs to be passed in as a argument
+lvextend -L +300G /dev/localhost-vg/root # TODO replace the 300 with your disksize - 1, e.g. 99 if your disksize is 100
 resize2fs /dev/localhost-vg/root
 
 

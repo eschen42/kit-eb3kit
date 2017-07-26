@@ -24,9 +24,14 @@ Vagrant.configure("2") do |config|
   # default: "8192" (8GB)
   memory = "8192"
   
-  # Amount of additional disk space in MB (hard drive)
-  # default: 301 * 1024 (301GB)
-  disksize = 301 * 1024
+  # Amount of additional disk space in GB (hard drive)
+  #
+  # IMPORTANT IF YOU CHANGE THE DEFAULT VALUE!!!
+  #  - Also replace '300' with your disksize value - 1 in "resources/add_disk.sh"
+  #  - So if you choose 100 as disksize, replace 300 with 99 in "resources/add_disk.sh"
+  #
+  # default: 301
+  disksize = 301
   
   # Name of the disk
   # default "301GB"
@@ -80,7 +85,7 @@ Vagrant.configure("2") do |config|
     vb.memory = memory
     vb.cpus = cpus
     
-    # Create new disk of size 301GB
+    # Create new disk with given disksize
     file_to_disk = File.realpath( "." ).to_s + "/disk-" + diskname + ".vdi"
 
         if ARGV[0] == "up" && ! File.exist?(file_to_disk) 
@@ -89,7 +94,7 @@ Vagrant.configure("2") do |config|
                 'createhd', 
                 '--filename', file_to_disk, 
                 '--format', 'VDI', 
-                '--size', disksize
+                '--size', disksize * 1024
                 ] 
            vb.customize [
                 'storageattach', vmname, 
