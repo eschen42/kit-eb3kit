@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a61bb49-6991-49ca-a221-eaa1ed654262" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/docker-compose-domain.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/docker-compose-technical.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/BIBBOXDocker-portlet-7.0.0.1.war" afterPath="$PROJECT_DIR$/resources/BIBBOXDocker-portlet-7.0.0.1.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp" afterPath="$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,8 +57,8 @@
       <file leaf-file-name="init.pp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="340" column="28" lean-forward="true" selection-start-line="340" selection-start-column="28" selection-end-line="340" selection-end-column="28" />
+            <state relative-caret-position="494">
+              <caret line="202" column="47" lean-forward="true" selection-start-line="202" selection-start-column="47" selection-end-line="202" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -122,7 +118,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>datastor</find>
       <find>datasto</find>
       <find>a</find>
       <find>act</find>
@@ -152,6 +147,7 @@
       <find>bibboxbase</find>
       <find>bibboxbaseurl</find>
       <find>applica</find>
+      <find>general-domai</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/resources</dir>
@@ -736,12 +732,12 @@
       <workItem from="1496128914940" duration="3206000" />
       <workItem from="1496153609918" duration="3796000" />
       <workItem from="1497343665451" duration="4614000" />
-      <workItem from="1501066642010" duration="2646000" />
+      <workItem from="1501066642010" duration="3348000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40738000" />
+    <option name="totallyTimeSpent" value="41440000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1483" y="23" width="1524" height="1479" extended-state="0" />
@@ -1158,8 +1154,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="340" column="28" lean-forward="true" selection-start-line="340" selection-start-column="28" selection-end-line="340" selection-end-column="28" />
+        <state relative-caret-position="494">
+          <caret line="202" column="47" lean-forward="true" selection-start-line="202" selection-start-column="47" selection-end-line="202" selection-end-column="47" />
           <folding />
         </state>
       </provider>

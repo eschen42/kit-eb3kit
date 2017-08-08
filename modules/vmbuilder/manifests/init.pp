@@ -199,7 +199,11 @@ class vmbuilder(
 				owner		=> 'root',
 				group   => 'bibbox'
 		}
-		file { '/opt/bibbox/sys-bibbox-sync/data/sync-biobank/bibbox/general-domain':
+		file { ['/opt/bibbox/sys-bibbox-sync',
+            '/opt/bibbox/sys-bibbox-sync/data',
+            '/opt/bibbox/sys-bibbox-sync/data/sync-biobank',
+            '/opt/bibbox/sys-bibbox-sync/data/sync-biobank/bibbox',
+            '/opt/bibbox/sys-bibbox-sync/data/sync-biobank/bibbox/general-domain']:
 				ensure 	=> 'directory',
 				mode 		=> '0777'
 		}
