@@ -207,11 +207,17 @@ class vmbuilder(
 				ensure 	=> 'directory',
 				mode 		=> '0777'
 		}
-		file { '/opt/bibbox/sys-bibbox-sync/data/sync/bibbox/general-machine':
+		file { ['/opt/bibbox/sys-bibbox-sync',
+            '/opt/bibbox/sys-bibbox-sync/data',
+            '/opt/bibbox/sys-bibbox-sync/data/sync-biobank',
+            '/opt/bibbox/sys-bibbox-sync/data/sync-biobank/bibbox',
+            '/opt/bibbox/sys-bibbox-sync/data/sync-biobank/bibbox/general-machine']:
 				ensure 	=> 'directory',
 				mode 		=> '0777'
 		}
-		file { '/opt/bibbox/sys-bibbox-sync/data/sync/bibbox/general':
+		file { ['/opt/bibbox/sys-bibbox-sync/data/sync',
+            '/opt/bibbox/sys-bibbox-sync/data/sync/bibbox',
+            '/opt/bibbox/sys-bibbox-sync/data/sync/bibbox/general']:
 				ensure 	=> 'directory',
 				mode 		=> '0777'
 		}
