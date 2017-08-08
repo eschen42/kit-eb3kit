@@ -11,6 +11,10 @@ bibboxinstancefolder="application-instance"
 bibboxbaseurl="<%= $bibboxbaseurl %>"
 usedinstanceids="error"
 
+# Elastic Serach Configuration
+elasticDomainIndex="bibbox-biobank"
+elasticMachineIndex="bibbox"
+
 # Admin Roles / TEMP
 adminroles="Administrator;BIBBOX Admin;BIBBOX VM Admin"
 vmadminroles="BIBBOX VM Admin"
