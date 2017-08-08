@@ -199,6 +199,18 @@ class vmbuilder(
 				owner		=> 'root',
 				group   => 'bibbox'
 		}
+		file { '/opt/bibbox/sys-bibbox-sync/data/sync-biobank/bibbox/general-domain':
+				ensure 	=> 'directory',
+				mode 		=> '0777'
+		}
+		file { '/opt/bibbox/sys-bibbox-sync/data/sync/bibbox/general-machine':
+				ensure 	=> 'directory',
+				mode 		=> '0777'
+		}
+		file { '/opt/bibbox/sys-bibbox-sync/data/sync/bibbox/general':
+				ensure 	=> 'directory',
+				mode 		=> '0777'
+		}
 		file { '/var/www/html/error':
 				ensure	=> 'directory',
 				owner		=> 'root',
@@ -251,6 +263,16 @@ class vmbuilder(
 				provider 	=> 'git',
 				source   	=> 'https://github.com/bibbox/sys-idmapping.git'
 		}
+		vcsrepo { '/opt/bibbox/sys-bibbox-sync/sync-technical':
+				ensure   	=> 'latest',
+				provider 	=> 'git',
+				source   	=> 'https://github.com/bibbox/sys-bibbox-sync.git'
+		}
+		vcsrepo { '/opt/bibbox/sys-bibbox-sync/sync-domain':
+				ensure   	=> 'latest',
+				provider 	=> 'git',
+				source   	=> 'https://github.com/bibbox/sys-bibbox-sync.git'
+		}
 
 
 		# Copy bibbox configuration and init scripts
@@ -298,6 +320,30 @@ class vmbuilder(
 				group  		=> 'bibbox',
 				source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/etc/bibbox',
 				subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts']
+		}
+		file { "/opt/bibbox/metadata":
+				recurse 	=> true,
+				owner  		=> 'root',
+				group  		=> 'root',
+				mode			=> '0777',
+				source 		=> '/opt/bibbox/application-store/application-store/metadata',
+				subscribe	=> Vcsrepo['/opt/bibbox/application-store/application-store']
+		}
+		file { "/opt/bibbox/sys-bibbox-sync/sync-technical/docker-compose.yml":
+				ensure  	=> 'file',
+				source 		=> '/vagrant/resources/docker-compose-technical.yml',
+				owner  		=> 'root',
+				group  		=> 'root',
+				mode   		=> '0777',
+				subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-sync/sync-technical']
+		}
+		file { "/opt/bibbox/sys-bibbox-sync/sync-domain/docker-compose.yml":
+				ensure  	=> 'file',
+				source 		=> '/vagrant/resources/docker-compose-domain.yml',
+				owner  		=> 'root',
+				group  		=> 'root',
+				mode   		=> '0777',
+				subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-sync/sync-domain']
 		}
 
 
@@ -420,6 +466,20 @@ class vmbuilder(
 		exec { 'dockerUpIdMapping':
 				path			=> '/usr/bin',
 				command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-idmapping/docker-compose.yml up -d',
+				timeout   => 1800,
+				subscribe	=> Docker_network['bibbox-default-network'],
+				require 	=> Class['docker::compose']
+		}
+		exec { 'dockerUpSyncTechnical':
+				path			=> '/usr/bin',
+				command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-bibbox-sync/sync-technical/docker-compose.yml up -d',
+				timeout   => 1800,
+				subscribe	=> Docker_network['bibbox-default-network'],
+				require 	=> Class['docker::compose']
+		}
+		exec { 'dockerUpSyncDomain':
+				path			=> '/usr/bin',
+				command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-bibbox-sync/sync-domain/docker-compose.yml up -d',
 				timeout   => 1800,
 				subscribe	=> Docker_network['bibbox-default-network'],
 				require 	=> Class['docker::compose']

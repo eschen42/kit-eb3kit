@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a61bb49-6991-49ca-a221-eaa1ed654262" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/docker-compose-domain.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/docker-compose-technical.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/BIBBOXDocker-portlet-7.0.0.1.war" afterPath="$PROJECT_DIR$/resources/BIBBOXDocker-portlet-7.0.0.1.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp" afterPath="$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,8 +61,28 @@
       <file leaf-file-name="init.pp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="435" column="23" lean-forward="false" selection-start-line="435" selection-start-column="23" selection-end-line="435" selection-end-column="23" />
+            <state relative-caret-position="760">
+              <caret line="340" column="28" lean-forward="true" selection-start-line="340" selection-start-column="28" selection-end-line="340" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="docker-compose-technical.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/docker-compose-technical.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="58" lean-forward="false" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="docker-compose-domain.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/docker-compose-domain.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -85,26 +108,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="001-default-application-store.conf.epp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/templates/001-default-application-store.conf.epp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="050-liferay.conf.epp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/templates/050-liferay.conf.epp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="hosts.pp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/templates/hosts.pp">
           <provider selected="true" editor-type-id="text-editor">
@@ -119,7 +122,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>datastore</find>
       <find>datastor</find>
       <find>datasto</find>
       <find>a</find>
@@ -149,6 +151,7 @@
       <find>ip</find>
       <find>bibboxbase</find>
       <find>bibboxbaseurl</find>
+      <find>applica</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/resources</dir>
@@ -175,8 +178,10 @@
         <option value="$PROJECT_DIR$/resources/hosts" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/resources/templates/hosts.pp" />
-        <option value="$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp" />
         <option value="$PROJECT_DIR$/Vagrantfile" />
+        <option value="$PROJECT_DIR$/resources/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/resources/docker-compose-domain.yml" />
+        <option value="$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp" />
       </list>
     </option>
   </component>
@@ -244,24 +249,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kit-eb3kit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kit-eb3kit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -298,9 +285,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/templates" />
     </key>
@@ -746,15 +736,15 @@
       <workItem from="1496128914940" duration="3206000" />
       <workItem from="1496153609918" duration="3796000" />
       <workItem from="1497343665451" duration="4614000" />
-      <workItem from="1501066642010" duration="881000" />
+      <workItem from="1501066642010" duration="2646000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38973000" />
+    <option name="totallyTimeSpent" value="40738000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1483" y="23" width="1524" height="1479" extended-state="1" />
+    <frame x="1483" y="23" width="1524" height="1479" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -816,20 +806,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/add_disk.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/delete_root_folder_applications.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1164,10 +1140,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/docker-compose-technical.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="58" lean-forward="false" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/docker-compose-domain.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="435" column="23" lean-forward="false" selection-start-line="435" selection-start-column="23" selection-end-line="435" selection-end-column="23" />
+        <state relative-caret-position="760">
+          <caret line="340" column="28" lean-forward="true" selection-start-line="340" selection-start-column="28" selection-end-line="340" selection-end-column="28" />
           <folding />
         </state>
       </provider>
