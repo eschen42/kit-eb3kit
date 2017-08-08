@@ -12,7 +12,7 @@ bibboxbaseurl="<%= $bibboxbaseurl %>"
 usedinstanceids="error"
 
 # Elastic Serach Configuration
-elasticDomainIndex="bibbox-biobank"
+elasticDomainIndex="dcrb"
 elasticMachineIndex="bibbox"
 
 # Admin Roles / TEMP

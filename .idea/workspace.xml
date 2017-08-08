@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a61bb49-6991-49ca-a221-eaa1ed654262" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/BIBBOXDocker-portlet-7.0.0.1.war" afterPath="$PROJECT_DIR$/resources/BIBBOXDocker-portlet-7.0.0.1.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/templates/bibbox.cfg.epp" afterPath="$PROJECT_DIR$/resources/templates/bibbox.cfg.epp" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +17,8 @@
       <file leaf-file-name="bibbox.cfg.epp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/templates/bibbox.cfg.epp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="15" selection-end-column="28" />
+            <state relative-caret-position="210">
+              <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -752,12 +750,12 @@
       <workItem from="1496128914940" duration="3206000" />
       <workItem from="1496153609918" duration="3796000" />
       <workItem from="1497343665451" duration="4614000" />
-      <workItem from="1501066642010" duration="4616000" />
+      <workItem from="1501066642010" duration="4832000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42708000" />
+    <option name="totallyTimeSpent" value="42924000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1483" y="23" width="1524" height="1479" extended-state="0" />
@@ -1174,8 +1172,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/templates/bibbox.cfg.epp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="15" selection-end-column="28" />
+        <state relative-caret-position="210">
+          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding />
         </state>
       </provider>
