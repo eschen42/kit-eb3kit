@@ -5,6 +5,7 @@ services:
         build:
             context: ./images/python-script
         container_name: sys-bibbox-sync-domain
+        restart: unless-stopped
         environment:
             ELASTIC_BASE_URL: 'http://elastic-el.demo.bibbox.org/'
             SYNC_PATH: '/opt/bibbox/sys-bibbox-sync/data'
