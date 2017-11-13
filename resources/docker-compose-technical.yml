@@ -7,7 +7,7 @@ services:
         container_name: sys-bibbox-sync-technical
         restart: unless-stopped
         environment:
-            ELASTIC_BASE_URL: 'http://elastic-el.demo.bibbox.org/'
+            ELASTIC_BASE_URL: 'http://bibbox-hq-elastic-el.tools.bbmri-eric.eu/'
             SYNC_PATH: '/opt/bibbox/sys-bibbox-sync/data'
         command: /opt/scripts/entrypoint.sh
         depends_on:
