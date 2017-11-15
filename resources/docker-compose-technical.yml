@@ -9,6 +9,7 @@ services:
         environment:
             ELASTIC_BASE_URL: 'http://bibbox-hq-elastic-el.tools.bbmri-eric.eu/'
             SYNC_PATH: '/opt/bibbox/sys-bibbox-sync/data'
+            LOGGER_LEVEL: DEBUG
         command: /opt/scripts/entrypoint.sh
         depends_on:
             - sys-bibbox-sync-technical-data
