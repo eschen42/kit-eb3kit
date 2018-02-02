@@ -19,6 +19,11 @@ Vagrant.configure(2) do |config|
       s.inline = "sed -ie 's#SHELL=/bin/sh#SHELL=/bin/bash#g' /etc/default/useradd"
   end
  
+  config.vm.provision "install-pyhthon-and-tools", type: "shell" do |s|
+      s.privileged = true
+      s.path = "install-pyhthon-and-tools.sh"
+  end
+        
   config.vm.provision "download-liferay", type: "shell" do |s|
       s.privileged = true
       s.path = "download-liferay.sh"
