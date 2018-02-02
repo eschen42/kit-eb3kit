@@ -1,0 +1,101 @@
+<html>
+	<head>
+		<title>BIBBOX Dashboard</title>
+		
+		<script>
+			refreshLog();
+			
+			setInterval(function() {
+				refreshLog();
+			}, 3000);
+
+			function refreshLog() {
+				var xhr= new XMLHttpRequest();
+				xhr.open('GET', 'log.out', true);
+				xhr.onreadystatechange= function() {
+					if (this.readyState!==4) return;
+					if (this.status!==200) return;
+					var container = document.getElementById('log-container');
+					container.innerHTML= this.responseText.replace(/(?:\r\n|\r|\n)/g, '<br />');
+					if(document.getElementById('autoscroll').checked) {
+						container.scrollTop = container.scrollHeight;
+					}
+				};
+				xhr.send();
+			}
+			
+			function reset() {
+				if (confirm("Your system will be set back to a clean Liferay installation and existing data will be lost. Do you want to continue?")) {
+					document.getElementById('status').innerHTML = "Your Liferay installation will now be set up for you. Please hang on just a little longer.";
+					console.log("Run reset python script");
+				}
+			}
+			function setup() {
+				if (confirm("Do you want to install BIBBOX?")) {
+					document.getElementById('status').innerHTML = "Your BIBBOX will now be set up for you. Please hang on just a little longer.";
+					console.log("Run reset python script");
+				}
+			}
+		</script>
+		
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			html {
+				background: #222;
+				color: #EEE;
+				text-align: center;
+				font-family: "Arial", "Helvetica", sans-serif;
+			}
+			h1 {
+				margin-top: 30px;
+				font-size: 40px;
+			}
+			label {
+				float: right;
+				margin: 10px 5% 10px 0;
+			}
+			#controls {
+				display: inline-block;
+				margin: 15px 0 40px 0;
+			}
+			#controls button {
+				margin: 0 10px;
+				padding: 10px 20px;
+				border: solid 1px lightgray;
+				background: #EEE;
+				border-radius: 5px;
+				font-size: 14px;
+				cursor: pointer;
+			}
+			#log-container {
+				width: 90%;
+				max-height: 500px;
+				margin: 0 auto;
+				border: solid 2px gray;
+				padding: 10px 15px;
+				border-radius: 5px;
+				background: #EEE;
+				color: black;
+				text-align: left;
+				overflow-y: auto;
+				overflow-x: hidden;
+				font-size: 13px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1>Welcome to BIBBOX</h1>
+		<div id="controls">
+			<button onclick="reset()">Reset Liferay</button>
+			<button onclick="setup()">Install BIBBOX</button>
+		</div>
+		<p id="status"></p>
+		<label><input id="autoscroll" type="checkbox" value="enabled" checked /> Autoscroll</label>
+		<div id="log-container">
+			Loading log data...
+		</div>
+	</body>
+</html>

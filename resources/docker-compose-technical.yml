@@ -1,0 +1,24 @@
+version: '2'
+services:
+
+    sys-bibbox-sync-technical:
+        build:
+            context: ./images/python-script
+        container_name: sys-bibbox-sync-technical
+        restart: unless-stopped
+        environment:
+            ELASTIC_BASE_URL: 'http://bibbox-hq-elastic-el.tools.bbmri-eric.eu/'
+            SYNC_PATH: '/opt/bibbox/sys-bibbox-sync/data'
+            LOGGER_LEVEL: ERROR
+        command: /opt/scripts/entrypoint.sh
+        depends_on:
+            - sys-bibbox-sync-technical-data
+        volumes_from:
+            - sys-bibbox-sync-technical-data
+
+    sys-bibbox-sync-technical-data:
+        image: busybox
+        container_name: sys-bibbox-sync-technical-data
+        volumes:
+            - "/opt/bibbox/sys-bibbox-sync/data/sync:/opt/bibbox/sys-bibbox-sync/data"
+            - "./bibbox-sync.log:/opt/log/bibbox-sync.log"

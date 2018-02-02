@@ -1,0 +1,12 @@
+<%- | String $db_user, String $db_password, String $db_name | -%>
+
+admin.email.from.address=test@liferay.com
+admin.email.from.name=BIBBOX Test
+company.default.name=BIBBOX Demo
+default.admin.first.name=BIBBOX
+jdbc.default.driverClassName=org.postgresql.Driver
+jdbc.default.password=<%= $db_password %>
+jdbc.default.url=jdbc:postgresql://localhost:5432/<%= $db_name %>
+jdbc.default.username=<%= $db_user %>
+liferay.home=/opt/liferay
+setup.wizard.enabled=false
