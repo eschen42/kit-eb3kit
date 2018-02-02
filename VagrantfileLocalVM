@@ -1,0 +1,47 @@
+Vagrant.configure(2) do |config|
+
+  bibboxbaseurl = "test.bibbox.org"
+    
+  config.vm.provider :virtualbox do |vb|
+    vb.name = "ubuntutest"
+  end
+
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
+    
+  config.vm.provision "fix-no-tty", type: "shell" do |s|
+      s.privileged = true
+      s.inline = "sudo sed -i '/tty/!s/mesg n/tty -s \\&\\& mesg n/' /root/.profile"
+  end
+
+  config.vm.provision "fix-shell", type: "shell" do |s|
+      s.privileged = true
+      s.inline = "sed -ie 's#SHELL=/bin/sh#SHELL=/bin/bash#g' /etc/default/useradd"
+  end
+ 
+  config.vm.provision "download-liferay", type: "shell" do |s|
+      s.privileged = true
+      s.path = "download-liferay.sh"
+  end
+    
+  config.vm.provision "bootstrap-puppet-agent", type: "shell" do |s|
+      s.privileged = true
+      s.path = "bootstrap-puppet-agent.sh"
+  end
+    
+  config.vm.provision "install-base-puppet-modules", type: "shell" do |s|
+      s.privileged = true
+      s.path = "install-base-puppet-modules.sh"
+  end
+    
+  config.vm.provision "puppet" do | puppet |
+    puppet.facter = {
+      "fqdn" => bibboxbaseurl
+    }
+    puppet.manifests_path = "environments/production/manifests"
+    puppet.manifest_file  = "config.pp"
+    puppet.environment    = "production"
+    puppet.environment_path = "environments"
+  end  
+    
+end
