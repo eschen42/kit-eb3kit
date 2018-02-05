@@ -16,8 +16,8 @@ echo "Environment PATH $PATH"
 
 echo $PATH | grep -q "/opt/puppetlabs/bin"
 
-if [ $? -eq 0 ]; then
-  export $PATH=/opt/puppetlabs/bin:$PATH
+if [ $? ]; then
+  export PATH=/opt/puppetlabs/bin:$PATH
   echo "new PATH: $PATH" 
 fi
 
