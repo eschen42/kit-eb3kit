@@ -1,8 +1,10 @@
 #!/bin/bash
 
-# run the script curl .... | sudo bash -s arg1 arg2
+# run the script curl https://raw.githubusercontent.com/bibbox/kit-eb3kit/master/install-bibbox-server.sh | sudo bash -s arg1 arg2
 
-echo "Installing BIBBOX Server"
+echo " --- Installing BIBBOX Server"
+
+whoami
 
 apt-get install -y git
 
@@ -12,14 +14,14 @@ if [ ! -d "$DIRECTORY" ]; then
   git clone https://github.com/bibbox/kit-eb3kit.git /vagrant
 fi
 
-echo "Install Python and Tools"
+echo " --- Install Python and Tools"
 /vagrant/install-pyhthon-and-tools.sh
-echo "download Liferay"
+echo " --- download Liferay"
 /vagrant/download-liferay.sh
-echo "Install Puppet"
+echo " --- Install Puppet"
 /vagrant/bootstrap-puppet-agent.sh
-echo "Install Puppet modules"
+echo " --- Install Puppet modules"
 /vagrant/install-base-puppet-modules.sh
 
-echo "Run Puppet"
+echo " --- Run Puppet"
 puppet 
