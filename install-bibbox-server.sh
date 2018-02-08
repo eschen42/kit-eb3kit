@@ -1,6 +1,8 @@
 #!/bin/bash
 
-# run the script curl https://raw.githubusercontent.com/bibbox/kit-eb3kit/master/install-bibbox-server.sh | sudo bash -s arg1 arg2
+# run the script curl https://raw.githubusercontent.com/bibbox/kit-eb3kit/master/install-bibbox-server.sh | sudo bash
+
+# curl https://raw.githubusercontent.com/bibbox/kit-eb3kit/master/install-bibbox-server.sh | sudo bash -s arg1 arg2
 
 echo " --- Installing BIBBOX Server"
 
@@ -31,4 +33,4 @@ if [ $? ]; then
   export PATH=/opt/puppetlabs/bin:$PATH
   echo "new PATH: $PATH"
 fi
-puppet apply /vagrant/modules/vmbuilder/manifests/init.pp
+puppet apply --modulepath=/vagrant/modules -L /vagrant/environments/production/manifests/config.pp /vagrant/modules/vmbuilder/manifests/init.pp
