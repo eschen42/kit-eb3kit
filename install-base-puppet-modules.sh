@@ -23,4 +23,4 @@ puppet module install tylerwalts-jdk_oracle --version 2.0.0 --modulepath /etc/pu
 # finaly copy our modules to the /etc/puppetlabs/code/modules
 #
 echo "copy BIBBOX puppet modules"
-cp -r modules/* /etc/puppetlabs/code/modules
+cp -r /vagrant/modules/* /etc/puppetlabs/code/modules

@@ -4,14 +4,15 @@
 
 echo " --- Installing BIBBOX Server"
 
-whoami
-
+chmod +x /vagrant/*.sh
 apt-get install -y git
 
 DIRECTORY="/vagrant"
 if [ ! -d "$DIRECTORY" ]; then
   echo "Coning KIT Repository"
   git clone https://github.com/bibbox/kit-eb3kit.git /vagrant
+else
+  echo "Update Kit git Repository"
 fi
 
 echo " --- Install Python and Tools"
