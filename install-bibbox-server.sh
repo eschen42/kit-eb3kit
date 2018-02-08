@@ -6,13 +6,15 @@ echo " --- Installing BIBBOX Server"
 
 chmod +x /vagrant/*.sh
 apt-get install -y git
+mkdir /vagrant/modules/
 
 DIRECTORY="/vagrant"
 if [ ! -d "$DIRECTORY" ]; then
-  echo "Coning KIT Repository"
+  echo " --- Coning KIT Repository"
   git clone https://github.com/bibbox/kit-eb3kit.git /vagrant
 else
-  echo "Update Kit git Repository"
+  echo " --- Update Kit git Repository"
+  git -C /vagrant/ pull
 fi
 
 echo " --- Install Python and Tools"
@@ -25,4 +27,8 @@ echo " --- Install Puppet modules"
 /vagrant/install-base-puppet-modules.sh
 
 echo " --- Run Puppet"
-puppet 
+if [ $? ]; then
+  export PATH=/opt/puppetlabs/bin:$PATH
+  echo "new PATH: $PATH"
+fi
+puppet apply /vagrant/modules/vmbuilder/manifests/init.pp
