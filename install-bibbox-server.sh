@@ -33,4 +33,4 @@ if [ $? ]; then
   export PATH=/opt/puppetlabs/bin:$PATH
   echo "new PATH: $PATH"
 fi
-puppet apply --modulepath=/vagrant/modules -L /vagrant/environments/production/manifests/config.pp /vagrant/modules/vmbuilder/manifests/init.pp
+puppet apply --modulepath=/etc/puppetlabs/code/modules -L /vagrant/environments/production/manifests/config.pp /vagrant/modules/vmbuilder/manifests/init.pp
