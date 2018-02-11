@@ -13,7 +13,7 @@ import() {
 	VBoxManage import $ova $vmname_command
 }
 
-setport() {
+setvmport() {
 	echo 'VBoxManage modifyvm $vmname --natpf1 "ssh,tcp,127.0.0.1,$p22,,22"'
 	echo 'VBoxManage modifyvm $vmname --natpf1 "http,tcp,127.0.0.1,$p80,,80"'
 }
@@ -45,5 +45,5 @@ while [ "$1" != "" ]; do
 done
 
 import()
-setport()
+setvmport()
 startvm()
