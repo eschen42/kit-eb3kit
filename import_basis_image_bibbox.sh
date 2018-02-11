@@ -27,7 +27,7 @@ while [ "$1" != "" ]; do
     case $1 in
         -vn | --vmname )        shift
 								vmname=$1
-                                vmname_command="--vsys 0 --vmname $vmname"
+                                vmname_command="--vsys 0 --vmname $vmname --vsys 0 --unit 11 --disk /root/VirtualBox VMs/$vmname/BIBBOX-v-2-0-2-disk001.vmdk"
                                 ;;
         -ova | --ovafile )      shift
                                 ova=$1
