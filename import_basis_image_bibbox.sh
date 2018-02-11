@@ -14,7 +14,7 @@ import() {
 }
 
 setport() {
-	VBoxManage modifyvm $vmname --natpf1 "ssh,tcp,127.0.0.1,$p22,,22"
+	echo 'VBoxManage modifyvm $vmname --natpf1 "ssh,tcp,127.0.0.1,$p22,,22"'
 	VBoxManage modifyvm $vmname --natpf1 "http,tcp,127.0.0.1,$p80,,80"
 }
 
