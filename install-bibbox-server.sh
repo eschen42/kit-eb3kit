@@ -8,7 +8,7 @@ echo " --- Installing BIBBOX Server"
 
 apt-get install -y git
 mkdir /vagrant/modules/
-chmod +x /vagrant/*.sh
+
 
 DIRECTORY="/vagrant"
 if [ ! -d "$DIRECTORY" ]; then
@@ -18,6 +18,8 @@ else
   echo " --- Update Kit git Repository"
   git -C /vagrant/ pull
 fi
+
+chmod +x /vagrant/*.sh
 
 echo " --- Install Python and Tools"
 /vagrant/install-pyhthon-and-tools.sh
