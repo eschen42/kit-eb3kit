@@ -87,7 +87,8 @@ class vmbuilder(
 				version_update 	=> '131',
 				version_build		=> '13',
 				version_hash		=> '75b2cb2249710d822a60f83e28860053',
-				download_url		=> 'http://downloads.bibbox.org/java'
+				download_url		=> 'http://downloads.bibbox.org/java',
+				before => Archive['/opt/liferay-ce-portal-tomcat-7.0-ga3.zip']
 		}
 
 
