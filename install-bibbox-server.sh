@@ -6,9 +6,9 @@
 
 echo " --- Installing BIBBOX Server"
 
-chmod +x /vagrant/*.sh
 apt-get install -y git
 mkdir /vagrant/modules/
+chmod +x /vagrant/*.sh
 
 DIRECTORY="/vagrant"
 if [ ! -d "$DIRECTORY" ]; then
