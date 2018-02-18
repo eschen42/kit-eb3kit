@@ -2,7 +2,14 @@
 
 # run the script curl https://raw.githubusercontent.com/bibbox/kit-eb3kit/master/install-bibbox-server.sh | sudo bash
 
-# curl https://raw.githubusercontent.com/bibbox/kit-eb3kit/master/install-bibbox-server.sh | sudo bash -s arg1 arg2
+# curl --silent https://raw.githubusercontent.com/bibbox/kit-eb3kit/master/install-bibbox-server.sh | sudo bash -url local.test.box -gui
+
+# bash <(curl --silent https://raw.githubusercontent.com/bibbox/kit-eb3kit/master/install-bibbox-server.sh) -url local.test.box -gui
+
+# wget -qO- https://raw.githubusercontent.com/bibbox/kit-eb3kit/master/install-bibbox-server.sh | sudo bash -s -- -url local.test.box -gui
+
+# BIBBOX Version
+# wget -qO- https://raw.githubusercontent.com/bibbox/kit-eb3kit/master/install-bibbox-server.sh | sudo bash -s -- -url eb3kit.bibbox.org
 
 echo " --- Installing BIBBOX Server"
 
@@ -62,3 +69,6 @@ if [ "$gui" = true ] ; then
     echo " --- Install GUI"
 	/vagrant/install-gui.sh
 fi
+
+echo " --- Run liferay setup"
+service bibbox start
