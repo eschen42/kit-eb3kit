@@ -71,4 +71,4 @@ if [ "$gui" = true ] ; then
 fi
 
 echo " --- Run liferay setup"
-service bibbox start
+#service bibbox start
