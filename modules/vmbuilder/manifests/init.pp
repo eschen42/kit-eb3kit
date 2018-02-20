@@ -380,11 +380,11 @@ class vmbuilder(
 				enable 		=> true,
 				subscribe	=> File['/etc/init.d/bibbox']
 		}
-		service { 'bibbox':
-				ensure 		=> running,
-				enable 		=> true,
-				subscribe	=> File['/etc/init.d/bibbox']
-		}
+		#service { 'bibbox':
+		#		ensure 		=> running,
+		#		enable 		=> true,
+		#		subscribe	=> File['/etc/init.d/bibbox']
+		#}
 		service { 'liferay':
 				ensure 		=> running,
 				enable 		=> true,
