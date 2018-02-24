@@ -63,7 +63,7 @@ if [ $? ]; then
   export PATH=/opt/puppetlabs/bin:$PATH
   echo "new PATH: $PATH"
 fi
-puppet apply --modulepath=/etc/puppetlabs/code/modules -L /vagrant/environments/production/manifests/config.pp /vagrant/modules/vmbuilder/manifests/init.pp
+puppet apply --modulepath=/etc/puppetlabs/code/modules  /vagrant/environments/production/manifests/config.pp 
 
 if [ "$gui" = true ] ; then
     echo " --- Install GUI"
