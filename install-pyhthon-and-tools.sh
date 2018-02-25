@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "install python and some tools"
+echo "BIBBOX INSTALLER - python 3 and some tools"
 
 sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 7F438280EF8D349F
 sudo apt-get update

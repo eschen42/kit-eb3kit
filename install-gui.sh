@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Install GUI"
+echo "BIBBOX INSTALLER - install GUI"
 
 apt-get install -y ubuntu-desktop
 apt-get install -y dnsmasq
