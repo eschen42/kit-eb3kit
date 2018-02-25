@@ -3,7 +3,7 @@
 ##       Configurations        ##
 #################################
 
-class { 'vmbuilder-packages':
+class { 'vmbuilder_packages':
 
         # Currently only "eB3Kit" is available for bibboxkit
         bibboxkit       => "eB3Kit",

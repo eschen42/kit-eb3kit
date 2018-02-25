@@ -1,4 +1,4 @@
-class vmbuilder-ubuntu(
+class vmbuilder_ubuntu(
 		$bibboxbaseurl     = "eb3kit.bibbox.org",
         ) 
 {

@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a61bb49-6991-49ca-a221-eaa1ed654262" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/bootstrap-puppet-agent.sh" afterPath="$PROJECT_DIR$/bootstrap-puppet-agent.sh" />
-      <change beforePath="$PROJECT_DIR$/download-liferay.sh" afterPath="$PROJECT_DIR$/download-liferay.sh" />
+      <change beforePath="$PROJECT_DIR$/environments/production/manifests/config-packages.pp" afterPath="$PROJECT_DIR$/environments/production/manifests/config_packages.pp" />
+      <change beforePath="$PROJECT_DIR$/environments/production/manifests/config-ubuntu.pp" afterPath="$PROJECT_DIR$/environments/production/manifests/config_ubuntu.pp" />
       <change beforePath="$PROJECT_DIR$/install-base-puppet-modules.sh" afterPath="$PROJECT_DIR$/install-base-puppet-modules.sh" />
       <change beforePath="$PROJECT_DIR$/install-bibbox-local.sh" afterPath="$PROJECT_DIR$/install-bibbox-local.sh" />
-      <change beforePath="$PROJECT_DIR$/install-pyhthon-and-tools.sh" afterPath="$PROJECT_DIR$/install-pyhthon-and-tools.sh" />
+      <change beforePath="$PROJECT_DIR$/modules/vmbuilder-packages/manifests/init.pp" afterPath="$PROJECT_DIR$/modules/vmbuilder_packages/manifests/init.pp" />
+      <change beforePath="$PROJECT_DIR$/modules/vmbuilder-ubuntu/manifests/init.pp" afterPath="$PROJECT_DIR$/modules/vmbuilder_ubuntu/manifests/init.pp" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,30 +35,30 @@
         </entry>
       </file>
       <file leaf-file-name="init.pp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/vmbuilder-ubuntu/manifests/init.pp">
+        <entry file="file://$PROJECT_DIR$/modules/vmbuilder_ubuntu/manifests/init.pp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+            <state relative-caret-position="0">
+              <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config-ubuntu.pp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/environments/production/manifests/config-ubuntu.pp">
+      <file leaf-file-name="config_ubuntu.pp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/environments/production/manifests/config_ubuntu.pp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="75">
+              <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="install-bibbox-local.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="install-bibbox-local.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/install-bibbox-local.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="39" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="39" />
+            <state relative-caret-position="705">
+              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="174" />
               <folding />
             </state>
           </provider>
@@ -106,20 +105,20 @@
         </entry>
       </file>
       <file leaf-file-name="init.pp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/vmbuilder-packages/manifests/init.pp">
+        <entry file="file://$PROJECT_DIR$/modules/vmbuilder_packages/manifests/init.pp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="24" lean-forward="true" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="24" />
+              <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config-packages.pp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/environments/production/manifests/config-packages.pp">
+      <file leaf-file-name="config_packages.pp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/environments/production/manifests/config_packages.pp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="75">
+              <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -202,6 +201,10 @@
         <option value="$PROJECT_DIR$/bootstrap-puppet-agent.sh" />
         <option value="$PROJECT_DIR$/install-base-puppet-modules.sh" />
         <option value="$PROJECT_DIR$/install-bibbox-local.sh" />
+        <option value="$PROJECT_DIR$/environments/production/manifests/config_ubuntu.pp" />
+        <option value="$PROJECT_DIR$/modules/vmbuilder_ubuntu/manifests/init.pp" />
+        <option value="$PROJECT_DIR$/modules/vmbuilder_packages/manifests/init.pp" />
+        <option value="$PROJECT_DIR$/environments/production/manifests/config_packages.pp" />
       </list>
     </option>
   </component>
@@ -279,26 +282,26 @@
               <item name="kit-eb3kit" type="b2602c69:ProjectViewProjectNode" />
               <item name="kit-eb3kit" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="vmbuilder-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="vmbuilder_packages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kit-eb3kit" type="b2602c69:ProjectViewProjectNode" />
               <item name="kit-eb3kit" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="vmbuilder-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="vmbuilder_packages" type="462c0819:PsiDirectoryNode" />
               <item name="manifests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kit-eb3kit" type="b2602c69:ProjectViewProjectNode" />
               <item name="kit-eb3kit" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="vmbuilder-ubuntu" type="462c0819:PsiDirectoryNode" />
+              <item name="vmbuilder_ubuntu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kit-eb3kit" type="b2602c69:ProjectViewProjectNode" />
               <item name="kit-eb3kit" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="vmbuilder-ubuntu" type="462c0819:PsiDirectoryNode" />
+              <item name="vmbuilder_ubuntu" type="462c0819:PsiDirectoryNode" />
               <item name="manifests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -715,38 +718,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/vmbuilder-ubuntu/manifests/init.pp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/environments/production/manifests/config-ubuntu.pp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/vmbuilder-packages/manifests/init.pp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="24" lean-forward="true" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/environments/production/manifests/config-packages.pp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/download-liferay.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -771,14 +742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/install-base-puppet-modules.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/install-bibbox-server.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
@@ -787,10 +750,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/install-base-puppet-modules.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/install-bibbox-local.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="39" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="39" />
+        <state relative-caret-position="705">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="174" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/vmbuilder_ubuntu/manifests/init.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/vmbuilder_packages/manifests/init.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/production/manifests/config_packages.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/production/manifests/config_ubuntu.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
           <folding />
         </state>
       </provider>
