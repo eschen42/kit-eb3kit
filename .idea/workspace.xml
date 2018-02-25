@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a61bb49-6991-49ca-a221-eaa1ed654262" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/environments/production/manifests/config_files.pp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/modules/vmbuilder_files/manifests/init.pp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/modules/vmbuilder_services/manifests/init.pp" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/environments/production/manifests/config_files.pp" afterPath="$PROJECT_DIR$/environments/production/manifests/config_files.pp" />
       <change beforePath="$PROJECT_DIR$/environments/production/manifests/config_packages.pp" afterPath="$PROJECT_DIR$/environments/production/manifests/config_packages.pp" />
-      <change beforePath="$PROJECT_DIR$/install-bibbox-local.sh" afterPath="$PROJECT_DIR$/install-bibbox-local.sh" />
-      <change beforePath="$PROJECT_DIR$/modules/vmbuilder_packages/manifests/init.pp" afterPath="$PROJECT_DIR$/modules/vmbuilder_packages/manifests/init.pp" />
+      <change beforePath="$PROJECT_DIR$/modules/vmbuilder_files/manifests/init.pp" afterPath="$PROJECT_DIR$/modules/vmbuilder_files/manifests/init.pp" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="install-bibbox-local.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="install-bibbox-local.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/install-bibbox-local.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="77" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="77" />
+            <state relative-caret-position="345">
+              <caret line="23" column="34" lean-forward="true" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -68,8 +64,8 @@
       <file leaf-file-name="config.pp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/environments/production/manifests/config.pp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -78,8 +74,8 @@
       <file leaf-file-name="init.pp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="654">
-              <caret line="96" column="30" lean-forward="false" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="30" />
+            <state relative-caret-position="120">
+              <caret line="8" column="34" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="8" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -95,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="init.pp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="init.pp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/vmbuilder_files/manifests/init.pp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="390">
+              <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -108,8 +104,8 @@
       <file leaf-file-name="config_files.pp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/environments/production/manifests/config_files.pp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="165">
+              <caret line="11" column="36" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -118,8 +114,8 @@
       <file leaf-file-name="config_packages.pp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/environments/production/manifests/config_packages.pp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="47" lean-forward="true" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+            <state relative-caret-position="180">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -129,7 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>acti</find>
       <find>activ</find>
       <find>activi</find>
       <find>activit</find>
@@ -159,6 +154,7 @@
       <find>kit</find>
       <find>/</find>
       <find>/vagrant</find>
+      <find>db_user</find>
     </findStrings>
     <replaceStrings>
       <replace>/opt/bibbox-install</replace>
@@ -207,11 +203,11 @@
         <option value="$PROJECT_DIR$/environments/production/manifests/config_ubuntu.pp" />
         <option value="$PROJECT_DIR$/modules/vmbuilder_ubuntu/manifests/init.pp" />
         <option value="$PROJECT_DIR$/modules/vmbuilder_packages/manifests/init.pp" />
-        <option value="$PROJECT_DIR$/environments/production/manifests/config_packages.pp" />
-        <option value="$PROJECT_DIR$/environments/production/manifests/config_files.pp" />
         <option value="$PROJECT_DIR$/install-bibbox-local.sh" />
         <option value="$PROJECT_DIR$/modules/vmbuilder_services/manifests/init.pp" />
         <option value="$PROJECT_DIR$/modules/vmbuilder_files/manifests/init.pp" />
+        <option value="$PROJECT_DIR$/environments/production/manifests/config_files.pp" />
+        <option value="$PROJECT_DIR$/environments/production/manifests/config_packages.pp" />
       </list>
     </option>
   </component>
@@ -756,30 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/environments/production/manifests/config_ubuntu.pp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/environments/production/manifests/config_packages.pp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="47" lean-forward="true" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="96" column="30" lean-forward="false" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/vmbuilder_packages/manifests/init.pp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -796,22 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/environments/production/manifests/config.pp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/environments/production/manifests/config_files.pp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/vmbuilder_services/manifests/init.pp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1081">
@@ -820,18 +776,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/vmbuilder_files/manifests/init.pp">
+    <entry file="file://$PROJECT_DIR$/install-bibbox-local.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="345">
+          <caret line="23" column="34" lean-forward="true" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/install-bibbox-local.sh">
+    <entry file="file://$PROJECT_DIR$/modules/vmbuilder/manifests/init.pp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="77" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="77" />
+        <state relative-caret-position="120">
+          <caret line="8" column="34" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="8" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/production/manifests/config.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/production/manifests/config_packages.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/production/manifests/config_ubuntu.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/production/manifests/config_files.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="36" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/vmbuilder_files/manifests/init.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
           <folding />
         </state>
       </provider>

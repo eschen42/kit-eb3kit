@@ -2,6 +2,9 @@ class vmbuilder_files(
 		$bibboxkit         = "eB3Kit",
 		$bibboxbaseurl     = "eb3kit.bibbox.org",
 		$serveradmin       = "admin@bibbox.org"
+  	$db_user           = "liferay",
+		$db_password       = "vendetta",
+		$db_name           = "lportal"
 ) {
 
 		# Unzip liferay sources to 'liferay' directory
@@ -197,6 +200,7 @@ class vmbuilder_files(
 				source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/liferay/portal-ext.properties',
 				subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts']
 		}
+
 		file { "/opt/liferay/portal-setup-wizard.properties":
 				ensure  	=> 'file',
 				owner  		=> 'liferay',
