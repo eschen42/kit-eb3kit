@@ -6,7 +6,7 @@ class vmbuilder_ubuntu(
 		# Override hosts file
 		file { '/etc/hosts':
 				ensure 		=> 'file',
-				content 	=> epp('/vagrant/resources/templates/hosts.pp', {
+				content 	=> epp('/opt/bibbox-install/resources/templates/hosts.pp', {
 					'subdomain'	=> split($bibboxbaseurl, '[.]')[0]
 				})
 		}

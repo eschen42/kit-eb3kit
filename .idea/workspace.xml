@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a61bb49-6991-49ca-a221-eaa1ed654262" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/environments/production/manifests/config-packages.pp" afterPath="$PROJECT_DIR$/environments/production/manifests/config_packages.pp" />
-      <change beforePath="$PROJECT_DIR$/environments/production/manifests/config-ubuntu.pp" afterPath="$PROJECT_DIR$/environments/production/manifests/config_ubuntu.pp" />
-      <change beforePath="$PROJECT_DIR$/install-base-puppet-modules.sh" afterPath="$PROJECT_DIR$/install-base-puppet-modules.sh" />
       <change beforePath="$PROJECT_DIR$/install-bibbox-local.sh" afterPath="$PROJECT_DIR$/install-bibbox-local.sh" />
-      <change beforePath="$PROJECT_DIR$/modules/vmbuilder-packages/manifests/init.pp" afterPath="$PROJECT_DIR$/modules/vmbuilder_packages/manifests/init.pp" />
-      <change beforePath="$PROJECT_DIR$/modules/vmbuilder-ubuntu/manifests/init.pp" afterPath="$PROJECT_DIR$/modules/vmbuilder_ubuntu/manifests/init.pp" />
+      <change beforePath="$PROJECT_DIR$/modules/vmbuilder_ubuntu/manifests/init.pp" afterPath="$PROJECT_DIR$/modules/vmbuilder_ubuntu/manifests/init.pp" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,17 +30,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="init.pp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="init.pp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/vmbuilder_ubuntu/manifests/init.pp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+            <state relative-caret-position="105">
+              <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config_ubuntu.pp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config_ubuntu.pp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/environments/production/manifests/config_ubuntu.pp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -57,8 +53,8 @@
       <file leaf-file-name="install-bibbox-local.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/install-bibbox-local.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="174" />
+            <state relative-caret-position="720">
+              <caret line="48" column="165" lean-forward="false" selection-start-line="48" selection-start-column="165" selection-end-line="48" selection-end-column="165" />
               <folding />
             </state>
           </provider>
@@ -200,11 +196,11 @@
         <option value="$PROJECT_DIR$/install-pyhthon-and-tools.sh" />
         <option value="$PROJECT_DIR$/bootstrap-puppet-agent.sh" />
         <option value="$PROJECT_DIR$/install-base-puppet-modules.sh" />
-        <option value="$PROJECT_DIR$/install-bibbox-local.sh" />
         <option value="$PROJECT_DIR$/environments/production/manifests/config_ubuntu.pp" />
-        <option value="$PROJECT_DIR$/modules/vmbuilder_ubuntu/manifests/init.pp" />
         <option value="$PROJECT_DIR$/modules/vmbuilder_packages/manifests/init.pp" />
         <option value="$PROJECT_DIR$/environments/production/manifests/config_packages.pp" />
+        <option value="$PROJECT_DIR$/install-bibbox-local.sh" />
+        <option value="$PROJECT_DIR$/modules/vmbuilder_ubuntu/manifests/init.pp" />
       </list>
     </option>
   </component>
@@ -758,22 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/install-bibbox-local.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="174" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/vmbuilder_ubuntu/manifests/init.pp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/vmbuilder_packages/manifests/init.pp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -794,6 +774,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install-bibbox-local.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="165" lean-forward="false" selection-start-line="48" selection-start-column="165" selection-end-line="48" selection-end-column="165" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/vmbuilder_ubuntu/manifests/init.pp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding />
         </state>
       </provider>

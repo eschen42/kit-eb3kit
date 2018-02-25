@@ -45,8 +45,8 @@ sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/production
 sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/production/manifests/config-packages.pp
 
 
-/opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules  /opt/bibbox-install/environments/production/manifests/config-ubuntu.pp
-/opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules  /opt/bibbox-install/environments/production/manifests/config-packages.pp
+/opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules  /opt/bibbox-install/environments/production/manifests/config_ubuntu.pp
+/opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules  /opt/bibbox-install/environments/production/manifests/config_packages.pp
 
 
 if [ "$gui" = true ] ; then
