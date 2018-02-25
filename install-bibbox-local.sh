@@ -2,8 +2,9 @@
 
 # sudo apt-get install -y git
 # sudo git clone https://github.com/bibbox/kit-eb3kit.git /opt/bibbox-install
+# sudo git -C  /opt/bibbox-install pull
 # sudo chmod +x /opt/bibbox-install/*.sh
-# sudo -url put.here.your.domain -gui
+# sudo /opt/bibbox-install/install-bibbox-local.sh -url put.here.your.domain -gui
 #
 #
 

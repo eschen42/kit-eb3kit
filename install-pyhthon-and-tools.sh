@@ -1,6 +1,9 @@
 #!/bin/bash
 
-echo "BIBBOX INSTALLER - python 3 and some tools"
+echo " ##################################################################"
+echo " # BIBBOX INSTALLER  python 3 and some tools                      #"
+echo " ##################################################################"
+
 
 sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 7F438280EF8D349F
 sudo apt-get update

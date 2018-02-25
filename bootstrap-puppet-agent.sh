@@ -3,7 +3,9 @@
 # Run on VM to bootstrap Puppet Agent nodes
 # https://puppet.com/docs/puppet/4.9/install_linux.html
 
-
+echo " ##################################################################"
+echo " # BIBBOX INSTALLER install Puppet Agent                          #"
+echo " ##################################################################"
 
 wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
 sudo dpkg -i puppetlabs-release-pc1-xenial.deb
