@@ -19,7 +19,7 @@ class vmbuilder_packages (
     class { 'apache::mod::proxy_ajp': }
     class { 'apache::mod::proxy_wstunnel': }
 
-    apache :: vhost { $bibboxbaseurl:
+    apache::vhost { $bibboxbaseurl:
     port    => '80',
     docroot => '/var/www/vhost'
   }
@@ -43,19 +43,19 @@ class vmbuilder_packages (
     ###################
     class { 'postgresql::server': }
 
-    postgresql :: server :: role {
+    postgresql::server::role {
       $db_user:
         password_hash => postgresql_password($db_user, $db_password),
     }
 
-    postgresql :: server :: db {
+    postgresql::server::db {
       $db_name:
         user     => $db_user,
         password => postgresql_password($db_user, $db_password)
     }
 
 
-    postgresql:: server :: database_grant {
+    postgresql::server::database_grant {
       $db_name:
         privilege => 'ALL',
         db        => $db_name,
