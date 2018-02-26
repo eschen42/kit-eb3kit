@@ -35,7 +35,7 @@ class vmbuilder_services (
     #########################################
 
 		docker_network { 'bibbox-default-network':
-				ensure   	=> present]
+				ensure   	=> present
 		}
 		exec { 'dockerUpActivities':
 				path			=> '/usr/bin',
