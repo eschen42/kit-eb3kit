@@ -22,8 +22,18 @@ class vmbuilder_packages (
     apache::vhost { $bibboxbaseurl:
     port    => '80',
     docroot => '/var/www/vhost'
-  }
+     }
 
+    File <| title == '/etc/apache2/sites-available' |> {
+				owner	=> 'root',
+				group   => 'bibbox',
+				mode 	=> '0777'
+		}
+		File <| title == '/etc/apache2/sites-enabled' |> {
+				owner	=> 'root',
+				group   => 'bibbox',
+				mode 	=> '0777'
+		}
 
     ###################
     #      JDK        #

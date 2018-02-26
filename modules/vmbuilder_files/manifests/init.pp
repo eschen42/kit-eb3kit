@@ -127,16 +127,7 @@ class vmbuilder_files(
 				group   => 'root',
 				mode		=> '0644'
 		}
-		File <| title == '/etc/apache2/sites-available' |> {
-				owner	=> 'root',
-				group   => 'bibbox',
-				mode 	=> '0777'
-		}
-		File <| title == '/etc/apache2/sites-enabled' |> {
-				owner	=> 'root',
-				group   => 'bibbox',
-				mode 	=> '0777'
-		}
+
 
 
   	#######################
