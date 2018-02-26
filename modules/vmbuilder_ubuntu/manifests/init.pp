@@ -3,14 +3,6 @@ class vmbuilder_ubuntu(
         ) 
 {
 
-		# Override hosts file
-		file { '/etc/hosts':
-				ensure 		=> 'file',
-				content 	=> epp('/opt/bibbox-install/resources/templates/hosts.pp', {
-					'subdomain'	=> split($bibboxbaseurl, '[.]')[0]
-				})
-		}
-
 		# Ensure groups 'bibbox' and 'docker'
 		group { 'bibbox':
 				ensure	=> 'present',

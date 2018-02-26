@@ -9,7 +9,7 @@ class vmbuilder(
 		$db_name           = "lportal"
 
 ) {
-	
+
 		# Ensure groups 'bibbox' and 'docker'
 		group { 'bibbox':
 				ensure	=> 'present',
