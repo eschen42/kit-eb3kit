@@ -17,11 +17,12 @@ class vmbuilder_services (
 				ensure 		=> running,
 				enable 		=> true
 		}
-		service { 'bibbox':
+		service { 'liferay':
 				ensure 		=> running,
 				enable 		=> true
 		}
-		service { 'liferay':
+
+		service { 'bibbox':
 				ensure 		=> running,
 				enable 		=> true
 		}
@@ -34,6 +35,7 @@ class vmbuilder_services (
 		docker_network { 'bibbox-default-network':
 				ensure   	=> present
 		}
+
 		exec { 'dockerUpActivities':
 				path			=> '/usr/bin',
 				command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-activities/docker-compose.yml up -d',
