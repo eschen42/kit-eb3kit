@@ -1,13 +1,4 @@
 class vmbuilder_services (
-
-		$bibboxkit         = "eB3Kit",
-		$bibboxbaseurl     = "eb3kit.bibbox.org",
-		$serveradmin       = "admin@bibbox.org",
-
-		$db_user           = "liferay",
-		$db_password       = "bibbox4ever",
-		$db_name           = "lportal"
-
 ) {
 
     #########################################

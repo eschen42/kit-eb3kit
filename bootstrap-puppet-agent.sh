@@ -9,6 +9,7 @@ echo "##########################################################################
 
 wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
 sudo dpkg -i puppetlabs-release-pc1-xenial.deb
+sudo dpkg --configure -a
 sudo apt-get update -q
 sudo apt-get install -q -y systemd
 sudo apt-get install -q -y puppet-agent
