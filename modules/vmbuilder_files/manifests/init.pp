@@ -7,7 +7,11 @@ class vmbuilder_files(
 		$db_name           = "lportal"
 ) {
 
-		# Unzip liferay sources to 'liferay' directory
+
+
+    #######################
+    #      LIFERAY  BASE  #
+    #######################
 		archive { '/opt/liferay-ce-portal-tomcat-7.0-ga3.zip':
 				ensure 				=> 'present',
 				extract       => true,
@@ -50,8 +54,9 @@ class vmbuilder_files(
 				subscribe	=> File['/opt/liferay/tomcat-8.0.32/bin']
 		}
 
-
-		# Copy 'war' files to liferay deploy folder
+    #######################
+    #       BIBBOX        #
+    #######################
 		file { "/opt/liferay/deploy/BIBBOXDocker-portlet-7.0.0.1.war":
 				ensure 		=> 'file',
 				owner			=> 'liferay',
@@ -70,7 +75,9 @@ class vmbuilder_files(
 		}
 
 
-		# Create directories used by bibbox
+	  #######################
+    #       DIRECTORIES   #
+    #######################
 		file { '/opt/bibbox':
 				ensure 	=> 'directory',
 				mode 		=> '0777'
@@ -90,6 +97,7 @@ class vmbuilder_files(
 				owner		=> 'root',
 				group   => 'bibbox'
 		}
+
 		file { ['/opt/bibbox/sys-bibbox-sync',
             '/opt/bibbox/sys-bibbox-sync/data',
             '/opt/bibbox/sys-bibbox-sync/data/sync-biobank',
@@ -108,15 +116,17 @@ class vmbuilder_files(
 				ensure 	=> 'directory',
 				mode 		=> '0777'
 		}
+
+
+  	#######################
+    #        APACHE       #
+    #######################
 		file { '/var/www/html/error':
 				ensure	=> 'directory',
 				owner		=> 'root',
 				group   => 'root',
 				mode		=> '0644'
 		}
-
-
-		# Set access rights for apache directories
 		File <| title == '/etc/apache2/sites-available' |> {
 				owner	=> 'root',
 				group   => 'bibbox',
@@ -129,21 +139,20 @@ class vmbuilder_files(
 		}
 
 
-		# Clone bibbox repositories
+  	#######################
+    #  CLONE FROM GIT     #
+    #######################
 		vcsrepo { '/opt/bibbox/sys-bibbox-vmscripts':
 				ensure   	=> 'latest',
 				provider 	=> 'git',
-				source   	=> 'https://github.com/bibbox/sys-bibbox-vmscripts.git',
-				subscribe => File['/opt/liferay/tomcat-8.0.32/bin'],
-				notify		=> Exec['pythonRequirements']
+				source   	=> 'https://github.com/bibbox/sys-bibbox-vmscripts.git'
 		}
 		vcsrepo { '/opt/bibbox/application-store/application-store':
 				ensure   	=> 'latest',
 				provider	=> 'git',
 				owner			=> 'liferay',
 				group   	=> 'bibbox',
-				source  	=> 'https://github.com/bibbox/application-store.git',
-				notify		=> File['/var/www/html/bibbox-datastore/index.html']
+				source  	=> 'https://github.com/bibbox/application-store.git'
 		}
 		vcsrepo { '/opt/bibbox/sys-bibbox-frontend':
 				ensure  	=> 'latest',
@@ -172,33 +181,34 @@ class vmbuilder_files(
 		}
 
 
+  	#######################
+    #      COPY FILES     #
+    #######################
+
+
 		# Copy bibbox configuration and init scripts
 		file { "/etc/init.d/bibbox":
 				source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/etc/init.d/bibbox',
 				owner  		=> 'root',
 				group  		=> 'root',
-				mode   		=> '0777',
-				subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts']
+				mode   		=> '0777'
 		}
 		file { "/etc/init.d/functions":
 				source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/etc/init.d/functions',
 				owner  		=> 'root',
 				group  		=> 'root',
-				mode   		=> '0777',
-				subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts']
+				mode   		=> '0777'
 		}
 		file { "/etc/init.d/liferay":
 				source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/etc/init.d/liferay',
 				owner  		=> 'root',
 				group  		=> 'root',
-				mode   		=> '0777',
-				subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts']
+				mode   		=> '0777'
 		}
 		file { "/opt/liferay/portal-ext.properties":
 				owner  		=> 'liferay',
 				group  		=> 'liferay',
-				source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/liferay/portal-ext.properties',
-				subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts']
+				source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/liferay/portal-ext.properties'
 		}
 
 		file { "/opt/liferay/portal-setup-wizard.properties":
@@ -209,31 +219,31 @@ class vmbuilder_files(
 						'db_user'			=> $db_user,
 						'db_password'	=> $db_password,
 						'db_name'			=> $db_name
-				}),
-				subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts']
+				})
 		}
 		file { "/etc/bibbox":
 				recurse 	=> true,
 				owner  		=> 'root',
 				group  		=> 'bibbox',
-				source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/etc/bibbox',
-				subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-vmscripts']
+				source 		=> '/opt/bibbox/sys-bibbox-vmscripts/initscripts/etc/bibbox'
 		}
 		file { "/opt/bibbox/metadata":
 				recurse 	=> true,
 				owner  		=> 'root',
 				group  		=> 'root',
 				mode			=> '0777',
-				source 		=> '/opt/bibbox/application-store/application-store/metadata',
-				subscribe	=> Vcsrepo['/opt/bibbox/application-store/application-store']
+				source 		=> '/opt/bibbox/application-store/application-store/metadata'
 		}
+
+	  #########################################
+    #  SYNC (is this copied twice ?         #
+    #########################################
 		file { "/opt/bibbox/sys-bibbox-sync/sync-technical/docker-compose.yml":
 				ensure  	=> 'file',
 				source 		=> '/opt/bibbox-install/resources/docker-compose-technical.yml',
 				owner  		=> 'root',
 				group  		=> 'root',
-				mode   		=> '0777',
-				subscribe	=> Vcsrepo['/opt/bibbox/sys-bibbox-sync/sync-technical']
+				mode   		=> '0777'
 		}
 		file { "/opt/bibbox/sys-bibbox-sync/sync-domain/docker-compose.yml":
 				ensure  	=> 'file',
@@ -245,14 +255,16 @@ class vmbuilder_files(
 		}
 
 
+    #########################################
+    #  CONFIGURE BIBBOX SERVICE             #
+    #########################################
+
 		# Create 'conf.d' directory
 		file { '/etc/bibbox/conf.d':
 				ensure		=> 'directory',
 				owner  		=> 'root',
 				group  		=> 'bibbox'
 		}
-
-
 		# Render 'bibbox.cfg' template file
 		file { "/etc/bibbox/bibbox.cfg":
 				ensure  	=> 'file',
@@ -264,8 +276,9 @@ class vmbuilder_files(
 				})
 		}
 
-
-		# Create and symlink datastore directories
+    #########################################
+    #        CONFIGURE DATASTORE            #
+    #########################################
 		file { '/var/www/html/bibbox-datastore':
 				ensure	=> 'directory'
 		}
@@ -293,7 +306,9 @@ class vmbuilder_files(
 		}
 
 
-		# Copy gui resources to datastore
+    #########################################
+    #       COPY GUI FILES TO DATASTORE     #
+    #########################################
 		file { '/var/www/html/bibbox-datastore/js/js':
 				recurse		=> true,
 				source		=> '/opt/bibbox/sys-bibbox-frontend/js',
@@ -311,12 +326,9 @@ class vmbuilder_files(
 		}
 
 
-		# Remove setup config file to reapply configuration on provisioning
-		file { '/etc/bibbox/conf.d/setup.cfg':
-				ensure	=> 'absent'
-		}
-
-
+    #########################################
+    #              COPY SCRIPTS             #
+    #########################################
 		file { "/etc/bibbox/delete_root_folder_applications.sh":
 				ensure		=> 'file',
 				owner  		=> 'root',
@@ -332,7 +344,10 @@ class vmbuilder_files(
 				mode			=> '0440',
 				source 		=> '/opt/bibbox-install/resources/liferaydeletescript'
 		}
-		# Configure vhosts for apache
+
+    #########################################
+    #  COPY APACHE FILE AND CONFIGURE FQSN  #
+	  #########################################
 		file { "/etc/apache2/sites-available/000-default.conf":
 				ensure  => 'file',
 				content => epp('/opt/bibbox-install/resources/templates/000-default.conf.epp', {
@@ -353,7 +368,6 @@ class vmbuilder_files(
 				})
 		}
 
-		# Symlink the new vhosts config files
 		file { '/etc/apache2/sites-enabled/001-default-application-store.conf':
 				ensure		=> 'link',
 				target		=> '/etc/apache2/sites-available/001-default-application-store.conf',
@@ -366,10 +380,16 @@ class vmbuilder_files(
 		}
 
 
-		# Copy 'urlrewrite.xml' to tomcat
-		file { "/opt/liferay/tomcat-8.0.32/webapps/ROOT/WEB-INF/urlrewrite.xml":
+    #########################################
+    #  COPY URL REWRITE                     #
+	  #########################################
+	  file { "/opt/liferay/tomcat-8.0.32/webapps/ROOT/WEB-INF/urlrewrite.xml":
 				ensure 	=> 'file',
 				source 	=> '/opt/bibbox-install/resources/urlrewrite.xml'
 		}
 
+		# Remove setup config file to reapply configuration on provisioning
+		file { '/etc/bibbox/conf.d/setup.cfg':
+				ensure	=> 'absent'
+		}
 }
