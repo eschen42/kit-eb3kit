@@ -1,8 +1,9 @@
 #!/bin/bash
 
-echo " ##################################################################"
-echo " # BIBBOX INSTALLER install puppet modules                        #"
-echo " ##################################################################"
+
+echo "##########################################################################################"
+echo "#                                  PUPPET MODULES                                        #"
+echo "##########################################################################################"
 
 /opt/puppetlabs/bin/puppet module install puppetlabs-stdlib --version 4.14.0  --modulepath /etc/puppetlabs/code/modules
 /opt/puppetlabs/bin/puppet module install puppetlabs-apt --version 2.3.0      --modulepath /etc/puppetlabs/code/modules

@@ -11,7 +11,6 @@ class { 'vmbuilder_files':
         db_user         => "liferay",
         db_password     => "vendetta",
         db_name         => "lportal"
-
 }
 
 

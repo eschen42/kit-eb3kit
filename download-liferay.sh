@@ -1,9 +1,10 @@
 #!/bin/bash
 
-echo " ##################################################################"
-echo " # BIBBOX INSTALLER pre-download liferay                          #"
-echo " ##################################################################"
 
+
+echo "##########################################################################################"
+echo "#                                DOWNLOAD LIFERAY                                        #"
+echo "##########################################################################################"
 
 if [ ! -f "/opt/liferay-ce-portal-tomcat-7.0-ga3.zip" ]; then
    echo "BIBBOX INSTALLER - downloading Liferay, this might take a while...";
