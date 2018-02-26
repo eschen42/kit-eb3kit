@@ -15,18 +15,15 @@ class vmbuilder_services (
     #########################################
 		Service <| title == 'apache2' |> {
 				ensure 		=> running,
-				enable 		=> true,
-				subscribe	=> File['/etc/init.d/bibbox']
+				enable 		=> true
 		}
 		service { 'bibbox':
 				ensure 		=> running,
-				enable 		=> true,
-				subscribe	=> File['/etc/init.d/bibbox']
+				enable 		=> true
 		}
 		service { 'liferay':
 				ensure 		=> running,
-				enable 		=> true,
-				subscribe	=> File['/etc/init.d/liferay']
+				enable 		=> true
 		}
 
 
