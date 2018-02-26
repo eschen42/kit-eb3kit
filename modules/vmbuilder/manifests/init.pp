@@ -9,17 +9,7 @@ class vmbuilder(
 		$db_name           = "lportal"
 
 ) {
-
-		# Override hosts file
-		file { '/etc/hosts':
-				ensure 		=> 'file',
-				content 	=> epp('/vagrant/resources/templates/hosts.pp', {
-					'subdomain'	=> split($bibboxbaseurl, '[.]')[0]
-				}),
-				notify		=> Class['postgresql::server']
-		}
-
-
+	
 		# Ensure groups 'bibbox' and 'docker'
 		group { 'bibbox':
 				ensure	=> 'present',
