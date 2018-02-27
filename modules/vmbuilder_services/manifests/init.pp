@@ -37,7 +37,7 @@ class vmbuilder_services (
     exec { 'installLiferayContent':
 				path			=> '/usr/bin',
 				command 	=> '/usr/bin/sudo  /opt/bibbox/sys-bibbox-vmscripts/initscripts/runSetupScript.sh',
-				timeout   => 1800
+				timeout   => 2800
 		}
 
     #########################################
@@ -51,22 +51,22 @@ class vmbuilder_services (
 		exec { 'dockerUpActivities':
 				path			=> '/usr/bin',
 				command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-activities/docker-compose.yml up -d',
-				timeout   => 1800
+				timeout   => 2800
 		}
 		exec { 'dockerUpIdMapping':
 				path			=> '/usr/bin',
 				command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-idmapping/docker-compose.yml up -d',
-				timeout   => 1800
+				timeout   => 2800
 		}
 		exec { 'dockerUpSyncTechnical':
 				path			=> '/usr/bin',
 				command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-bibbox-sync/sync-technical/docker-compose.yml up -d',
-				timeout   => 1800
+				timeout   => 2800
 		}
 		exec { 'dockerUpSyncDomain':
 				path			=> '/usr/bin',
 				command 	=> '/usr/bin/sudo /usr/local/bin/docker-compose -f /opt/bibbox/sys-bibbox-sync/sync-domain/docker-compose.yml up -d',
-				timeout   => 1800,
+				timeout   => 2800,
 		}
 
 }

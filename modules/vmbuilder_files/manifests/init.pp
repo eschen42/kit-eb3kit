@@ -138,8 +138,8 @@ class vmbuilder_files(
 		}
 
 		exec { 'changePermissionOfVMScrips':
-				path			=> '/usr/bin',
-				command 	=> 'chmod +x /opt/bibbox/sys-bibbox-vmscripts/*.sh',
+				path			=> '/bin',
+				command 	=> '/usr/bin/sudo chmod +x /opt/bibbox/sys-bibbox-vmscripts/*.sh',
 				timeout   => 1800
 		}
 
