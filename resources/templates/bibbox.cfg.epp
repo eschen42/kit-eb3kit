@@ -22,9 +22,3 @@ vmadminroles="BIBBOX VM Admin"
 # init configuration
 ApplicationStoreUpdate="ON"
 bibboxScriptUpdate="ON"
-
-
-# load config files
-for conffiles in /etc/bibbox/conf.d/*.cfg; do
-  . $conffiles
-done
