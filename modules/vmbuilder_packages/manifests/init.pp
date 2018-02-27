@@ -20,8 +20,8 @@ class vmbuilder_packages (
     class { 'apache::mod::proxy_wstunnel': }
 
     apache::vhost { $bibboxbaseurl:
-    port    => '80',
-    docroot => '/var/www/vhost'
+      port    => '80',
+      docroot => '/var/www/vhost'
      }
 
     File <| title == '/etc/apache2/sites-available' |> {

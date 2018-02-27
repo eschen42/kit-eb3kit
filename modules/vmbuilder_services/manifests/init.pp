@@ -17,6 +17,7 @@ class vmbuilder_services (
 				ensure 		=> running,
 				enable 		=> true
 		}
+
 		service { 'liferay':
 				ensure 		=> running,
 				enable 		=> true
@@ -26,7 +27,6 @@ class vmbuilder_services (
 				ensure 		=> running,
 				enable 		=> true
 		}
-
 
     #########################################
     #        DOCKER SERVICES                #
