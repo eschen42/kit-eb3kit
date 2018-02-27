@@ -9,9 +9,7 @@ class vmbuilder_services (
 				command	=> '/usr/bin/pip3 install -r /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/requirements.txt'
 		}
 
-    #
-    #  bitte hier das setup /opt/bibbox/sys-bibbox-vmscripts/initscripts/runSetupScript.sh >> /var/log/liferaySetup.log
-	  exec { 'dockerUpActivities':
+    exec { 'dockerUpActivities':
 				path			=> '/usr/bin',
 				command 	=> '/usr/bin/sudo  /opt/bibbox/sys-bibbox-vmscripts/initscripts/runSetupScript.sh >> /var/log/liferaySetup.log',
 				timeout   => 1800
@@ -20,6 +18,8 @@ class vmbuilder_services (
     #########################################
     #           BIBBOX / LIFERAY            #
     #########################################
+
+
 		Service <| title == 'apache2' |> {
 				ensure 		=> running,
 				enable 		=> true
@@ -30,17 +30,11 @@ class vmbuilder_services (
 				enable 		=> true
 		}
 
-
-    #
-    # return code des service checken, setup liferay entfernen
-    # IM UPDATE REPOSITORY das PULL auf dei SCRIPTS entfernen
-    #
-
-    #
-    # zwei scripts machen
-    #   a) update auf einen Version
-    #   b) wechsel der DOMAIN
-
+    exec { 'reloadApache':
+				path			=> '/usr/bin',
+				command 	=> '/usr/bin/sudo service apache2 restart',
+				timeout   => 1800
+		}
 
 		service { 'bibbox':
 				ensure 		=> running,
