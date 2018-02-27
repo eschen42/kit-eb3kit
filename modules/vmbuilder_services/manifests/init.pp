@@ -1,25 +1,10 @@
 class vmbuilder_services (
 ) {
 
-    #########################################
-    #        LIFERAY SETUP SCRIPT           #
-    #########################################
-		exec { 'pythonRequirements':
-				path		=> '/usr/bin',
-				command	=> '/usr/bin/pip3 install -r /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/requirements.txt'
-		}
-
-    exec { 'dockerUpActivities':
-				path			=> '/usr/bin',
-				command 	=> '/usr/bin/sudo  /opt/bibbox/sys-bibbox-vmscripts/initscripts/runSetupScript.sh >> /var/log/liferaySetup.log',
-				timeout   => 1800
-		}
 
     #########################################
     #           BIBBOX / LIFERAY            #
     #########################################
-
-
 		Service <| title == 'apache2' |> {
 				ensure 		=> running,
 				enable 		=> true
@@ -31,14 +16,28 @@ class vmbuilder_services (
 				timeout   => 1800
 		}
 
-
 		service { 'liferay':
 				ensure 		=> running,
 				enable 		=> true
 		}
-	service { 'bibbox':
+
+    service { 'bibbox':
 				ensure 		=> running,
 				enable 		=> true
+		}
+
+   #########################################
+    #        LIFERAY SETUP SCRIPT           #
+    #########################################
+		exec { 'pythonRequirements':
+				path		=> '/usr/bin',
+				command	=> '/usr/bin/pip3 install -r /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/requirements.txt'
+		}
+
+    exec { 'installLiferayContent':
+				path			=> '/usr/bin',
+				command 	=> '/usr/bin/sudo  /opt/bibbox/sys-bibbox-vmscripts/initscripts/runSetupScript.sh',
+				timeout   => 1800
 		}
 
     #########################################

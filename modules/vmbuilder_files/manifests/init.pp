@@ -128,8 +128,6 @@ class vmbuilder_files(
 				mode		=> '0644'
 		}
 
-
-
   	#######################
     #  CLONE FROM GIT     #
     #######################
@@ -138,6 +136,13 @@ class vmbuilder_files(
 				provider 	=> 'git',
 				source   	=> 'https://github.com/bibbox/sys-bibbox-vmscripts.git'
 		}
+
+		exec { 'changePermissionOfVMScrips':
+				path			=> '/usr/bin',
+				command 	=> 'chmod +x /opt/bibbox/sys-bibbox-vmscripts/*.sh',
+				timeout   => 1800
+		}
+
 		vcsrepo { '/opt/bibbox/application-store/application-store':
 				ensure   	=> 'latest',
 				provider	=> 'git',
