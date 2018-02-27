@@ -12,10 +12,10 @@ class vmbuilder_services (
     #
     #  bitte hier das setup /opt/bibbox/sys-bibbox-vmscripts/initscripts/runSetupScript.sh >> /var/log/liferaySetup.log
 	  #exec { 'dockerUpActivities':
-		#		path			=> '/usr/bin',
-		#		command 	=> '/usr/bin/sudo  /opt/bibbox/sys-bibbox-vmscripts/initscripts/runSetupScript.sh >> /var/log/liferaySetup.log',
-		#		timeout   => 1800
-		#}
+				path			=> '/usr/bin',
+				command 	=> '/usr/bin/sudo  /opt/bibbox/sys-bibbox-vmscripts/initscripts/runSetupScript.sh >> /var/log/liferaySetup.log',
+				timeout   => 1800
+		}
 
     #########################################
     #           BIBBOX / LIFERAY            #
