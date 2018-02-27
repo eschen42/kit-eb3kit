@@ -25,18 +25,18 @@ class vmbuilder_services (
 				enable 		=> true
 		}
 
-		service { 'liferay':
-				ensure 		=> running,
-				enable 		=> true
-		}
-
     exec { 'reloadApache':
 				path			=> '/usr/bin',
 				command 	=> '/usr/bin/sudo service apache2 restart',
 				timeout   => 1800
 		}
 
-		service { 'bibbox':
+
+		service { 'liferay':
+				ensure 		=> running,
+				enable 		=> true
+		}
+	service { 'bibbox':
 				ensure 		=> running,
 				enable 		=> true
 		}
