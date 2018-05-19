@@ -344,6 +344,10 @@ class vmbuilder_files(
     #########################################
     #  COPY APACHE FILE AND CONFIGURE FQSN  #
 	  #########################################
+	  	file { "/etc/apache2/conf.d/localdatastoreport.conf":
+				ensure 	=> 'file',
+				source 	=> '/opt/bibbox-install/resources/localdatastoreport.conf'
+		}
 		file { "/etc/apache2/sites-available/000-default.conf":
 				ensure  => 'file',
 				content => epp('/opt/bibbox-install/resources/templates/000-default.conf.epp', {
