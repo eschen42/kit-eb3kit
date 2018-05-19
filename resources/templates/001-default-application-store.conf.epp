@@ -1,6 +1,6 @@
 <%- | String $serveradmin, String $bibboxbaseurl | -%>
 
-<VirtualHost 127.0.0.1:80>
+<VirtualHost 127.0.0.1:85>
         ServerName <%= $bibboxbaseurl %>
         ServerAdmin <%= $serveradmin %>
 
