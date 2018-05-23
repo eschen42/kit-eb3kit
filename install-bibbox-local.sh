@@ -41,16 +41,16 @@ done
 #                    lety dance with puppet                      #
 ##################################################################
 
-sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/production/manifests/config_ubuntu.pp
-sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/production/manifests/config_packages.pp
-sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/production/manifests/config_files.pp
-sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/production/manifests/config_services.pp
+sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/local/manifests/config_ubuntu.pp
+sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/local/manifests/config_packages.pp
+sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/local/manifests/config_files.pp
+sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/local/manifests/config_services.pp
 
 
-/opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules  /opt/bibbox-install/environments/production/manifests/config_ubuntu.pp
-/opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules  /opt/bibbox-install/environments/production/manifests/config_packages.pp
-/opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules  /opt/bibbox-install/environments/production/manifests/config_files.pp
-/opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules  /opt/bibbox-install/environments/production/manifests/config_services.pp
+/opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_ubuntu.pp
+/opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_packages.pp
+/opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_files.pp
+/opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_services.pp
 
 
 if [ "$gui" = true ] ; then
