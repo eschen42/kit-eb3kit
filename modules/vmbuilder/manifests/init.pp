@@ -440,6 +440,11 @@ class vmbuilder(
 				command	=> '/usr/bin/pip3 install -r /opt/bibbox/sys-bibbox-vmscripts/setup-liferay/scripts/requirements.txt'
 		}
 
+        exec { 'installLiferayContent':
+				path	  => '/usr/bin',
+				command   => '/usr/bin/sudo  /opt/bibbox/sys-bibbox-vmscripts/initscripts/runSetupScript.sh',
+				timeout   => 2800
+		}
 
 		# Install docker and docker compose
 		include 'docker'

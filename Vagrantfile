@@ -68,7 +68,10 @@ Vagrant.configure("2") do |config|
   
   # OS image of the virtual machine
   config.vm.box = "puppetlabs/ubuntu-14.04-64-puppet"
-
+  config.vm.provision :shell, :inline => <<-EOT
+     echo 'LC_ALL="en_US.UTF-8"'  >  /etc/default/locale
+  EOT
+        
   # Static IP and port within the host's network
   config.vm.network :private_network, ip: ip
   config.vm.network :forwarded_port, host: http_port, host_ip: "127.0.0.1",  guest: 80
