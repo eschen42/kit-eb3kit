@@ -443,6 +443,7 @@ class vmbuilder(
         exec { 'installLiferayContent':
 				path	  => '/usr/bin',
 				command   => '/usr/bin/sudo  /opt/bibbox/sys-bibbox-vmscripts/initscripts/runSetupScript.sh',
+                subscribe	=> Service['liferay']
 				timeout   => 2800
 		}
 
