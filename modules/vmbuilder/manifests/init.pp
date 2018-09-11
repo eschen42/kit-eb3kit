@@ -64,7 +64,7 @@ class vmbuilder(
 
 		# Define default vhost, or apache can't start
 		apache::vhost { $bibboxbaseurl:
-				port    	=> '80',
+				port    	=> '85',
 				docroot 	=> '/var/www/vhost'
 		}
 
@@ -523,8 +523,8 @@ class vmbuilder(
 						'bibboxbaseurl'	=> $bibboxbaseurl
 				})
 		}
-
-
+  
+        
 		# Symlink the new vhosts config files
 		file { '/etc/apache2/sites-enabled/001-default-application-store.conf':
 				ensure		=> 'link',
