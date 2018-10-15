@@ -38,7 +38,7 @@ done
 /opt/bibbox-install/install-base-puppet-modules.sh
 
 ##################################################################
-#                    lety dance with puppet                      #
+#                    lets dance with puppet                      #
 ##################################################################
 
 sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/local/manifests/config_ubuntu.pp
