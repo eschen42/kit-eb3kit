@@ -66,5 +66,5 @@ if [ "$gui" = true ] ; then
     sed -i "s|#conf-dir=/etc/dnsmasq.d/,\*.conf|conf-dir=/etc/dnsmasq.d/,*.conf|g" /etc/dnsmasq.conf
     sed -i '1i127.0.0.1 $url' /etc/hosts
     
-    echo "address=/*.$url/127.0.0.1" > /etc/dnsmasq.d/bibbox-local.conf
+    echo "address=/$url/127.0.0.1" > /etc/dnsmasq.d/bibbox-local.conf
 fi
