@@ -52,6 +52,9 @@ sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/local/mani
 /opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_files.pp
 /opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_services.pp
 
+##################################################################
+#       optionally install the ubuntu desktop und dnsmasq        #
+##################################################################
 
 if [ "$gui" = true ] ; then
     apt-get install -y ubuntu-desktop
