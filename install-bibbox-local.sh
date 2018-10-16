@@ -29,6 +29,23 @@ while [ "$1" != "" ]; do
 done
 
 ##################################################################
+#                   checking locale                              #
+##################################################################
+
+if [ -n "$LANG" ];
+then
+    echo   "your default language is ${LANG}"
+else
+    echo LANG="en_US.UTF-8"
+fi
+LANGUAGE=${LANG}
+LC_ALL=${LANG}
+echo  "your locale is"
+locale
+
+
+
+##################################################################
 #                    bootstrap the machine                       #
 ##################################################################
 
