@@ -64,7 +64,7 @@ class vmbuilder(
 
 		# Define default vhost, or apache can't start
 		apache::vhost { $bibboxbaseurl:
-				port    	=> ['80','85’],
+				port    	=> ['80','85'],
 				docroot 	=> '/var/www/vhost'
 		}
 
