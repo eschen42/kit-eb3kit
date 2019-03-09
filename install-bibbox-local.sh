@@ -12,6 +12,11 @@ echo "##########################################################################
 echo "#                                  BIBBOX INSTALLER                                      #"
 echo "##########################################################################################"
 
+if [ "$(whoami)" != "root" ]; then
+  echo "You must run install-bibbox-local.sh as root or run it with sudo (as root)."
+  exit 1
+fi
+
 url=lab.box
 gui=false
 
@@ -43,11 +48,17 @@ LC_ALL=${LANG}
 echo  "your locale is"
 locale
 
+##################################################################
+#                    back up apache2 config                      #
+##################################################################
 
+tar cvfz /etc/apache2-$(date -u '+%Y%m%dT%H%M%SZ').tgz /etc/apache2
 
 ##################################################################
 #                    bootstrap the machine                       #
 ##################################################################
+
+/opt/bibbox-install/bootstrap-apache2.sh
 
 /opt/bibbox-install/install-pyhthon-and-tools.sh
 /opt/bibbox-install/download-liferay.sh
@@ -62,14 +73,18 @@ sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/local/mani
 sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/local/manifests/config_packages.pp
 sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/local/manifests/config_files.pp
 sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/local/manifests/config_services.pp
+
 sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/modules/vmbuilder/manifests/init.pp
 sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/production/manifests/config.pp
+sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/modules-local/vmbuilder_ubuntu/manifests/init.pp
+sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/modules-local/vmbuilder_packages/manifests/init.pp
+sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/modules-local/vmbuilder_files/manifests/init.pp
 
 
-/opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_ubuntu.pp
-/opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_packages.pp
-/opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_files.pp
-/opt/puppetlabs/bin/puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_services.pp
+puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_ubuntu.pp
+puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_packages.pp
+puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_files.pp
+puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_services.pp
 
 ##################################################################
 #       optionally install the ubuntu desktop und dnsmasq        #

@@ -7,13 +7,28 @@ echo "##########################################################################
 echo "#                                  PUPPET AGENT                                          #"
 echo "##########################################################################################"
 
-wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
+if [ ! -f puppetlabs-release-pc1-xenial.deb ]; then
+  wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
+fi
 sudo dpkg -i puppetlabs-release-pc1-xenial.deb
 sudo dpkg --configure -a
-sudo apt-get update -q
-sudo apt-get install -q -y systemd
-sudo apt-get install -q -y puppet-agent
-sudo /opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
+(
+  (dpkg --status systemd > /dev/null) && (dpkg --status puppet-module-puppetlabs-postgresql > /dev/null)
+) || (
+  sudo apt-get update -q
+  sudo apt-get install -q -y systemd
+  #sudo apt-get install -q -y puppet-agent
+  sudo apt-get install -q -y puppet-module-puppetlabs-postgresql
+)
+find . -type f -print | xargs grep -l /opt/puppetlabs/bin/puppet | grep -v bootstrap-puppet-agent.sh | xargs sed -i -e 's./opt/puppetlabs/bin/puppet.puppet.g'
+sudo puppet resource service puppet ensure=running enable=true
+
+sudo systemctl status puppet.service | cat
+# sudo systemctl enable puppet.service
+# sudo systemctl start puppet.service
+# sudo systemctl status puppet.service | cat
+#
+# sudo puppet resource service puppet ensure=running
 
 echo "Environment PATH $PATH"
 
