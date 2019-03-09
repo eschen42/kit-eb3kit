@@ -22,3 +22,12 @@ vmadminroles="BIBBOX VM Admin"
 # init configuration
 ApplicationStoreUpdate="ON"
 bibboxScriptUpdate="ON"
+
+# load config files
+for conffiles in /etc/bibbox/conf.d/*.cfg; do
+  . $conffiles
+done
+
+# string for starting and stopping bibbox service
+bibboxinotifywait="inotifywait -m /etc/apache2/sites-enabled -e delete -e create -e moved_to"
+bibboxwaitseconds=5

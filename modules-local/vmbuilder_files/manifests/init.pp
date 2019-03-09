@@ -134,7 +134,9 @@ class vmbuilder_files(
 		vcsrepo { '/opt/bibbox/sys-bibbox-vmscripts':
 				ensure   	=> 'latest',
 				provider 	=> 'git',
-				source   	=> 'https://github.com/bibbox/sys-bibbox-vmscripts.git'
+				#source   	=> 'https://github.com/bibbox/sys-bibbox-vmscripts.git'
+				source   	=> 'https://github.com/eschen42/sys-bibbox-vmscripts.git',
+        revision  => 'hackApache'
 		}
 
 		exec { 'changePermissionOfVMScrips':
