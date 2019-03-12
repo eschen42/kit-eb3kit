@@ -13,6 +13,10 @@ puppet module install puppetlabs-apache --version 1.11.0  --modulepath /etc/pupp
 puppet module install puppet-archive --version 1.2.0      --modulepath /etc/puppetlabs/code/modules
 puppet module install puppetlabs-vcsrepo --version 1.5.0  --modulepath /etc/puppetlabs/code/modules
 puppet module install puppet-alternatives --version 1.0.2 --modulepath /etc/puppetlabs/code/modules
-puppet module install puppetlabs-docker_platform --version 2.1.0 --modulepath /etc/puppetlabs/code/modules
-puppet module install puppetlabs-postgresql --version 4.8.0 --modulepath /etc/puppetlabs/code/modules
+lsb_release -rs | grep '18[.]' && puppet module install puppetlabs-docker --version 3.4.0 --modulepath /etc/puppetlabs/code/modules
+lsb_release -rs | grep '16[.]' && puppet module install puppetlabs-docker_platform --version 2.1.0 --modulepath /etc/puppetlabs/code/modules
+
+lsb_release -rs | grep '18[.]' && puppet module install puppetlabs-postgresql --version 5.6.0 --modulepath /etc/puppetlabs/code/modules
+lsb_release -rs | grep '16[.]' && puppet module install puppetlabs-postgresql --version 4.8.0 --modulepath /etc/puppetlabs/code/modules
+
 puppet module install tylerwalts-jdk_oracle --version 2.0.0 --modulepath /etc/puppetlabs/code/modules

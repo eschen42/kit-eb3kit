@@ -1,5 +1,10 @@
 <%- | String $bibboxkit, String $bibboxbaseurl | -%>
 
+echo Start bibbox.cfg
+
+echo bibboxkit="<%= $bibboxkit %>"
+echo bibboxbaseurl="<%= $bibboxbaseurl %>"
+
 # This is the main BIBBOX configuration file.
 bibboxkit="<%= $bibboxkit %>"
 
@@ -24,10 +29,14 @@ ApplicationStoreUpdate="ON"
 bibboxScriptUpdate="ON"
 
 # load config files
-for conffiles in /etc/bibbox/conf.d/*.cfg; do
-  . $conffiles
-done
+if [ -d /etc/bibbox/conf.d ]; then
+  for conffiles in $(ls /etc/bibbox/conf.d/*.cfg 2>/dev/null); do
+    . $conffiles
+  done
+fi
 
 # string for starting and stopping bibbox service
 bibboxinotifywait="inotifywait -m /etc/apache2/sites-enabled -e delete -e create -e moved_to"
 bibboxwaitseconds=5
+
+echo End bibbox.cfg
