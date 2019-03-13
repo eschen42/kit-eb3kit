@@ -25,8 +25,8 @@ lsb_release -sd | grep 'Ubuntu 1[68][.]' || (
 
 # Inspiration for code below: https://computingforgeeks.com/how-to-setup-puppet-master-and-agent-ubuntu-18-04-bionic-beaver/
 PUPPET_DEB=none
-lsb_release -rs | grep '18[.]' && PUPPET_DEB=puppet-release-bionic.deb
-lsb_release -rs | grep '16[.]' && PUPPET_DEB=puppetlabs-release-pc1-xenial.deb
+lsb_release -sd | grep 'Ubuntu 18[.]' && PUPPET_DEB=puppet-release-bionic.deb
+lsb_release -sd | grep 'Ubuntu 16[.]' && PUPPET_DEB=puppetlabs-release-pc1-xenial.deb
 if [ ! -f ${PUPPET_DEB} ]; then
   wget https://apt.puppetlabs.com/${PUPPET_DEB}
 fi
