@@ -48,6 +48,9 @@ LC_ALL=${LANG}
 echo  "your locale is"
 locale
 
+# echo each command as it is executed by the shell
+set -x
+
 ##################################################################
 #                    back up apache2 config                      #
 ##################################################################
@@ -58,12 +61,12 @@ tar cvfz /etc/apache2-$(date -u '+%Y%m%dT%H%M%SZ').tgz /etc/apache2
 #                    bootstrap the machine                       #
 ##################################################################
 
-/opt/bibbox-install/bootstrap-apache2.sh
+bash /opt/bibbox-install/bootstrap-apache2.sh
 
-/opt/bibbox-install/install-pyhthon-and-tools.sh
-/opt/bibbox-install/download-liferay.sh
-/opt/bibbox-install/bootstrap-puppet-agent.sh
-/opt/bibbox-install/install-base-puppet-modules.sh
+bash /opt/bibbox-install/install-pyhthon-and-tools.sh
+bash /opt/bibbox-install/download-liferay.sh
+bash /opt/bibbox-install/bootstrap-puppet-agent.sh
+bash /opt/bibbox-install/install-base-puppet-modules.sh
 
 ##################################################################
 #                    lets dance with puppet                      #
