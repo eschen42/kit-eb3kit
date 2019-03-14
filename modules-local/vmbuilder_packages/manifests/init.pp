@@ -51,8 +51,18 @@ class vmbuilder_packages (
     ###################
     #     POSTGRES    #
     ###################
+    # class { 'postgresql::globals':
+    #   datadir              => '/opt/postgres_data',
+    # }->
+    # class { 'postgresql::server':
+    #   needs_initdb => 'true',
+    # }
     class { 'postgresql::server': }
-
+    class running_postgresql_service {
+      service { 'postgresql':
+        ensure => 'running',
+      }
+    }
     postgresql::server::role {
       $db_user:
         password_hash => postgresql_password($db_user, $db_password),
@@ -63,7 +73,12 @@ class vmbuilder_packages (
         user     => $db_user,
         password => postgresql_password($db_user, $db_password)
     }
-
+    postgresql_conn_validator { 'validate my postgres connection':
+      host              => $bibboxbaseurl,
+      db_username       => $db_user,
+      db_password       => $db_password,
+      db_name           => $db_name,
+    }
 
     postgresql::server::database_grant {
       $db_name:
