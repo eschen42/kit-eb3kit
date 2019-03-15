@@ -1,3 +1,38 @@
+class vmbuilder_packages_postgres (
+  $bibboxbaseurl = "eb3kit.bibbox.org",
+  $db_user       = "liferay",
+  $db_password   = "bibbox4ever",
+  $db_name       = "lportal"
+)
+  {
+    ###################
+    #     POSTGRES    #
+    ###################
+    postgresql::server::role {
+      $db_user:
+        password_hash => postgresql_password($db_user, $db_password),
+    }
+
+    postgresql::server::db {
+      $db_name:
+        user     => $db_user,
+        password => postgresql_password($db_user, $db_password)
+    }
+    postgresql_conn_validator { 'validate my postgres connection':
+      host              => $bibboxbaseurl,
+      db_username       => $db_user,
+      db_password       => $db_password,
+      db_name           => $db_name,
+    }
+
+    postgresql::server::database_grant {
+      $db_name:
+        privilege => 'ALL',
+        db        => $db_name,
+        role      => $db_user
+    }
+
+  }
 class vmbuilder_packages (
   $bibboxbaseurl = "eb3kit.bibbox.org",
   $db_user       = "liferay",
@@ -46,45 +81,6 @@ class vmbuilder_packages (
       version_build  => '13',
       version_hash   => '75b2cb2249710d822a60f83e28860053',
       download_url   => 'http://downloads.bibbox.org/java',
-    }
-
-    ###################
-    #     POSTGRES    #
-    ###################
-    # class { 'postgresql::globals':
-    #   datadir              => '/opt/postgres_data',
-    # }->
-    # class { 'postgresql::server':
-    #   needs_initdb => 'true',
-    # }
-    class { 'postgresql::server': }
-    class running_postgresql_service {
-      service { 'postgresql':
-        ensure => 'running',
-      }
-    }
-    postgresql::server::role {
-      $db_user:
-        password_hash => postgresql_password($db_user, $db_password),
-    }
-
-    postgresql::server::db {
-      $db_name:
-        user     => $db_user,
-        password => postgresql_password($db_user, $db_password)
-    }
-    postgresql_conn_validator { 'validate my postgres connection':
-      host              => $bibboxbaseurl,
-      db_username       => $db_user,
-      db_password       => $db_password,
-      db_name           => $db_name,
-    }
-
-    postgresql::server::database_grant {
-      $db_name:
-        privilege => 'ALL',
-        db        => $db_name,
-        role      => $db_user
     }
 
     ###################

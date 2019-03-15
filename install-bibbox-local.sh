@@ -73,6 +73,7 @@ bash /opt/bibbox-install/install-base-puppet-modules.sh
 ##################################################################
 
 sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/local/manifests/config_ubuntu.pp
+sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/local/manifests/config_postgres.pp
 sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/local/manifests/config_packages.pp
 sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/local/manifests/config_files.pp
 sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/environments/local/manifests/config_services.pp
@@ -85,7 +86,8 @@ sed -i "s/eb3kit.bibbox.org/$url/g"  /opt/bibbox-install/modules-local/vmbuilder
 
 
 puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_ubuntu.pp
-puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_packages.pp
+puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  --verbose --debug /opt/bibbox-install/environments/local/manifests/config_packages_postgres.pp
+puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  --verbose --debug /opt/bibbox-install/environments/local/manifests/config_packages.pp
 puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_files.pp
 puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_services.pp
 
