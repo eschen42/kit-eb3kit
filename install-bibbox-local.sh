@@ -37,16 +37,25 @@ done
 #                   checking locale                              #
 ##################################################################
 
+cat > /etc/profile.d/locale_en_US.sh << EOF
+LANG="en_US.UTF-8"
+LANGUAGE="en_US:en"
+export LC_ALL=en_US.UTF-8
+EOF
+
+#source /etc/profile.d/locale_en_US.sh
+
+LANG=${LANG:-en_US.UTF-8}
+LANGUAGE=${LANGUAGE:-en_US:en}
 if [ -n "$LANG" ];
 then
     echo   "your default language is ${LANG}"
 else
     echo LANG="en_US.UTF-8"
 fi
-LANGUAGE=${LANG}
-LC_ALL=${LANG}
+export LC_ALL=${LANG}
 echo  "your locale is"
-locale
+sudo locale
 
 # echo each command as it is executed by the shell
 set -x
@@ -90,14 +99,8 @@ puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modul
 puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_packages.pp
 puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_files.pp
 
-cat > /etc/profile.d/locale_en_US.sh << EOF
-LANG="en_US.UTF-8"
-LANGUAGE="en_US:en"
-export LC_ALL=en_US.UTF-8
-EOF
-#source /etc/profile.d/locale_en_US.sh
-
 puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  /opt/bibbox-install/environments/local/manifests/config_services.pp
+puppet apply --modulepath=/etc/puppetlabs/code/modules:/opt/bibbox-install/modules-local  --debug --verbose /opt/bibbox-install/environments/local/manifests/config_services_liferay.pp
 
 ##################################################################
 #       optionally install the ubuntu desktop und dnsmasq        #
